@@ -1,0 +1,30 @@
+.excontainer {
+  border: 1px #000 solid;
+  border:none;
+  -webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+  -moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+  box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
+  color: #333;
+  background-color: #E8FFFF;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+
+  margin: 0.5em;
+  padding-right: 1em;
+  padding-top:1.5em;
+  padding-bottom:1.5em;
+}
+.ex {
+  border: 1px #000 solid;
+  border:none;
+  color:#333;
+  background-color: #E8FFFF;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  margin: 0.5em;
+  padding-right: 1em;
+
+  padding-bottom: 1em;
+}

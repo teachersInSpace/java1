@@ -1,0 +1,30 @@
+= PRC1 (Java1)
+Linda Urselmans
+V0.1  2019-01-25
+:toc: right
+:icons: font
+:includes: 2019
+:docbase: ..
+:docinfo: private-head
+:description: This site is the documentation for PRC1 (Java Programming 1) which (since 2018) uses a MOOC.
+:keywords: Java 1 MOOC SEBI Venlo
+:source-highlighter: coderay
+:stylesdir: css/
+:stylesheet: java1.css
+
+
+toc::[]
+
+//[.main-menu]
+//|===
+//|week|<<_week01, 01>>|<<_week02 ,02>>|<<_week03, 03>>|<<_week04, 04>>|<<_week05, 05>>|<<_week06, 06>>|<<_week07, 07>>|<<_week08, 08>>|<<_week09 ,09>>|<<_week10, 10>>|<<_week11, 11>>|<<_week12, 12>>|<<_week13, 13>>
+//|===
+
+
+:numbered!:
+
+== Module description
+Converting MOOC material
+
+:numbered:
+include::{includes}/week1.adoc[]
