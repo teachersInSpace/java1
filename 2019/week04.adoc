@@ -42,34 +42,34 @@ public static addThree(int number) {
 }
 ----
 
-  Still, the program does not function the way we want. The method parameters are different variables than
-  the ones introduced in the main program. In the previous example, the method increments a variable with
-  the same name as the main program variable. The parameter has the same name, but is not the same as the
-  main program variable `number`.
+Still, the program does not function the way we want. The method parameters are different variables than
+the ones introduced in the main program. In the previous example, the method increments a variable with
+the same name as the main program variable. The parameter has the same name, but is not the same as the
+main program variable `number`.
 
-  When a parameter is given to a method, the value of the parameter <em>is copied into a new
-    variable</em> and that new variable is the one the method uses. In the example above, the variable
-  `number` that was given to the method `addThree` as a parameter, will be copied
-  and then the copy is actually handed out for the method to use. The method uses a copy of the
-  variable from the main program, not the original variable. The main program variable
-  `number` stays unchanged.
+When a parameter is given to a method, the value of the parameter <em>is copied into a new
+  variable</em> and that new variable is the one the method uses. In the example above, the variable
+`number` that was given to the method `addThree` as a parameter, will be copied
+and then the copy is actually handed out for the method to use. The method uses a copy of the
+variable from the main program, not the original variable. The main program variable
+`number` stays unchanged.
 
-  We can imagine that the main program method `main` and the method `addThree`
-  both work in their own parts of the computer memory. In the picture below, there is a "box"
-  for the value of the variable `number` of the main method. When the method is called, a new
-  "box" named `number` will be created and the main value of  the method variable
-  `number` will be copied into it. In this example, the number is 1. Both variables
-  that are called `number` are separate, therefore when the method `addThree`
-  changes the value of its own variable called `number` it does not affect the variable
-  `number` in the main program.
+We can imagine that the main program method `main` and the method `addThree`
+both work in their own parts of the computer memory. In the picture below, there is a "box"
+for the value of the variable `number` of the main method. When the method is called, a new
+"box" named `number` will be created and the main value of  the method variable
+`number` will be copied into it. In this example, the number is 1. Both variables
+that are called `number` are separate, therefore when the method `addThree`
+changes the value of its own variable called `number` it does not affect the variable
+`number` in the main program.
 
-  The picture below will demonstrate what happens.
+The picture below will demonstrate what happens.
 
   <img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/metodi1.png">
 
-  The method can still naturally pass information to the caller, which happens by using a return value
-  (i.e. using a `return` command to return a variable with a value). We can get the previous
-  example to work by changing the code a little bit:
+The method can still naturally pass information to the caller, which happens by using a return value
+(i.e. using a `return` command to return a variable with a value). We can get the previous
+example to work by changing the code a little bit:
 
 [source,java]
 ----
@@ -87,10 +87,10 @@ public static int addThreeAndReturn(int number) {
 }
 ----
 
-  The method still uses the copy of the main program variable `number`. In the main program,
-  we assign the variable `number` the method return value as a new value, so that we can get
-  the change to take effect in the main program. Note that the name of the method variable plays no role
-  here. The code works exactly the same regardless of the variable names. Here follows an example:
+The method still uses the copy of the main program variable `number`. In the main program,
+we assign the variable `number` the method return value as a new value, so that we can get
+the change to take effect in the main program. Note that the name of the method variable plays no role
+here. The code works exactly the same regardless of the variable names. Here follows an example:
 
 [source,java]
 ----
@@ -108,11 +108,11 @@ public static int addThreeAndReturn(int incremented) {
 }
 ----
 
-  We have now found out that the parameters in methods are different variables than the variables introduced in
-  the method call. Only the parameter value gets copied from the caller to the method.
+We have now found out that the parameters in methods are different variables than the variables introduced in
+the method call. Only the parameter value gets copied from the caller to the method.
 
-  Unfortunately this is not the whole story. If a method gets an `ArrayList` as a parameter, the
-  method sees the original list and all the changes the method makes will take effect everywhere.
+Unfortunately this is not the whole story. If a method gets an `ArrayList` as a parameter, the
+method sees the original list and all the changes the method makes will take effect everywhere.
 
 [source,java]
 ----
@@ -138,37 +138,37 @@ public static void main(String[] args) {
 }
 ----
 
-  Unlike a parameter of `int` type, a list will not be copied and therefore the method
-  makes changes to the original list given as a parameter.
+Unlike a parameter of `int` type, a list will not be copied and therefore the method
+makes changes to the original list given as a parameter.
 
-  The picture below will clarify the example. `ArrayList` does not live in an imagined
-  "box" like an `int`. The variable name in the example `numbers` is only
-  a <em>reference</em> that refers to the place where the ArrayList is. One way to visualize this is that
-  an `ArrayList` is connected with a wire. The name of the `ArrayList` is a
-  "wire", and the list itself is located "at the other end of the wire". When we give
-  the `ArrayList` to a method as a parameter, we actually give the method a wire. When the
-  method uses its parameter, it finds the original list at the other end of this wire. Actually the main program
-  and the method do have separate wires, but both wires have the same original list at the end of them
-  and all the changes will be made directly to the original list. During and after this week we will find
-  out that many things in Java are "connected with a wire".
+The picture below will clarify the example. `ArrayList` does not live in an imagined
+"box" like an `int`. The variable name in the example `numbers` is only
+a <em>reference</em> that refers to the place where the ArrayList is. One way to visualize this is that
+an `ArrayList` is connected with a wire. The name of the `ArrayList` is a
+"wire", and the list itself is located "at the other end of the wire". When we give
+the `ArrayList` to a method as a parameter, we actually give the method a wire. When the
+method uses its parameter, it finds the original list at the other end of this wire. Actually the main program
+and the method do have separate wires, but both wires have the same original list at the end of them
+and all the changes will be made directly to the original list. During and after this week we will find
+out that many things in Java are "connected with a wire".
 
   <img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/metodi-lanka.PNG" height="400">
 
-  Note that again the parameter name inside the method can be anything. It does not need to be the
-  same as the name in the main program (or other method that calls it). In the example above, the method
-  uses the name `list` but the method caller sees the same list with a different name:
-  `numbers`.
+Note that again the parameter name inside the method can be anything. It does not need to be the
+same as the name in the main program (or other method that calls it). In the example above, the method
+uses the name `list` but the method caller sees the same list with a different name:
+`numbers`.
 
-  Now, you probably start to wonder why does the value of the parameter get copied and the original variable stay intact when the
-  parameter is of `int` type, but the original list is given to the method when the parameter
-  is of `ArrayList` type? In Java only the values of *<em>primitive data
-      types</em>* (which are `int`, `double`, `char`,
-  `boolean` and a couple of others that we have not yet discussed) get copied to the method.
-  When the method parameters are of other types only the <em>references</em> are copied to the method. A
-  reference is like a "wire", therefore the method can access the list using it directly. The
-  variables that are not of primitive data types are of *<em>reference data types</em>*
-  and are "wired" just like the ArrayList in the previous example. The method is given the
-  wire and the method can access the parameter directly.
+Now, you probably start to wonder why does the value of the parameter get copied and the original variable stay intact when the
+parameter is of `int` type, but the original list is given to the method when the parameter
+is of `ArrayList` type? In Java only the values of *<em>primitive data
+  types</em>* (which are `int`, `double`, `char`,
+`boolean` and a couple of others that we have not yet discussed) get copied to the method.
+When the method parameters are of other types only the <em>references</em> are copied to the method. A
+reference is like a "wire", therefore the method can access the list using it directly. The
+variables that are not of primitive data types are of *<em>reference data types</em>*
+and are "wired" just like the ArrayList in the previous example. The method is given the
+wire and the method can access the parameter directly.
 
   <div id="viikko4" class="tehtavat">
     <div class="tehtava">
@@ -199,34 +199,31 @@ System.out.println(list1); // prints [4, 3, 5, 10, 7]
 System.out.println(list2); // prints [5, 10, 7]
 ----
 
-      We can use the method `addAll` provided by the ArrayList class to add one list in
-      another list. The list gets the other list, whose items are to be added, as a parameter.
-    </div>
+We can use the method `addAll` provided by the ArrayList class to add one list in
+another list. The list gets the other list, whose items are to be added, as a parameter.
+</div>
 
-    <div class="tehtava">
-      <h3>Smart combining</h3>
+<div class="tehtava">
+  <h3>Smart combining</h3>
 
-      Create the method `smartCombine` that works like the previous
-      `combine` method except that numbers can be on the list only once. This means that the method
-      adds a new number to the list only if the list does not already contain that number. You might
-      find the method `contains` from the ArrayList class useful. You can use that method
-      to check if a number is in the list.
-    </div>
+Create the method `smartCombine` that works like the previous
+`combine` method except that numbers can be on the list only once. This means that the method
+adds a new number to the list only if the list does not already contain that number. You might
+find the method `contains` from the ArrayList class useful. You can use that method
+to check if a number is in the list.
   </div>
+</div>
 
-  <h2>Instructions on code-writing and problem solving</h2>
+== Instructions on code-writing and problem solving
 
-  Two of the leading software developers, <em>Martin Fowler</em> and <em>Kent Beck</em> have said in the book <em>Refactoring: Improving the Design of Existing Code</em> that:
+Two of the leading software developers, _Martin Fowler_ and _Kent Beck_ have said in the book _Refactoring: Improving the Design of Existing Code_ that:
 
-  <ul>
-    <li>Fowler: <em>"Any fool can write code that a computer can understand. Good programmers write code
-      that humans can understand."</em></li>
+* Fowler: "Any fool can write code that a computer can understand. Good programmers write code
+  that humans can understand."
+* Beck: "I'm not a great programmer, I'm just good a programmer with great
+  habits."
 
-    <li>Beck: <em>"I'm not a great programmer, I'm just good a programmer with great
-      habits."</em></li>
-  </ul>
-
-  [Update: previously both quotes were credited to Kent Beck. Our thanks go to Esko Luontola <a href="http://sourceforge.net/p/mooc-issues/tickets/451/">for pointing out this mistake</a>]:</a>
+ [Update: previously both quotes were credited to Kent Beck. Our thanks go to Esko Luontola <a href="http://sourceforge.net/p/mooc-issues/tickets/451/">for pointing out this mistake</a>]:</a>
 We are now taking the first steps towards becoming good programmers.
 
 <h3>Well indented and "breathing" code</h3>
@@ -253,6 +250,7 @@ numbers.remove(Integer.valueOf(3));
 System.out.println("The numbers after removal:");
 for (int number : numbers) {
 System.out.println(number);
+}
 }
 ----
 
@@ -297,7 +295,7 @@ much more pleasant.
 
 There are even comments in the code to help the reader understand what happens and where!
 
-<h3>Getting rid of copy-paste with methods</h3>
+=== Getting rid of copy-paste with methods
 
 What could be called the Original sin of a programmer is to create copy-paste code. This means using the same code in
 multiple places by copy-pasting it around the source code. In our example, the printing of the list is done twice. The
@@ -423,7 +421,7 @@ Change the `remove` method to use the `askLineNumber` method you just created.
   The method `add` reads a line number from the user as well.
 Use the `askLineNumber` method to read the line number.
   <h3>The least common multiple</h3>
-  In this assignment the least common multiple of two numbers is calculated using their greatest common divisor. 
+  In this assignment the least common multiple of two numbers is calculated using their greatest common divisor.
   <a href="http://en.wikipedia.org/wiki/Least_common_multiple">The least common multiple</a> is the smallest whole number that is exactly divisible (i.e. remainder is 0) by the numbers in question. It can be calculated easily, if we know the greatest common divisor of the numbers.
 <a href="http://en.wikipedia.org/wiki/Greatest_common_divisor">The greatest common divisor</a> means the greatest number that divides the numbers in question so that the result is a whole number.
   For example, the greatest common divisor of the numbers 32 and 6 is 2, because 32 / 2 = 16 and 6 / 2 = 3 and there is no greater number that those two numbers could be exactly divided with.
