@@ -1,0 +1,39 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 38: Many prints</summary>
+++++
+Develop the program by adding the following feature: the main program should ask the user how
+many times the text should be printed (meaning how many times the method is called).
+
+[source,java]
+----
+public static void main(String[] args) {
+    // ask the user how many times the text should be printed
+    // use the while structure to call the printText method several times
+}
+
+public static void printText() {
+    // write your code here
+}
+----
+
+The program output:
+
+[source]
+----
+How many?
+7
+In the beginning there were the swamp, the hoe and Java.
+In the beginning there were the swamp, the hoe and Java.
+In the beginning there were the swamp, the hoe and Java.
+In the beginning there were the swamp, the hoe and Java.
+In the beginning there were the swamp, the hoe and Java.
+In the beginning there were the swamp, the hoe and Java.
+In the beginning there were the swamp, the hoe and Java.
+----
+
+*Note:* you should print the assisting question <em>How many?</em> on its own
+    line!
+
+++++
+</details></div><!-- end ex 38-->
+++++

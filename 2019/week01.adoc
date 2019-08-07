@@ -115,17 +115,17 @@ From this point on, the main program body will be omitted from the examples.
 == Getting to know your development environment
 
 Programming these days takes place in development environments almost without exceptions. The development environment provides several tools and features to assist the programmer. Although the development environment does not write the program on behalf of the programmer, it contains several handy features such as hinting about mistakes in code and assisting the programmer to visualize the structure of the program.
-
 In this course, we will use the NetBeans development environment. A guide for using NetBeans is available here.
-
 Until you become familiar with NetBeans, follow the guides and steps precisely. Most of the following exercises show what needs to be printed to the screen for the program to function correctly.
 
 [NOTE]
 ====
 Do not do the exercises by writing code and then clicking the test button. You should also execute the code manually (green arrow) and observe the result on the screen. This is especially useful if an exercise fails to pass the tests.
 ====
-In the following exercises, we will practice the use of NetBeans and printing of text on the screen.
-
+++++
+<div class='exgroup'><h3>Using the IDE</h3>
+++++
+In the following exercises, we will practice the use of NetBeans and printing of text on the screen.+
 Remember to read the guide on using NetBeans before you continue!
 
 ++++
@@ -171,6 +171,9 @@ Create a program that prints the following:
 ----
 ++++
 </details></div><!-- end ex 3-->
+++++
+++++
+<div><!-- ex groop 1-3-->
 ++++
 
 [TIP]
@@ -493,6 +496,9 @@ y has the value 5 and z has the value 6
 ----
 
 ++++
+<div class='exgroup'><h3>Arithmetic</h3>
+++++
+++++
 <div class='ex'><details class='ex'><summary>Exercise 6: Addition</summary>
 ++++
 
@@ -540,7 +546,9 @@ What is the biggest multiplication that your program is able to calculate?
 ++++
 </details></div><!-- end ex 7-->
 ++++
-
+++++
+</dev><!--ex group 6-7-->
+++++
 
 == Reading user input
 
@@ -647,12 +655,18 @@ public class ProgramName {
 ----
 Reading a string:
 [source,java]
+----
   String text = reader.nextLine();
+----
 
 Reading an integer:
-[source]
-  int number = Integer.parseInt(reader.nextLine());
-
+[source,java]
+----
+int number = Integer.parseInt(reader.nextLine());
+----
+++++
+<div class='exgroup'><h3>More with numbers</h3>
+++++
 ++++
 <div class='ex'><details class='ex'><summary>Exercise 8: Adder</summary>
 ++++
@@ -743,7 +757,13 @@ Matti and Arto are 26 years old in total.
 </details></div><!--end ex 12-->
 ++++
 
-*NHL statistics, part 1*
+++++
+</div><!-- ex group 8-12 -->
+++++
+
+++++
+<div class='exgroup'><h3>NHL statistics, part 1</h3>
+++++
 
 A ready-made component NHLStatistics is included along with the exercise files for this excercise. It can be used to fetch and see NHL players' score data, including their number of played games, goals, assists, points, and penalty amount.
 
@@ -834,6 +854,9 @@ After you have successfully submitted the exercise, you can play with the code a
 ++++
 </details></div><!--end ex 13-->
 ++++
+++++
+</div><!-- ex group nhl 1 -->
+++++
 
 == Conditional statements and truth values
 
@@ -914,9 +937,15 @@ if (isLesser) {
 ----
 === Code indentation
 
-Note that the commands in the block following the if statement (i.e. the lines after the curly brace, { ) are not written at the same level as the if statement itself. They should be indented slightly to the right. Indentation happens when you press the tab key, which is located to the left of q key. When the block ends with the closing curly brace, indentation ends as well. The closing curly brace } should be on the same level as the original if statement.
+Note that the commands in the block following the if statement (i.e. the lines after the curly brace,
+{ ) are not written at the same level as the if statement itself.
+They should be indented slightly to the right. Indentation happens when you press the tab key,
+which is located to the left of q key. When the block ends with the closing curly brace, indentation ends as well.
+The closing curly brace } should be on the same level as the original if statement.
 
-The use of indentation is crucial for the readability of program code. During this course and generally everywhere, you are expected to indent the code properly. NetBeans helps with the correct indentation. You can easily indent your program by pressing shift, alt, and f simultaneously.
+The use of indentation is crucial for the readability of program code.
+During this course and generally everywhere, you are expected to indent the code properly.
+NetBeans helps with the correct indentation. You can easily indent your program by pressing +++<button>shift</button>, <button>alt</button>, and <button>F</button>+++ simultaneously.
 
 ==== else
 
@@ -957,7 +986,7 @@ The number is not positive.
 
 Are you certain that your code is indented correctly?
 
-Reread the section on code indentation. Observe what happens when you press shift, alt and f simultaneously! +
+Reread the section on code indentation. Observe what happens when you press +++<button>shift</button>, <button>alt</button>, and <button>F</button>+++ simultaneously! +
 The same automatic indentation functionality can also be used using the menu bar by selecting Source and then Format.
 
 

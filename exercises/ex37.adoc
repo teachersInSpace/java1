@@ -1,0 +1,28 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 37: Printing out text</summary>
+++++
+
+Create a method `printText` that prints the following string of characters: "In
+the beginning there were the swamp, the hoe and Java." and a line break.
+
+[source,java]
+----
+
+public static void main(String[] args) {
+    printText();
+}
+
+public static void printText() {
+    // write your code here
+}
+----
+The program output:
+
+[source]
+----
+In the beginning there were the swamp, the hoe and Java.
+----
+
+++++
+</details></div><!-- end ex 37-->
+++++
