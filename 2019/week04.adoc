@@ -828,8 +828,8 @@ public class Main {
 ----
 
 The output is:
-
-<pre>
+[source]
+----
 Pekka, age 0 years
 Brian, age 0 years
 Martin, age 0 years
@@ -907,7 +907,8 @@ public class Main {
 
 Output:
 
-<pre>
+[source]
+----
 Pekka, age 0 years
 Andrew, age 0 years
 
@@ -925,7 +926,8 @@ objects!
 Also, the object methods can return a value to the caller of the method. Let us define a method that
 can be used to ask for the age of a person:
 
-<pre class="sh_java">
+[source,java]
+----
 public class Person {
     // ...
 
@@ -939,7 +941,8 @@ Now the `void` in the method definition is replaced with `int` since the value
 the method returns has the type integer. The following example demonstrates, how the value returned by a
 method can be used:
 
-<pre class="sh_java">
+[source,java]
+----
 public class Main {
 
     public static void main(String[] args) {
@@ -962,8 +965,8 @@ public class Main {
 ----
 
 Output:
-
-<pre>
+[source]
+----
 Age of Pekka: 2
 Age of Andrew: 1
 
@@ -984,9 +987,9 @@ Pekka and Andrew total of 3 years old
       parameter).</li>
     </ul>
 
-    Example of usage:
+Example of usage:
 
-  [source,java]
+[source,java]
 ----
 Multiplier threeMultiplier = new Multiplier(3);
 System.out.println("threeMultiplier.multiply(2): " + threeMultiplier.multiply(2));
@@ -996,16 +999,17 @@ System.out.println("fourMultiplier.multiply(2): " + fourMultiplier.multiply(2));
 
 System.out.println("threeMultiplier.multiply(1): " + threeMultiplier.multiply(1));
 System.out.println("fourMultiplier.multiply(1): " + fourMultiplier.multiply(1));
-    ----
+----
 
-    Output
+Output
 
-    <pre>
+[source]
+----
 threeMultiplier.multiply(2): 6
 fourMultiplier.multiply(2): 8
 threeMultiplier.multiply(1): 3
 fourMultiplier.multiply(1): 4
-    ----
+----
   </div>
 
   <div class="tehtava">
@@ -1014,7 +1018,7 @@ fourMultiplier.multiply(1): 4
     The starting point of this exercise is a partially implemented class
     `DecreasingCounter`:
 
-  [source,java]
+[source,java]
 ----
 public class DecreasingCounter {
     private int value;   // object variable that remembers the value of the counter
@@ -1033,11 +1037,11 @@ public class DecreasingCounter {
 
     // and here the rest of the methods
 }
-    ----
+----
 
-    The counter can be used as follows:
+The counter can be used as follows:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1052,27 +1056,28 @@ public class Main {
         counter.printValue();
     }
 }
-    ----
+----
 
-    Output should be:
+Output should be:
 
-    <pre>
+[source]
+----
 value: 10
 value: 9
 value: 8
-    ----
+----
 
-    The constructor of `DecreasingCounter` receives as parameter the initial value of
-    the counter. In the example, the constructor parameter is `10`, which is then set to the
-    object variable `this.value`. The value of the counter can be printed with the method
-    `printValue()`. The method `decrease()` should decrease the value of the
-    counter by one.
+The constructor of `DecreasingCounter` receives as parameter the initial value of
+the counter. In the example, the constructor parameter is `10`, which is then set to the
+object variable `this.value`. The value of the counter can be printed with the method
+`printValue()`. The method `decrease()` should decrease the value of the
+counter by one.
 
-    <h4>Implementing method decrease()</h4>
+<h4>Implementing method decrease()</h4>
 
-    Implement the method `decrease()` so that when called, the object variable
-    `this.value` is decreased by one. When this is done, your program should work as the
-    example above.
+Implement the method `decrease()` so that when called, the object variable
+`this.value` is decreased by one. When this is done, your program should work as the
+example above.
 
     <h4>Value remains positive</h4>
 
@@ -1080,7 +1085,7 @@ value: 8
     counter will not drop below zero. If the method is called when the value is zero, nothing
     should happen:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1098,23 +1103,24 @@ public class Main {
         counter.printValue();
     }
 }
-    ----
+----
 
-    Output should be:
+Output should be:
 
-    <pre>
+[source]
+----
 value: 2
 value: 1
 value: 0
 value: 0
-    ----
+----
 
-    <h4>Counter reset</h4>
+<h4>Counter reset</h4>
 
-    Implement the method `public void reset()` that sets the value of the counter to
-    zero. Example of usage:
+Implement the method `public void reset()` that sets the value of the counter to
+zero. Example of usage:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1129,22 +1135,23 @@ public class Main {
         counter.printValue();
     }
 }
-    ----
+----
 
     Output:
 
-    <pre>
+[source]
+----
 value: 100
 value: 0
 value: 0
-    ----
+----
 
-    <h4>Back to initial value</h4>
+<h4>Back to initial value</h4>
 
-    Implement the method `public void setInitial()`, which returns the counter to its
-    initial value:
+Implement the method `public void setInitial()`, which returns the counter to its
+initial value:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1165,20 +1172,21 @@ public class Main {
         counter.printValue();
     }
 }
-    ----
+----
 
-    Output:
+Output:
 
-    <pre>
+[source]
+----
 value: 100
 value: 99
 value: 98
 value: 0
 value: 100
-    ----
+----
 
-    *Hint*: add to the class a new object variable that remembers the initial
-    value of the counter
+*Hint*: add to the class a new object variable that remembers the initial
+value of the counter
   </div>
 
   <div class="tehtava">
@@ -1189,7 +1197,7 @@ value: 100
 
     Our starting point is the following class skeleton:
 
-  [source,java]
+[source,java]
 ----
 import java.util.ArrayList;
 
@@ -1203,34 +1211,35 @@ public class Menu {
 
     // Implement the methods here
 }
-    ----
+----
 
-    Menu objects store the information of meals using an object variable of type
-    ArrayList<String>
+Menu objects store the information of meals using an object variable of type
+ArrayList<String>
 
-    <h4>Adding a meal to menu</h4>
+<h4>Adding a meal to menu</h4>
 
-    Implement the method `public void addMeal(String meal)` that adds a new meal to
-    the list `this.meals` of a Menu object. If the meal is already in the list, it
-    should not be added.
+Implement the method `public void addMeal(String meal)` that adds a new meal to
+the list `this.meals` of a Menu object. If the meal is already in the list, it
+should not be added.
 
-    <h4>Printing the menu</h4>
+<h4>Printing the menu</h4>
 
-    Implement the method `public void printMeals()` that prints the meals in a menu.
-    As an example, the output after three additions could be:
+Implement the method `public void printMeals()` that prints the meals in a menu.
+As an example, the output after three additions could be:
 
-    <pre>
+[source]
+----
 Hamburger
 Fish'n'Chips
 Sauerkraut
-    ----
+----
 
-    <h4>Clearing a menu</h4>
+<h4>Clearing a menu</h4>
 
-    Implement the method `public void clearMenu()` that clears a menu. After
-    calling this method, the menu should be empty. Class `ArrayList` has a method that is
-    useful here. Within your method body write `meals.` and see how NetBeans helps you
-    by showing the available methods.
+Implement the method `public void clearMenu()` that clears a menu. After
+calling this method, the menu should be empty. Class `ArrayList` has a method that is
+useful here. Within your method body write `meals.` and see how NetBeans helps you
+by showing the available methods.
   </div>
 </div>
 
@@ -1238,137 +1247,91 @@ Sauerkraut
 
 Let us get back to work on the `Person` class. The current version of the class looks
 like this:
+[source,java]
+----
+public class Person {
+    private String name;
+    private int age;
 
-<pre class="sh_java sh_sourceCode">
-<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
-"sh_normal"> </span><span class="sh_classname">Person</span> <span class="sh_cbracket">{</span>
-    <span class="sh_keyword">private</span> <span class="sh_usertype">String</span><span class=
-"sh_normal"> </span>name<span class="sh_symbol">;</span>
-    <span class="sh_keyword">private</span> <span class="sh_type">int</span> age<span class="sh_symbol">;</span>
+    public Person(String initialName) {
+        this.age = 0;
+        this.name = initialName;
+    }
 
-    <span class="sh_keyword">public</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_usertype">String</span><span class="sh_normal"> </span>initialName<span class=
-"sh_symbol">)</span> <span class="sh_cbracket">{</span>
-        <span class="sh_keyword">this</span><span class="sh_symbol">.</span>age <span class=
-"sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
-        <span class="sh_keyword">this</span><span class="sh_symbol">.</span>name <span class=
-"sh_symbol">=</span> initialName<span class="sh_symbol">;</span>
-    <span class="sh_cbracket">}</span>
+    public void printPerson() {
+        System.out.println(this.name + ", age " + this.age + " years");
+    }
 
-    <span class="sh_keyword">public</span> <span class="sh_type">void</span> <span class=
-"sh_function">printPerson</span><span class="sh_symbol">()</span> <span class="sh_cbracket">{</span>
-        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span><span class="sh_keyword">this</span><span class=
-"sh_symbol">.</span>name <span class="sh_symbol">+</span> <span class=
-"sh_string">", age "</span> <span class="sh_symbol">+</span> <span class="sh_keyword">this</span><span class=
-"sh_symbol">.</span>age <span class="sh_symbol">+</span> <span class="sh_string">" years"</span><span class=
-"sh_symbol">);</span>
-    <span class="sh_cbracket">}</span>
-
-    <span class="sh_keyword">public</span> <span class="sh_type">void</span> <span class=
-"sh_function">becomeOlder</span><span class="sh_symbol">()</span> <span class="sh_cbracket">{</span>
-        <span class="sh_keyword">this</span><span class="sh_symbol">.</span>age <span class=
-"sh_symbol">=</span> <span class="sh_keyword">this</span><span class="sh_symbol">.</span>age <span class=
-"sh_symbol">+</span> <span class="sh_number">1</span><span class="sh_symbol">;</span>
-    <span class="sh_cbracket">}</span>
-<span class="sh_cbracket">}</span>
+    public void becomeOlder() {
+        this.age = this.age + 1;
+    }
+}
 ----
 
 Let us create a method for person that can figure out if a person is an adult. The method
 returns a boolean -- either `true` or `false`:
 
-<pre class="sh_java sh_sourceCode">
-<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
-"sh_normal"> </span><span class="sh_classname">Person</span> <span class="sh_cbracket">{</span>
-    <span class="sh_comment">// ...</span>
+[source,java]
+----
+public class Person {
+    // ...
 
-    <span class="sh_keyword">public</span> <span class="sh_type">boolean</span> <span class=
-"sh_function">isAdult</span><span class="sh_symbol">()</span><span class="sh_cbracket">{</span>
-        <span class="sh_keyword">if</span> <span class="sh_symbol">(</span> <span class=
-"sh_keyword">this</span><span class="sh_symbol">.</span>age <span class="sh_symbol"><</span> <span class=
-"sh_number">18</span> <span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
-            <span class="sh_keyword">return</span> <span class="sh_keyword">false</span><span class=
-"sh_symbol">;</span>
-        <span class="sh_cbracket">}</span>
+    public boolean isAdult(){
+        if ( this.age < 18 ) {
+            return false;
+        }
 
-        <span class="sh_keyword">return</span> <span class="sh_keyword">true</span><span class="sh_symbol">;</span>
-    <span class="sh_cbracket">}</span>
+        return true;
+    }
 
-   <span class="sh_comment">/*</span>
-<span class="sh_comment">      note that the method could also be written like this:</span>
-<span class="sh_comment">  </span>
-<span class="sh_comment">      public boolean isAdult(){</span>
-<span class="sh_comment">        return this.age >= 18;</span>
-<span class="sh_comment">      }</span>
-<span class="sh_comment">   */</span>
-<span class="sh_cbracket">}</span>
+   /*
+      note that the method could also be written like this:
+
+      public boolean isAdult(){
+        return this.age >= 18;
+      }
+   */
+}
 ----
 
 Let us test it:
-
-<pre class="sh_java sh_sourceCode">
-    <span class="sh_keyword">public</span> <span class="sh_keyword">static</span> <span class=
-"sh_type">void</span> <span class="sh_function">main</span><span class="sh_symbol">(</span>String<span class=
-"sh_symbol">[]</span> args<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
-        <span class="sh_usertype">Person</span><span class="sh_normal"> </span>bob <span class=
-"sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_string">"Bob"</span><span class="sh_symbol">);</span>
-        <span class="sh_usertype">Person</span><span class="sh_normal"> </span>andy <span class=
-"sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_string">"Andy"</span><span class="sh_symbol">);</span>
-
-        <span class="sh_type">int</span> i <span class="sh_symbol">=</span> <span class=
-"sh_number">0</span><span class="sh_symbol">;</span>
-        <span class="sh_keyword">while</span> <span class="sh_symbol">(</span> i <span class=
-"sh_symbol"><</span> <span class="sh_number">30</span> <span class="sh_symbol">)</span> <span class=
-"sh_cbracket">{</span>
-            bob<span class="sh_symbol">.</span><span class="sh_function">becomeOlder</span><span class=
-"sh_symbol">();</span>
-            i<span class="sh_symbol">++;</span>
-        <span class="sh_cbracket">}</span>
-
-        andy<span class="sh_symbol">.</span><span class="sh_function">becomeOlder</span><span class=
-"sh_symbol">();</span>
-
-        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span><span class="sh_string">""</span><span class=
-"sh_symbol">);</span>
-
-        <span class="sh_keyword">if</span> <span class="sh_symbol">(</span> andy<span class=
-"sh_symbol">.</span><span class="sh_function">isAdult</span><span class="sh_symbol">()</span> <span class=
-"sh_symbol">)</span> <span class="sh_cbracket">{</span>
-            System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">print</span><span class="sh_symbol">(</span><span class=
-"sh_string">"adult: "</span><span class="sh_symbol">);</span>
-            andy<span class="sh_symbol">.</span><span class="sh_function">printPerson</span><span class=
-"sh_symbol">();</span>
-        <span class="sh_cbracket">}</span> <span class="sh_keyword">else</span> <span class="sh_cbracket">{</span>
-            System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">print</span><span class="sh_symbol">(</span><span class=
-"sh_string">"minor: "</span><span class="sh_symbol">);</span>
-            andy<span class="sh_symbol">.</span><span class="sh_function">printPerson</span><span class=
-"sh_symbol">();</span>
-        <span class="sh_cbracket">}</span>
-
-        <span class="sh_keyword">if</span> <span class="sh_symbol">(</span> bob<span class=
-"sh_symbol">.</span><span class="sh_function">isAdult</span><span class="sh_symbol">()</span> <span class=
-"sh_symbol">)</span> <span class="sh_cbracket">{</span>
-            System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">print</span><span class="sh_symbol">(</span><span class=
-"sh_string">"adult: "</span><span class="sh_symbol">);</span>
-            bob<span class="sh_symbol">.</span><span class="sh_function">printPerson</span><span class=
-"sh_symbol">();</span>
-        <span class="sh_cbracket">}</span> <span class="sh_keyword">else</span> <span class="sh_cbracket">{</span>
-            System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">print</span><span class="sh_symbol">(</span><span class=
-"sh_string">"minor: "</span><span class="sh_symbol">);</span>
-            bob<span class="sh_symbol">.</span><span class="sh_function">printPerson</span><span class=
-"sh_symbol">();</span>
-        <span class="sh_cbracket">}</span>
-    <span class="sh_cbracket">}</span>
+[source,java]
 ----
+public static void main(String[] args) {
+        Person bob = new Person("Bob");
+        Person andy = new Person("Andy");
 
-<pre>
+        int i = 0;
+        while ( i < 30 ) {
+            bob.becomeOlder();
+            i++;
+        }
+
+        andy.becomeOlder();
+
+        System.out.println("");
+
+        if ( andy.isAdult() ) {
+            System.out.print("adult: ");
+            andy.printPerson();
+        } else {
+            System.out.print("minor: ");
+            andy.printPerson();
+        }
+
+        if ( bob.isAdult() ) {
+            System.out.print("adult: ");
+            bob.printPerson();
+        } else {
+            System.out.print("minor: ");
+            bob.printPerson();
+        }
+    }
+----
+Output:
+
+[source]
+----
 minor: Andy, age 1 years
 adult: bob, age 30 years
 ----
@@ -1377,18 +1340,15 @@ Let us tune up the solution a little further. Now, a person can only be printed 
 to the name, the age also gets printed. In some cases, we might only want to print the name of the object.
 Let us tailor a method for this purpose:
 
-<pre class="sh_java sh_sourceCode">
-<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
-"sh_normal"> </span><span class="sh_classname">Person</span> <span class="sh_cbracket">{</span>
-    <span class="sh_comment">// ...</span>
+[source,java]
+----
+public class Person {
+    // ...
 
-    <span class="sh_keyword">public</span> <span class="sh_usertype">String</span><span class=
-"sh_normal"> </span><span class="sh_function">getName</span><span class="sh_symbol">()</span> <span class=
-"sh_cbracket">{</span>
-        <span class="sh_keyword">return</span> <span class="sh_keyword">this</span><span class=
-"sh_symbol">.</span>name<span class="sh_symbol">;</span>
-    <span class="sh_cbracket">}</span>
-<span class="sh_cbracket">}</span>
+    public String getName() {
+        return this.name;
+    }
+}
 ----
 
 The method `getName` returns the object variable `name` to its caller. The
@@ -1398,67 +1358,40 @@ like these are often called 'getters'.
 
 Let us edit the main program to use the new 'getter':
 
-<pre class="sh_java sh_sourceCode">
-    <span class="sh_keyword">public</span> <span class="sh_keyword">static</span> <span class=
-"sh_type">void</span> <span class="sh_function">main</span><span class="sh_symbol">(</span>String<span class=
-"sh_symbol">[]</span> args<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
-        <span class="sh_usertype">Person</span><span class="sh_normal"> </span>bob <span class=
-"sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_string">"bob"</span><span class="sh_symbol">);</span>
-        <span class="sh_usertype">Person</span><span class="sh_normal"> </span>andy <span class=
-"sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_string">"andy"</span><span class="sh_symbol">);</span>
+[source,java]
+----
+public static void main(String[] args) {
+    Person bob = new Person("bob");
+    Person andy = new Person("andy");
 
-        <span class="sh_type">int</span> i <span class="sh_symbol">=</span> <span class=
-"sh_number">0</span><span class="sh_symbol">;</span>
-        <span class="sh_keyword">while</span> <span class="sh_symbol">(</span> i <span class=
-"sh_symbol"><</span> <span class="sh_number">30</span> <span class="sh_symbol">)</span> <span class=
-"sh_cbracket">{</span>
-            bob<span class="sh_symbol">.</span><span class="sh_function">becomeOlder</span><span class=
-"sh_symbol">();</span>
-            i<span class="sh_symbol">++;</span>
-        <span class="sh_cbracket">}</span>
+    int i = 0;
+    while ( i < 30 ) {
+        bob.becomeOlder();
+        i++;
+    }
 
-        andy<span class="sh_symbol">.</span><span class="sh_function">becomeOlder</span><span class=
-"sh_symbol">();</span>
+    andy.becomeOlder();
 
-        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span><span class="sh_string">""</span><span class=
-"sh_symbol">);</span>
+    System.out.println("");
 
-        <span class="sh_keyword">if</span> <span class="sh_symbol">(</span> andy<span class=
-"sh_symbol">.</span><span class="sh_function">isAdult</span><span class="sh_symbol">()</span> <span class=
-"sh_symbol">)</span> <span class="sh_cbracket">{</span>
-            System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span> andy<span class="sh_symbol">.</span><span class=
-"sh_function">getName</span><span class="sh_symbol">()</span> <span class="sh_symbol">+</span> <span class=
-"sh_string">" is an adult"</span> <span class="sh_symbol">);</span>
-        <span class="sh_cbracket">}</span> <span class="sh_keyword">else</span> <span class="sh_cbracket">{</span>
-            System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span> andy<span class="sh_symbol">.</span><span class=
-"sh_function">getName</span><span class="sh_symbol">()</span> <span class="sh_symbol">+</span> <span class=
-"sh_string">" is a minor"</span> <span class="sh_symbol">);</span>
-        <span class="sh_cbracket">}</span>
+    if ( andy.isAdult() ) {
+        System.out.println( andy.getName() + " is an adult" );
+    } else {
+        System.out.println( andy.getName() + " is a minor" );
+    }
 
-        <span class="sh_keyword">if</span> <span class="sh_symbol">(</span> bob<span class=
-"sh_symbol">.</span><span class="sh_function">isAdult</span><span class="sh_symbol">()</span> <span class=
-"sh_symbol">)</span> <span class="sh_cbracket">{</span>
-            System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span> bob<span class="sh_symbol">.</span><span class=
-"sh_function">getName</span><span class="sh_symbol">()</span> <span class="sh_symbol">+</span> <span class=
-"sh_string">" is an adult"</span> <span class="sh_symbol">);</span>
-        <span class="sh_cbracket">}</span> <span class="sh_keyword">else</span> <span class="sh_cbracket">{</span>
-            System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span> bob<span class="sh_symbol">.</span><span class=
-"sh_function">getName</span><span class="sh_symbol">()</span> <span class="sh_symbol">+</span> <span class=
-"sh_string">" is a minor"</span> <span class="sh_symbol">);</span>
-        <span class="sh_cbracket">}</span>
-    <span class="sh_cbracket">}</span>
+    if ( bob.isAdult() ) {
+        System.out.println( bob.getName() + " is an adult" );
+    } else {
+        System.out.println( bob.getName() + " is a minor" );
+    }
+}
 ----
 
 The print is starting to look pretty clean:
 
-<pre>
+[source]
+----
 andy is a minor
 bob is an adult
 ----
@@ -1470,22 +1403,15 @@ We have been guilty of bad programming style; we have created a method that prin
 defining a method that returns a "character string representation" of the object. In Java, a
 method returning a String representation is called `toString`. Let us define this
 method for person:
+[source,java]
+----
+public class Person {
+    // ...
 
-<pre class="sh_java sh_sourceCode">
-<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
-"sh_normal"> </span><span class="sh_classname">Person</span> <span class="sh_cbracket">{</span>
-    <span class="sh_comment">// ...</span>
-
-    <span class="sh_keyword">public</span> <span class="sh_usertype">String</span><span class=
-"sh_normal"> </span><span class="sh_function">toString</span><span class="sh_symbol">()</span> <span class=
-"sh_cbracket">{</span>
-        <span class="sh_keyword">return</span> <span class="sh_keyword">this</span><span class=
-"sh_symbol">.</span>name <span class="sh_symbol">+</span> <span class=
-"sh_string">", age "</span> <span class="sh_symbol">+</span> <span class="sh_keyword">this</span><span class=
-"sh_symbol">.</span>age <span class="sh_symbol">+</span> <span class="sh_string">" years"</span><span class=
-"sh_symbol">;</span>
-    <span class="sh_cbracket">}</span>
-<span class="sh_cbracket">}</span>
+    public String toString() {
+        return this.name + ", age " + this.age + " years";
+    }
+}
 ----
 
 The method `toString` works just like `printPerson`, but instead of printing
@@ -1493,54 +1419,39 @@ it the method returns the string representation. The call to the method can be u
 
 The method is used in a slightly surprising way:
 
-<pre class="sh_java sh_sourceCode">
-    <span class="sh_keyword">public</span> <span class="sh_keyword">static</span> <span class=
-"sh_type">void</span> <span class="sh_function">main</span><span class="sh_symbol">(</span>String<span class=
-"sh_symbol">[]</span> args<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
-        <span class="sh_usertype">Person</span><span class="sh_normal"> </span>bob <span class=
-"sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_string">"Bob"</span><span class="sh_symbol">);</span>
-        <span class="sh_usertype">Person</span><span class="sh_normal"> </span>andy <span class=
-"sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_string">"Andy"</span><span class="sh_symbol">);</span>
+[source,java]
+----
+public static void main(String[] args) {
+      Person bob = new Person("Bob");
+      Person andy = new Person("Andy");
 
-        <span class="sh_type">int</span> i <span class="sh_symbol">=</span> <span class=
-"sh_number">0</span><span class="sh_symbol">;</span>
-        <span class="sh_keyword">while</span> <span class="sh_symbol">(</span> i <span class=
-"sh_symbol"><</span> <span class="sh_number">30</span> <span class="sh_symbol">)</span> <span class=
-"sh_cbracket">{</span>
-            bob<span class="sh_symbol">.</span><span class="sh_function">becomeOlder</span><span class=
-"sh_symbol">();</span>
-            i<span class="sh_symbol">++;</span>
-        <span class="sh_cbracket">}</span>
+      int i = 0;
+      while ( i < 30 ) {
+          bob.becomeOlder();
+          i++;
+      }
 
-        andy<span class="sh_symbol">.</span><span class="sh_function">becomeOlder</span><span class=
-"sh_symbol">();</span>
+      andy.becomeOlder();
 
-        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span> andy <span class="sh_symbol">);</span> <span class=
-"sh_comment">// same as System.out.println( andy.toString() ); </span>
-        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span> bob <span class="sh_symbol">);</span> <span class=
-"sh_comment">// same as System.out.println( bob.toString() ); </span>
-    <span class="sh_cbracket">}</span>
+      System.out.println( andy ); // same as System.out.println( andy.toString() );
+      System.out.println( bob ); // same as System.out.println( bob.toString() );
+}
+
 ----
 
 The principle is that the `System.out.println` method requests the string representation of
 an object and then prints it. The returned string representation of the `toString` method
 does not have to be written, as Java adds it automatically. When the programmer writes:
 
-<pre class="sh_java sh_sourceCode">
-        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span> andy <span class="sh_symbol">);</span>
+[source,java]
+----
+    System.out.println( andy );
 ----
 
 Java completes the call during runtime to the format:
-
-<pre class="sh_java sh_sourceCode">
-        System<span class="sh_symbol">.</span>out<span class="sh_symbol">.</span><span class=
-"sh_function">println</span><span class="sh_symbol">(</span> andy<span class="sh_symbol">.</span><span class=
-"sh_function">toString</span><span class="sh_symbol">()</span> <span class="sh_symbol">);</span>
+[source,java]
+----
+    System.out.println( andy.toString() );
 ----
 
 What happens is that the object is asked for its string representation. The string representation the
@@ -1567,7 +1478,7 @@ object is returned and is printed normally with the `System.out.println` command
 
     The skeleton of class `LyyraCard` looks like this:
 
-  [source,java]
+[source,java]
 ----
 public class LyyraCard {
     private double balance;
@@ -1580,11 +1491,11 @@ public class LyyraCard {
         // write code here
     }
 }
-    ----
+----
 
     The following main program can be used to test the program:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1592,19 +1503,20 @@ public class Main {
         System.out.println(card);
     }
 }
-    ----
+----
 
-    The output should be:
+The output should be:
 
-    <pre>
+[source]
+----
 The card has 50.0 euros
-    ----
+----
 
     <h4 class="req">Paying with card</h4>
 
     Implement the following methods to `LyyraCard`:
 
-  [source,java]
+[source,java]
 ----
 public void payEconomical() {
     // write code here
@@ -1613,14 +1525,14 @@ public void payEconomical() {
 public void payGourmet() {
     // write code here
 }
-    ----
+----
 
     Method `payEconomical` should decrease the balance by 2.50 euros and method
     `payGourmet` by 4.00 euros.
 
     The following main program can be used to test the program:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1635,15 +1547,16 @@ public class Main {
         System.out.println(card);
     }
 }
-    ----
+----
 
     The output should be:
 
-    <pre>
+[source]
+----
 The card has 50.0 euros
 The card has 47.5 euros
 The card has 41.0 euros
-    ----
+----
 
     <h4 class="req">Balance nonnegative</h4>
 
@@ -1652,7 +1565,7 @@ The card has 41.0 euros
 
     The following main program can be used to test the program:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1666,7 +1579,7 @@ public class Main {
         System.out.println(card);
     }
 }
-    ----
+----
 
     The output should be:
 
@@ -1683,20 +1596,20 @@ The card has 1.0 euros
 
     Add the `LyyraCard` the following method:
 
-  [source,java]
+[source,java]
 ----
 public void loadMoney(double amount) {
     // write code here
 }
-    ----
+----
 
-    The method should increase the balance of the card by the given amount. However, the maximum
-    balance on a card is 150 euros. In case the balance after loading money would be more than
-    that, it should be truncated to 150 euros.
+The method should increase the balance of the card by the given amount. However, the maximum
+balance on a card is 150 euros. In case the balance after loading money would be more than
+that, it should be truncated to 150 euros.
 
-    The following main program can be used to test the program:
+The following main program can be used to test the program:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1713,25 +1626,26 @@ public class Main {
         System.out.println(card);
     }
 }
-    ----
+----
 
-    The output should be:
+The output should be:
 
-    <pre>
+[source]
+----
 The card has 10.0 euros
 The card has 25.0 euros
 The card has 35.0 euros
 The card has 150.0 euros
-    ----
+----
 
-    <h4 class="req">Loading a negative amount</h4>
+<h4 class="req">Loading a negative amount</h4>
 
-    Change the method `loadMoney` so that the balance of the card does not change if
-    the amount to load is negative.
+Change the method `loadMoney` so that the balance of the card does not change if
+the amount to load is negative.
 
-    The following main program can be used to test the program:
+The following main program can be used to test the program:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1741,51 +1655,52 @@ public class Main {
         System.out.println("Pekka: " + card);
     }
 }
-    ----
+----
 
-    The output should be:
+The output should be:
 
-    <pre>
+[source]
+----
 Pekka: The card has 10.0 euros
 Pekka: The card has 10.0 euros
-    ----
+----
 
-    <h4 class="req">Multiple cards</h4>
+<h4 class="req">Multiple cards</h4>
 
-    Write a main method that does the following:
+Write a main method that does the following:
 
-    <ul>
-      <li>Creates a LyyraCard for Pekka with initial balance of 20 euros</li>
+<ul>
+  <li>Creates a LyyraCard for Pekka with initial balance of 20 euros</li>
 
-      <li>Creates a LyyraCard for Brian with initial balance of 30 euros</li>
+  <li>Creates a LyyraCard for Brian with initial balance of 30 euros</li>
 
-      <li>Pekka buys gourmet lunch</li>
+  <li>Pekka buys gourmet lunch</li>
 
-      <li>Brian buys economical lunch</li>
+  <li>Brian buys economical lunch</li>
 
-      <li>cards are printed (both on their own row, starting with the name of the card
-      owner)</li>
+  <li>cards are printed (both on their own row, starting with the name of the card
+  owner)</li>
 
-      <li>Pekka loads 20 euros</li>
+  <li>Pekka loads 20 euros</li>
 
-      <li>Brian buys gourmet lunch</li>
+  <li>Brian buys gourmet lunch</li>
 
-      <li>cards are printed (both on their own row, starting with the name of the card
-      owner)</li>
+  <li>cards are printed (both on their own row, starting with the name of the card
+  owner)</li>
 
-      <li>Pekka buys economical lunch</li>
+  <li>Pekka buys economical lunch</li>
 
-      <li>Pekka buys economical lunch</li>
+  <li>Pekka buys economical lunch</li>
 
-      <li>Brian loads 50 euros</li>
+  <li>Brian loads 50 euros</li>
 
-      <li>cards are printed (both on their own row, starting with the name of the card
-      owner)</li>
-    </ul>
+  <li>cards are printed (both on their own row, starting with the name of the card
+  owner)</li>
+</ul>
 
-    The main skeleton is as follows:
+The main skeleton is as follows:
 
-  [source,java]
+[source,java]
 ----
 public class Main {
     public static void main(String[] args) {
@@ -1795,19 +1710,19 @@ public class Main {
         // write code here
     }
 }
-    ----
+----
 
-    The output should be:
-
-    <pre>
+The output should be:
+[source]
+----
 Pekka: The card has 16.0 euros
 Brian: The card has 27.5 euros
 Pekka: The card has 36.0 euros
 Brian: The card has 23.5 euros
 Pekka: The card has 31.0 euros
 Brian: The card has 73.5 euros
-    ----
-  </div>
+----
+</div>
 </div>
 
 <h3>More methods</h3>
