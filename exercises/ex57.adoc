@@ -1,0 +1,42 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 57: Words</summary>
+++++
+
+Create a program that asks the user to input words until the user types in an empty String. Then
+the program prints the words the user gave. *Try the for repetition sentence here*. Use an
+`ArrayList` structure in your program. ArrayList is defined like this:
+
+[source,java]
+----
+ArrayList&lt;String&gt; words = new ArrayList&lt;String&gt;();
+----
+
+[source]
+----
+Type a word: <font color="red">Mozart</font>
+Type a word: <font color="red">Schubert</font>
+Type a word: <font color="red">Bach</font>
+Type a word: <font color="red">Sibelius</font>
+Type a word: <font color="red">Liszt</font>
+Type a word:
+You typed the following words:
+Mozart
+Schubert
+Bach
+Sibelius
+Liszt
+----
+
+*Note:* an empty String can be detected this way:
+
+[source,java]
+----
+String word = reader.nextLine();
+
+if ( word.isEmpty() ) {  // could also be: word.equals("")
+ // word was empty, meaning that the user only pressed enter
+}
+----
+++++
+</details></div><!-- end ex -->
+++++

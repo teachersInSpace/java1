@@ -1,0 +1,25 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 58: Recurring word</summary>
+++++
+Create a program that asks the user to input words until the user gives the same word twice. Use
+an `ArrayList` structure in your program. ArrayList is defined like this:
+
+[source,java]
+----
+ArrayList<String> words = new ArrayList<>();
+----
+
+[source]
+----
+Type a word: <font color="red">carrot</font>
+Type a word: <font color="red">celery</font>
+Type a word: <font color="red">turnip</font>
+Type a word: <font color="red">rutabaga</font>
+Type a word: <font color="red">celery</font>
+You gave the word celery twice
+----
+
+*Hint:* Remember that ArrayList has the method `.contains()`
+++++
+</details></div><!-- end ex 58 -->
+++++

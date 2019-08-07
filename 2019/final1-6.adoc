@@ -1,0 +1,15 @@
+            <h2>Final Words</h2>
+
+            <p>Object-Oriented Programming with Java, Part I ends here. Congratulations for
+                making it this far! If you want to continue learning and programming, start our
+                second part of the course here: <a href="http://mooc.fi/courses/2013/programming-part-2/">Object-Oriented Programming with Java, Part II</a></p>
+
+            <p>Assuming you have NetBeans and TMC already installed in your computer, in NetBeans just change the current
+                course from TMC -> Settings to <b>2013-OOProgrammingWithJava-PART2</b> and you should be good to go!</p>
+        </div>
+<!-- BEGIN MOOC SNIP -->
+<p>not visible</p>
+<!-- END MOOC SNIP -->
+    </section>
+</body>
+</html>

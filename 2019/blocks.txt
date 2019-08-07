@@ -1,7 +1,7 @@
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : Lower limit and upper limit</summary>
+<div class='ex'><details class='ex'><summary>Exercise xx: </summary>
 ++++
 
 ++++
-</details></div><!-- end ex w2.5-->
+</details></div><!-- end ex -->
 ++++

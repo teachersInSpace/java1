@@ -1,0 +1,23 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 54: The end part</summary>
+++++
+
+Create a program that prints the end part of a word. The program asks the user for the word and the
+length of the end part. Use the `substring` method in your program.
+
+[source]
+----
+Type a word: <font color="red">example</font>
+Length of the end part: <font color="red">4</font>
+Result: mple
+----
+
+[source]
+----
+Type a word: <font color="red">example</font>
+Length of the end part: <font color="red">6</font>
+Result: xample
+----
+++++
+</details></div><!-- end ex 54 -->
+++++

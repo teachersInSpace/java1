@@ -112,11 +112,9 @@ while (number &gt;= 1) {
   not need to always write `familyName`. Try what happens when you type in
   `f` and then press CTRL and space simultaneously. You can also use auto-completion
   with commands like `while` by typing in `w` and then CTRL + space.
-
 * *sout* +
     Remember that you can get the text `System.out.println("")` by typing
     `sout` and pressing the `tab` key (located to the left of the q key)
-
 ====
 
 

@@ -1,0 +1,23 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 52: Reversing a name</summary>
+++++
+
+
+Create a program that asks for the user's name and prints it in reverse order. You do not
+need to create a separate method for this.
+[source]
+----
+Type your name: <font color="red">Paul</font>
+In reverse order: luaP
+----
+
+[source]
+----
+Type your name: <font color="red">Catherine</font>
+In reverse order: enirehtaC
+----
+
+*Hint*: You can print one character using the command `System.out.print()`.
+++++
+</details></div><!-- end ex 52-->
+++++

@@ -1,5 +1,5 @@
 ++++
-<div class='exgroup'><h4>Exercise 41: A text-based user interface for the Hangman game</h4>
+<div class='exgroup'><h4>Exercise 42: A text-based user interface for the Hangman game</h4>
 ++++
 
 Your friend has programmed a Hangman game for you, but the game lacks the user inferface. The

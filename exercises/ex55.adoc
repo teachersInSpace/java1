@@ -1,0 +1,25 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 55: A word inside a word</summary>
+++++
+Create a program that asks the user for two words. Then the program tells if the second word
+is included in the first word. Use String method `indexOf` in your program.
+
+[source]
+----
+
+Type the first word: <font color="red">glitter</font>
+Type the second word: <font color="red">litter</font>
+The word 'litter' is found in the word 'glitter'.
+----
+
+[source]
+----
+Type the first word: <font color="red">glitter</font>
+Type the second word: <font color="red">clean</font>
+The word 'clean' is not found in the word 'glitter'.
+----
+
+  *Note:* Make your program outputs (prints) match exactly the example above!
+++++
+</details></div><!-- end ex 55 -->
+++++

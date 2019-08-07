@@ -1,0 +1,36 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 51: Separating characters</summary>
+++++
+
+Create a program that asks for the user's name and gives its characters separately. You do
+not need to create methods in this exercise.
+
+[source]
+----
+
+Type your name: <font color="red">Paul</font>
+1. character: P
+2. character: a
+3. character: u
+4. character: l
+----
+
+*Hint*: using a `while` loop helps in this exercise!
+
+[source]
+----
+Type your name: <font color="red">Catherine</font>
+1. character: C
+2. character: a
+3. character: t
+4. character: h
+5. character: e
+6. character: r
+7. character: i
+8. character: n
+9. character: e
+----
+
+++++
+</details></div><!-- end ex 51-->
+++++
