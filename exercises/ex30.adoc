@@ -1,0 +1,31 @@
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 30 : Up to a certain number</summary>
+++++
+
+Create a program that prints all whole numbers from 1 to the number the user enters.
+
+[source]
+----
+Up to what number? <font color="red">3</font>
+1
+2
+3
+----
+
+[source]
+----
+Up to what number? <font color="red">5</font>
+1
+2
+3
+4
+5
+----
+
+*Tip:* The number you read from the user now works as the upper limit in the condition of
+        the `while` statement. Remember that in Java `a &lt;= b` means
+        _a is less than or equal to b_.
+++++
+</details></div><!-- end ex 30-->
+++++

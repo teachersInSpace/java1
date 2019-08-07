@@ -1,5 +1,5 @@
 :doctitle: Using variables
-:tabcolumns: d,h,h,d,d,d,d,d,d,d,d,d,d,d,d,d
+:tabcolumns: d,h,d,h,d,d,d,d,d,d,d,d,d,d,d,d
 include::../commonhead.adoc[]
 
 [#_part1_1]
@@ -58,49 +58,7 @@ System.out.println(length);  // prints 24
 
 include::{exercises}/ex25.adoc[]
 
-++++
-<div class='ex'><details class='ex'><summary>Exercise 26: Sum of many numbers</summary>
-++++
-
-Create a program that reads numbers from the user and prints their sum. The program should stop
-        asking for numbers when user enters the number 0. The program should be structured like this:
-
-[source,java]
-----
-
-Scanner reader = new Scanner(System.in);
-int sum = 0;
-while (true) {
-    int read = Integer.parseInt(reader.nextLine());
-    if (read == 0) {
-        break;
-    }
-
-    // DO SOMETHING HERE
-
-    System.out.println("Sum now: " + sum);
-}
-
-System.out.println("Sum in the end: " + sum);
-----
-The program should work as follows:
-
-[source]
-----
-3
-Sum now: 3
-2
-Sum now: 5
-1
-Sum now: 6
-1
-Sum now: 7
-0
-Sum in the end: 7
-----
-++++
-</details></div> <!--end ex 26 -->
-++++
+include::{exercises}/ex26.adoc[]
 
 
 == More loops
@@ -165,135 +123,16 @@ Remember that you can get the text `System.out.println("")` by typing
 
 ====
 
-++++
-<div class='ex'><details class='ex'><summary>Exercise 27: From one to a hundred</summary>
-++++
 
-Complete the following exercises using the `while` statement: +
-Create a program that prints the integers (whole numbers) from 1 to 100.
+include::{exercises}/ex27.adoc[]
 
-The program output should be:
-[source]
-----
-1
-2
-3
-(many rows of numbers here)
-98
-99
-100
-----
-++++
-</details></div><!-- end ex w27-->
-++++
+include::{exercises}/ex28.adoc[]
 
-++++
-<div class='ex'><details class='ex'><summary>Exercise28 : From hundred to one</summary>
-++++
+include::{exercises}/ex29.adoc[]
 
-Create a program that prints the integers (whole numbers) from 100 to 1. +
-The program output should be:
+include::{exercises}/ex30.adoc[]
 
-[source]
-----
-100
-99
-98
-(many rows of numbers here)
-3
-2
-1
-----
-
-*Tip:* Assign the variable you use in the condition of the loop a initial value of 100 and
-then subtract one on each iteration of the loop.
-
-++++
-</details></div><!-- end ex w2.3-->
-++++
-
-
-++++
-<div class='ex'><details class='ex'><summary>Exercise 29 : Even numbers</summary>
-++++
-
-Create a program that prints all even numbers between 2 and 100.
-
-[source]
-----
-2
-4
-6
-(many rows of numbers here)
-96
-98
-100
-----
-++++
-</details></div><!-- end ex w29-->
-++++
-
-
-++++
-<div class='ex'><details class='ex'><summary>Exercise 30 : Up to a certain number</summary>
-++++
-
-Create a program that prints all whole numbers from 1 to the number the user enters.
-
-[source]
-----
-Up to what number? <font color="red">3</font>
-1
-2
-3
-----
-
-[source]
-----
-Up to what number? <font color="red">5</font>
-1
-2
-3
-4
-5
-----
-
-*Tip:* The number you read from the user now works as the upper limit in the condition of
-        the `while` statement. Remember that in Java `a &lt;= b` means
-        _a is less than or equal to b_.
-++++
-</details></div><!-- end ex 30-->
-++++
-
-++++
-<div class='ex'><details class='ex'><summary>Exercise 31: Lower limit and upper limit</summary>
-++++
-
-Create a program that asks the user for the first number and the last number and then prints all
-        numbers between those two.
-
-[source]
-----
-First: 5
-Last: 8
-5
-6
-7
-8
-----
-
-If the first number is greater than the last number, the program prints nothing:
-
-[source]
-----
-First: 16
-Last: 12
-----
-
-*Note*:  Remember that the lower and upper limits can also be negative!
-++++
-</details></div><!-- end ex w31-->
-++++
+include::{exercises}/ex31.adoc[]
 
 
 === Assignment operations
@@ -380,123 +219,14 @@ while (i &lt; 4) {
 }
 ----
 
-++++
-<div class='ex'><details class='ex'><summary>Exercise 32: The sum of a set of numbers</summary>
-++++
+include::{exercises}/ex32.adoc[]
 
-Create a program that calculates the sum `1+2+3+…+n` where n is a number entered by the user.
+include::{exercises}/ex33.adoc[]
 
-Example outputs:
+include::{exercises}/ex34.adoc[]
 
-[source]
-----
-Until what? <font color="red">3</font>
-Sum is 6
-----
+include::{exercises}/ex35.adoc[]
 
-The calculation above was: `1+2+3 = 6.`
-
-[source]
-----
-Until what? <font color="red">7</font>
-Sum is 28
-----
-
-The calculation above was: `1+2+3+4+5+6+7 = 28`.
-
-*Hint:* Create the program using the `while` statement. Use a helper variable
-in your program to remember how many times the block has been executed. Use also another
-helper variable to store the sum. During each execution add the value of the helper variable that
-counts the executions to the variable in which you should collect the sum.
-
-++++
-</details></div><!-- end ex 32-->
-++++
-
-++++
-<div class='ex'><details class='ex'><summary>Exercise 33: The sum <i>between</i> two numbers</summary>
-++++
-
-Similar to the previous exercise, except that the program should ask for both the lower and
-upper bound. You can assume that the users first gives the smaller number and then the greater
-number.
-
-Example outputs:
-
-[source]
-----
-First: <font color="red">3</font>
-Last: <font color="red">5</font>
-The sum 12
-----
-
-[source]
-----
-First: <font color="red">2</font>
-Last: <font color="red">8</font>
-The sum is 35
-----
-
-++++
-</details></div><!-- end ex 33-->
-++++
-
-++++
-<div class='ex'><details class='ex'><summary>Exercise 34: Factorial</summary>
-++++
-Create a program that calculates the factorial of the number n. The factorial n! is calculated
-using the formula `1*2*3*...*n`. For example `4! = 1*2*3*4 = 24`. Additionally, it is defined that
-`0! = 1`.
-
-Example outputs:
-
-[source]
-----
-Type a number: <font color="red">3</font>
-Factorial is 6
-----
-
-[source]
-----
-Type a number: <font color="red">10</font>
-Factorial is 3628800
-----
-++++
-</details></div><!-- end ex 34-->
-++++
-
-
-++++
-<div class='ex'><details class='ex'><summary>Exercise 35: Sum of the powers of 2</summary>
-++++
-
-Create a program that calculates the sum of
-2^0^ + 2^1^ + 2^2^ +... + 2^n^, where `n` is a number entered by the user. +
-The notation 2^i^ means raising the number 2 to the power of i, for example
-2^4^ = 2*2*2*2 = 16. +
-In Java we cannot write a^b^ directly, but instead we can
-calculate the power with the command `Math.pow(number, power)`. Note that the command
-returns a number of `double` type (i.e. floating point number). A double can be
-converted into the `int` type (i.e. whole number) as follows:
-`int result = (int)Math.pow(2, 3)`. This assigns the value of 2^3^ to variable
-result.
-
-Example outputs:
-
-[source]
-----
-Type a number: 3
-The result is 15
-----
-
-[source]
-----
-Type a number: 7
-The result is 255
-----
-++++
-</details></div><!-- end ex 35-->
-++++
 
 === Infinite loops
 

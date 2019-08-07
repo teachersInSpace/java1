@@ -1,0 +1,20 @@
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 29 : Even numbers</summary>
+++++
+
+Create a program that prints all even numbers between 2 and 100.
+
+[source]
+----
+2
+4
+6
+(many rows of numbers here)
+96
+98
+100
+----
+++++
+</details></div><!-- end ex 29-->
+++++

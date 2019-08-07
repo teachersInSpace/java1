@@ -1,0 +1,29 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 31: Lower limit and upper limit</summary>
+++++
+
+Create a program that asks the user for the first number and the last number and then prints all
+        numbers between those two.
+
+[source]
+----
+First: 5
+Last: 8
+5
+6
+7
+8
+----
+
+If the first number is greater than the last number, the program prints nothing:
+
+[source]
+----
+First: 16
+Last: 12
+----
+
+*Note*:  Remember that the lower and upper limits can also be negative!
+++++
+</details></div><!-- end ex 31-->
+++++

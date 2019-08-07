@@ -1,0 +1,28 @@
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 33: The sum <i>between</i> two numbers</summary>
+++++
+
+Similar to the previous exercise, except that the program should ask for both the lower and
+upper bound. You can assume that the users first gives the smaller number and then the greater
+number.
+
+Example outputs:
+
+[source]
+----
+First: <font color="red">3</font>
+Last: <font color="red">5</font>
+The sum 12
+----
+
+[source]
+----
+First: <font color="red">2</font>
+Last: <font color="red">8</font>
+The sum is 35
+----
+
+++++
+</details></div><!-- end ex 33-->
+++++

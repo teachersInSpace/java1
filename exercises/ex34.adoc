@@ -1,0 +1,23 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 34: Factorial</summary>
+++++
+Create a program that calculates the factorial of the number n. The factorial n! is calculated
+using the formula `1*2*3*...*n`. For example `4! = 1*2*3*4 = 24`. Additionally, it is defined that
+`0! = 1`.
+
+Example outputs:
+
+[source]
+----
+Type a number: <font color="red">3</font>
+Factorial is 6
+----
+
+[source]
+----
+Type a number: <font color="red">10</font>
+Factorial is 3628800
+----
+++++
+</details></div><!-- end ex 34-->
+++++
