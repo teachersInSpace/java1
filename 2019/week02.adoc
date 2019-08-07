@@ -1,4 +1,4 @@
-:doctitle: The program and the source code
+:doctitle: Using variables
 :tabcolumns: d,h,h,d,d,d,d,d,d,d,d,d,d,d,d,d
 include::../commonhead.adoc[]
 
@@ -9,7 +9,7 @@ include::../commonhead.adoc[]
 == MOOC Material Week 2
 
 :numbered:
-== Changing variables
+== Using and updating variables
 
 We usually want to change the value of an existing variable. This can be done using the normal
     assignment statement. In the next example, we increase the value of the variable `age` by
@@ -56,41 +56,10 @@ length--;                    // means the same as length = length - 1;
 System.out.println(length);  // prints 24
 ----
 
-++++
-<div class='ex'><details class='ex'><summary>Exercise: Sum of three numbers</summary>
-++++
-
-Create a program that asks the user for three numbers and then prints their sum. Use the
-        following structure in your program:
-
-[source,java]
-----
-
-Scanner reader = new Scanner(System.in);
-int sum = 0;
-int read;
-
-// WRITE YOUR PROGRAM HERE
-// USE ONLY THE VARIABLES sum, reader AND read!
-
-System.out.println("Sum: " + sum);
-----
-
-[source]
-----
-Type the first number: <font color="red">3</font>
-Type the second number: <font color="red">6</font>
-Type the third number: <font color="red">12</font>
-
-Sum: 21
-----
+include::{exercises}/ex25.adoc[]
 
 ++++
-</details></div>
-++++
-
-++++
-<div class='ex'><details class='ex'><summary>Exercise: Sum of many numbers</summary>
+<div class='ex'><details class='ex'><summary>Exercise 26: Sum of many numbers</summary>
 ++++
 
 Create a program that reads numbers from the user and prints their sum. The program should stop
@@ -130,7 +99,7 @@ Sum now: 7
 Sum in the end: 7
 ----
 ++++
-</details></div>
+</details></div> <!--end ex 26 -->
 ++++
 
 
@@ -197,7 +166,7 @@ Remember that you can get the text `System.out.println("")` by typing
 ====
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : From one to a hundred</summary>
+<div class='ex'><details class='ex'><summary>Exercise 27: From one to a hundred</summary>
 ++++
 
 Complete the following exercises using the `while` statement: +
@@ -215,11 +184,11 @@ The program output should be:
 100
 ----
 ++++
-</details></div><!-- end ex w2.2-->
+</details></div><!-- end ex w27-->
 ++++
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : From hundred to one</summary>
+<div class='ex'><details class='ex'><summary>Exercise28 : From hundred to one</summary>
 ++++
 
 Create a program that prints the integers (whole numbers) from 100 to 1. +
@@ -245,7 +214,7 @@ then subtract one on each iteration of the loop.
 
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : Even numbers</summary>
+<div class='ex'><details class='ex'><summary>Exercise 29 : Even numbers</summary>
 ++++
 
 Create a program that prints all even numbers between 2 and 100.
@@ -261,12 +230,12 @@ Create a program that prints all even numbers between 2 and 100.
 100
 ----
 ++++
-</details></div><!-- end ex w2.4-->
+</details></div><!-- end ex w29-->
 ++++
 
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : Up to a certain number</summary>
+<div class='ex'><details class='ex'><summary>Exercise 30 : Up to a certain number</summary>
 ++++
 
 Create a program that prints all whole numbers from 1 to the number the user enters.
@@ -293,11 +262,11 @@ Up to what number? <font color="red">5</font>
         the `while` statement. Remember that in Java `a &lt;= b` means
         _a is less than or equal to b_.
 ++++
-</details></div><!-- end ex w2.5-->
+</details></div><!-- end ex 30-->
 ++++
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : Lower limit and upper limit</summary>
+<div class='ex'><details class='ex'><summary>Exercise 31: Lower limit and upper limit</summary>
 ++++
 
 Create a program that asks the user for the first number and the last number and then prints all
@@ -323,7 +292,7 @@ Last: 12
 
 *Note*:  Remember that the lower and upper limits can also be negative!
 ++++
-</details></div><!-- end ex w2.5-->
+</details></div><!-- end ex w31-->
 ++++
 
 
@@ -412,7 +381,7 @@ while (i &lt; 4) {
 ----
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : The sum of a set of numbers</summary>
+<div class='ex'><details class='ex'><summary>Exercise 32: The sum of a set of numbers</summary>
 ++++
 
 Create a program that calculates the sum `1+2+3+…+n` where n is a number entered by the user.
@@ -441,11 +410,11 @@ helper variable to store the sum. During each execution add the value of the hel
 counts the executions to the variable in which you should collect the sum.
 
 ++++
-</details></div><!-- end ex w2.6-->
+</details></div><!-- end ex 32-->
 ++++
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : The sum <i>between</i> two numbers</summary>
+<div class='ex'><details class='ex'><summary>Exercise 33: The sum <i>between</i> two numbers</summary>
 ++++
 
 Similar to the previous exercise, except that the program should ask for both the lower and
@@ -469,11 +438,11 @@ The sum is 35
 ----
 
 ++++
-</details></div><!-- end ex w2.6-->
+</details></div><!-- end ex 33-->
 ++++
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : Factorial</summary>
+<div class='ex'><details class='ex'><summary>Exercise 34: Factorial</summary>
 ++++
 Create a program that calculates the factorial of the number n. The factorial n! is calculated
 using the formula `1*2*3*...*n`. For example `4! = 1*2*3*4 = 24`. Additionally, it is defined that
@@ -493,12 +462,12 @@ Type a number: <font color="red">10</font>
 Factorial is 3628800
 ----
 ++++
-</details></div><!-- end ex w2.6-->
+</details></div><!-- end ex 34-->
 ++++
 
 
 ++++
-<div class='ex'><details class='ex'><summary>Exercise : Sum of the powers of 2</summary>
+<div class='ex'><details class='ex'><summary>Exercise 35: Sum of the powers of 2</summary>
 ++++
 
 Create a program that calculates the sum of
@@ -526,7 +495,7 @@ Type a number: 7
 The result is 255
 ----
 ++++
-</details></div><!-- end ex w2.7-->
+</details></div><!-- end ex 35-->
 ++++
 
 === Infinite loops
@@ -538,7 +507,7 @@ we try to print "Never again shall I program an eternal loop!" 10 times:
 ----
 int i = 0;
 
-while (i &lt; 10) {
+while (i < 10) {
     System.out.println("Never again shall I program an eternal loop!");
 }
 ----
@@ -614,136 +583,32 @@ while (true) {
 System.out.println("Your age is " + age);
 ----
 
-++++
-<div class='ex'><details class='ex'><summary>Exercise : Loops, ending and remembering</summary>
-++++
+include::{exercises}/ex36.adoc[]
 
-This set of exercises will form one larger program when put together. We create the program by
-adding features exercise by exercise. If you do not finish all the exercises you can still send
-them to be reviewed by the exercise robot. To do that, click the "submit"
-button, which has a picture of an arrow and is located on the right of the testing button. Even
-though the exercise robot complains about tests in the incomplete exercises, you
-will still get points for the parts you have completed.
+[TIP]
+====
+*Creating a program in small steps* +
 
-<p>Note: from now on every sub-exercise of a larger exercise (like 36.1) has the same value as an
-exercise without sub-exercises. It means that exercise 36 as a whole corresponds to five normal
-exercises.
+In these exercises we actually created one single program, but programming happened in very small
+steps. This is *ALWAYS* the preferred way to program.
 
-<h4 class="req">Reading numbers</h4>
+When you are programming something, no matter if it is an exercise or a project of your own, it is
+advised to do it in very tiny pieces. Do not ever try to solve the whole problem in one go. Start with
+something easy, something you know that you can do. In this recent set of exercises, for example, we
+focused first on stopping the program when the user types -1. When one part of the program is complete and
+working, we can move on to work out the solution for the next sub-problem of the big main
+problem.
 
-<p>Create a program that asks the user to input numbers (integers).
-The program prints `Type numbers` until the user types the number -1.
-When the user types the number -1, the program prints `Thank you and see you later!` and ends.
+Some of the exercises in this course are sliced into smaller pieces like the set of exercises we
+just introduced. Usually the pieces need to be sliced again into smaller pieces depending on the
+problem. It is advised that you execute the whole program after almost every new line of
+code you write. This enables you to be sure that your solution is going in the right and working
+direction.
+====
 
-[source]
-----
-Type numbers:
-5
-2
-4
--1
-Thank you and see you later!
-----
+== Methods
 
-    <h4 class="req">The sum of the numbers</h4>
-
-    <p>Develop your number reading program by adding the following feature: the program should print
-    the sum of the numbers entered by the user (without the number -1).
-
-[source]
-----
-Type numbers:
-<font color="red">5</font>
-<font color="red">2</font>
-<font color="red">4</font>
-<font color="red">-1</font>
-Thank you and see you later!
-The sum is 11
-----
-
-    <h4 class="req">Summing and counting the numbers</h4>
-
-    <p>Develop your number reading and summing program by adding the following feature: the program
-    should print how many numbers the user typed (without the number -1).
-
-[source]
-----
-Type numbers:
-<font color="red">5</font>
-<font color="red">2</font>
-<font color="red">4</font>
-<font color="red">-1</font>
-Thank you and see you later!
-The sum is 11
-How many numbers: 3
-----
-
-    <h4 class="req">Counting the average</h4>
-
-    <p>Develop your number reading, summing and counting program by adding the following feature: the
-    program should print the average of the numbers the user typed (without the number -1).
-
-[source]
-----
-Type numbers:
-<font color="red">5</font>
-<font color="red">2</font>
-<font color="red">4</font>
-<font color="red">-1</font>
-Thank you and see you later!
-The sum is 11
-How many numbers: 3
-Average: 3.666666666666
-----
-
-    <h4 class="req">Even and odd numbers</h4>
-
-    <p>Develop your program by adding the following feature: the program should print the number
-    of even and odd numbers that the user typed (without the number -1).
-
-[source]
-----
-Type numbers:
-<font color="red">5</font>
-<font color="red">2</font>
-<font color="red">4</font>
-<font color="red">-1</font>
-Thank you and see you later!
-The sum is 11
-How many numbers: 3
-Average: 3.666666666666
-Even numbers: 2
-Odd numbers: 1
-----
-++++
-</details></div><!-- end ex w2.5-->
-++++
-
-<div>
-  <hr>
-  <big><big><b>Note: creating a program in small steps</b></big></big>
-
-  <p>In these exercises we actually created one single program, but programming happened in very small
-  steps. This is <b>ALWAYS</b> the preferred way to program.
-
-  <p>When you are programming something, no matter if it is an exercise or a project of your own, it is
-  advised to do it in very tiny pieces. Do not ever try to solve the whole problem in one go. Start with
-  something easy, something you know that you can do. In this recent set of exercises, for example, we
-  focused first on stopping the program when the user types -1. When one part of the program is complete and
-  working, we can move on to work out the solution for the next sub-problem of the big main
-  problem.
-
-  <p>Some of the exercises in this course are sliced into smaller pieces like the set of exercises we
-  just introduced. Usually the pieces need to be sliced again into smaller pieces depending on the
-  problem. It is advised that you execute the whole program after almost every new line of
-  code you write. This enables you to be sure that your solution is going in the right and working
-  direction.
-  <hr>
-</div>
-
-<h2 id="metodit1">Methods</h2>
-
-<p>We have so far used many different commands of Java: assignment, calculations, comparison, if
+We have so far used many different commands of Java: assignment, calculations, comparison, if
 structures and while structures. We have been using a "command" `System.out.println()`
 to print text. We can also count the maximum of two numbers with the help of the "command"
 `Math.max()`. We are also familiar with `reader.nextLine()`, usually seen together
@@ -763,8 +628,9 @@ called a <i>method parameter</i>.
 <p>In addition to a parameter, the method can also have a return value, for example, a familiar line of
 code:
 
-<pre class="java">
-int number = Integer.parseInt( reader.nextLine() );
+[source,java]
+----
+]int number = Integer.parseInt( reader.nextLine() );
 ----
 
 <p>includes two method calls. First the inner method `reader.nextLine` is called. That method

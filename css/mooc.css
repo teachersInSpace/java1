@@ -43,3 +43,16 @@ details[open] summary {
     border-bottom: 1px solid #aaa;
     margin-bottom: .5em;
 }
+
+div.exgroup {
+  margin-top:.5em;
+  background-color: #E8FFFF;
+  border-radius: 10px;
+  padding-top: .5em;
+  margin-bottom:.5em;
+}
+
+div.exgroup > p{
+  padding:.5em;
+  margin:.5em;
+}

@@ -8,7 +8,7 @@ all: week01.html
 
 week01.html: week01.adoc $(HEADERS)
 
-week02.html: week02.adoc $(HEADERS)
+week02.html: week02.adoc $(HEADERS) ../exercises/*.adoc
 
 clean:
 	rm -f week*.html

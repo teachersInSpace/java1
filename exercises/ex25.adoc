@@ -1,0 +1,32 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 25: Sum of three numbers</summary>
+++++
+
+Create a program that asks the user for three numbers and then prints their sum. Use the
+        following structure in your program:
+
+[source,java]
+----
+
+Scanner reader = new Scanner(System.in);
+int sum = 0;
+int read;
+
+// WRITE YOUR PROGRAM HERE
+// USE ONLY THE VARIABLES sum, reader AND read!
+
+System.out.println("Sum: " + sum);
+----
+
+[source]
+----
+Type the first number: <font color="red">3</font>
+Type the second number: <font color="red">6</font>
+Type the third number: <font color="red">12</font>
+
+Sum: 21
+----
+
+++++
+</details></div>
+++++

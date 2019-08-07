@@ -1,0 +1,128 @@
+++++
+<div class='exgroup'>
+++++
+
+This set of exercises will form one larger program when put together. We create the program by
+adding features exercise by exercise. If you do not finish all the exercises you can still send
+them to be reviewed by the exercise robot. To do that, click the "submit"
+button, which has a picture of an arrow and is located on the right of the testing button. Even
+though the exercise robot complains about tests in the incomplete exercises, you
+will still get points for the parts you have completed.
+
+Note: from now on every sub-exercise of a larger exercise (like 36.1) has the same value as an
+exercise without sub-exercises. It means that exercise 36 as a whole corresponds to five normal
+exercises.
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 36.1 : Reading numbers</summary>
+++++
+
+Create a program that asks the user to input numbers (integers).
+The program prints `Type numbers` until the user types the number -1.
+When the user types the number -1, the program prints `Thank you and see you later!` and ends.
+
+[source,java]
+----
+Type numbers:
+5
+2
+4
+-1
+Thank you and see you later!
+----
+++++
+</details></div><!--36.1-->
+++++
+++++
+<div class='ex'><details class='ex'><summary>Exercise 36.2 : The sum of the numbers</summary>
+++++
+
+Develop your number reading program by adding the following feature: the program should print
+the sum of the numbers entered by the user (without the number -1).
+
+[source]
+----
+Type numbers:
+5
+2
+4
+-1
+Thank you and see you later!
+The sum is 11
+----
+++++
+</details></div><!--36.2-->
+++++
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 36.3 : Summing and counting the numbers</summary>
+++++
+
+Develop your number reading and summing program by adding the following feature: the program
+    should print how many numbers the user typed (without the number -1).
+
+[source]
+----
+Type numbers:
+5
+2
+4
+-1
+Thank you and see you later!
+The sum is 11
+How many numbers: 3
+----
+++++
+</details></div><!--36.3-->
+++++
+++++
+<div class='ex'><details class='ex'><summary>Exercise 36.4 : Computing the average</summary>
+++++
+
+
+Develop your number reading, summing and counting program by adding the following feature: the
+    program should print the average of the numbers the user typed (without the number -1).
+
+[source]
+----
+Type numbers:
+<font color="red">5</font>
+<font color="red">2</font>
+<font color="red">4</font>
+<font color="red">-1</font>
+Thank you and see you later!
+The sum is 11
+How many numbers: 3
+Average: 3.666666666666
+----
+++++
+</details></div><!--36.4-->
+++++
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 36.5 : Even and odd numbers</summary>
+++++
+
+Develop your program by adding the following feature: the program should print the number
+    of even and odd numbers that the user typed (without the number -1).
+
+[source]
+----
+Type numbers:
+<font color="red">5</font>
+<font color="red">2</font>
+<font color="red">4</font>
+<font color="red">-1</font>
+Thank you and see you later!
+The sum is 11
+How many numbers: 3
+Average: 3.666666666666
+Even numbers: 2
+Odd numbers: 1
+----
+++++
+</details></div><!-- 36.5-->
+++++
+++++
+</div> <!-- end ex group 36-->
+++++
