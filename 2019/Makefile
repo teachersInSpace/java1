@@ -14,5 +14,9 @@ week03.html: week03.adoc $(HEADERS) ../exercises/*.adoc
 
 week04.html: week04.adoc $(HEADERS) ../exercises/*.adoc
 
+week05.html: week05.adoc $(HEADERS) ../exercises/*.adoc
+
+week06.html: week06.adoc $(HEADERS) ../exercises/*.adoc
+
 clean:
 	rm -f week*.html
