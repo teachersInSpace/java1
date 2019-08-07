@@ -407,39 +407,3 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .show-for-print{display:inherit!important}}
 
 body{}
-/** #header{ margin: 250px auto 0 auto ;}*/
-/**h1{ padding: 6.5em 1em;background-image: url(fontys614x345.jpg);    background-repeat: no-repeat; background-size: 100%;
-    no-repeat; width:100%; letter-spacing:.1em; color:#white; font-weight: bolder;}
-#footer{height:80px;background-image:url('fontys-wit.svg');background-repeat: no-repeat; background-position:bottom right; background-size: 100px;}
-*/
-
-.excontainer {
-  border: 1px #000 solid;
-  border:none;
-  -webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
-  -moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
-  box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
-  color: #333;
-  background-color: #E8FFFF;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-
-  margin: 0.5em;
-  padding-right: 1em;
-  padding-top:1.5em;
-  padding-bottom:1.5em;
-}
-.ex {
-  border: 1px #000 solid;
-  border:none;
-  color:#333;
-  background-color: #E8FFFF;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-  margin: 0.5em;
-  padding-right: 1em;
-
-  padding-bottom: 1em;
-}

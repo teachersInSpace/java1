@@ -1,21 +1,4 @@
-.excontainer {
-  border: 1px #000 solid;
-  border:none;
-  -webkit-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
-  -moz-box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
-  box-shadow:rgba(0,0,0,0.2) 0 1px 0 0;
-  color: #333;
-  background-color: #E8FFFF;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-
-  margin: 0.5em;
-  padding-right: 1em;
-  padding-top:1.5em;
-  padding-bottom:1.5em;
-}
-.ex {
+div.ex {
   border: 1px #000 solid;
   border:none;
   color:#333;
@@ -23,8 +6,40 @@
   border-radius:5px;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
-  margin: 0.5em;
-  padding-right: 1em;
+  margin-bottom: 1em;
+}
 
-  padding-bottom: 1em;
+details {
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+summary {
+  display: block;
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+details summary:before{
+  font-family: monospace;
+  font-size: 120%;
+  content:'[+] ';
+}
+
+details[open] summary:before{
+  content:'[-] '
+}
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
 }

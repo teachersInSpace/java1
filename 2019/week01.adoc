@@ -4,9 +4,15 @@ include::../commonhead.adoc[]
 
 [#_part1_1]
 :source-language: java
+:numbered!:
+
 == MOOC Material Week 1
-=== The program and the source code
-==== Source code
+
+:numbered:
+
+
+== The program and the source code
+=== Source code
 
 A computer program is composed of commands written in the source code. A computer generally runs commands in the source code from top to bottom and from left to right. Source code is saved in a textual format and will be executed somehow.
 Commands
@@ -24,8 +30,8 @@ Computers do not directly understand the programming language we are using. We n
 
 When using a modern development environment (more on this later), it will take care of compiling the source code. When we choose to run the program, the development environment will compile and execute the program. All development environments compile source code while it is being written by the programmer, which means that simple errors will be noticed before executing the program.
 
-==== Components of commands
-===== Semicolon
+=== Components of commands
+==== Semicolon
 
 A semicolon `;` is used to separate different commands. The compiler and the interpreter both ignore line breaks in the source code, so we could write the entire program on a single line.
 
@@ -41,15 +47,15 @@ Hello world!
 ----
 Even though neither the compiler nor the interpreter need line breaks in the source code, they are very important when considering human readers of the source code. Line breaks are required to divide source code in a clear manner. Readability of source code will be emphasized throughout this course.
 
-===== Parameters (information passed to commands)
+==== Parameters (information passed to commands)
 
 The information processed by a command are the parameters of a command. They are passed to the command by placing them between () brackets that follow the command name. For example, the System.out.print command is given the text hello as a parameter as follows: System.out.print("hello").
 
-===== Comments
+==== Comments
 
 Comments are a useful way to make notes in the source code for yourself and others. Everything on a line after two forward slashes // is treated as a comment.
 
-===== Example of using comments
+==== Example of using comments
 [source]
 ----
 // We will print the text "Hello world"
@@ -61,7 +67,7 @@ System.out.print(" and all the people of the world."); // We print more text to 
 ----
 The last line of the example introduces a particularly handy use for comments: you can comment out code instead of completely deleting it if you want to temporarily try out something.
 
-==== More about printing
+=== More about printing
 
 As we can see from the examples above, there are two commands for printing.
 
@@ -80,7 +86,7 @@ Second
 Third
 ----
 
-=== Main program body
+== Main program body
 
 The body for a program named "Example" is as follows:
 [source,java]
@@ -106,7 +112,7 @@ public class Example {
 
 From this point on, the main program body will be omitted from the examples.
 
-=== Getting to know your development environment
+== Getting to know your development environment
 
 Programming these days takes place in development environments almost without exceptions. The development environment provides several tools and features to assist the programmer. Although the development environment does not write the program on behalf of the programmer, it contains several handy features such as hinting about mistakes in code and assisting the programmer to visualize the structure of the program.
 
@@ -174,9 +180,9 @@ Try typing only sout on an empty line in NetBeans and then press the tab key.
 What happened? This tip will save a lot of your time in the future!
 ====
 
-=== Variables and assignment
+== Variables and assignment
 
-==== Variables and data types
+=== Variables and data types
 
 A variable is one of the most important concepts in computer programming. A variable should be imagined as a box in which you can store information. The information stored in a variable always has a type. These types include text (String), whole numbers (int), decimal numbers (double), and truth values (boolean). A value can be assigned to a variable using the equals sign (=).
 
@@ -220,7 +226,7 @@ The variable's type is integer. Its value is 123
 The variable's type is integer. Its value is 42
 ----
 
-==== Variable data types are immutable
+=== Variable data types are immutable
 
 When a variable is declared with a data type, it cannot be changed later. For example, a text variable cannot be changed into an integer variable and it cannot be assigned integer values.
 
@@ -277,7 +283,7 @@ Zetor
 ++++
 
 
-==== Allowed and descriptive variable names
+=== Allowed and descriptive variable names
 
 There are certain limitations on the naming of our variables. Even though umlauts, for example, can be used, it is better to avoid them, because problems might arise with character encoding. For example, it is recommended to use A instead of Ä.
 
@@ -352,6 +358,7 @@ int second = 4;
 System.out.println(first + second);
 System.out.println(2 + second - first - second);
 ----
+
 ==== Floating point numbers (decimal numbers)
 
 Calculating the division and remainder of whole numbers is a little trickier. A floating point number (decimal number) and integer (whole number) often get mixed up. If all the variables in a calculation operation are integers, the end result will also be an integer.
@@ -535,7 +542,7 @@ What is the biggest multiplication that your program is able to calculate?
 ++++
 
 
-=== Reading user input
+== Reading user input
 
 So far our programs have been rather one-sided. Next we will learn how to read input from the user. We will use a special Scanner tool to read the user input.
 
@@ -552,7 +559,7 @@ public class ProgramBody {
       }
 }
 ----
-==== Reading a string
+=== Reading a string
 
 The following code reads the user's name and prints a greeting:
 [source,java]
@@ -593,9 +600,9 @@ Who is greeted: John
 Hi John
 BUILD SUCCESSFUL (total time: 6 seconds)
 ----
-==== Reading integers
+=== Reading integers
 
-Our Scanner tool is not good for reading integers, so we will use another special tool to read an integer. The command Integer.parseInt converts the string given to it into an integer. The command's parameter is given between brackets and it returns an integer that can be assigned to an integer variable.
+Our Scanner tool is no good for reading integers, so we will use another special tool to read an integer. The command Integer.parseInt converts the string given to it into an integer. The command's parameter is given between brackets and it returns an integer that can be assigned to an integer variable.
 
 Basically, we are joining two commands together. First we read the input as a string from the user and immediately give it to the command Integer.parseInt.
 [source,java]
@@ -624,7 +631,7 @@ public class NameAndAgeGreeting {
     }
 }
 ----
-==== Summary
+=== Summary
 
 The program body for interaction with the user is as follows:
 [source,java]
@@ -828,7 +835,7 @@ After you have successfully submitted the exercise, you can play with the code a
 </details></div><!--end ex 13-->
 ++++
 
-=== Conditional statements and truth values
+== Conditional statements and truth values
 
 So far, our programs have progressed from one command to another in a straightforward manner. In order for the program to branch to different execution paths based on e.g. user input, we need conditional statements.
 [source,java]
@@ -905,7 +912,7 @@ if (isLesser) {
 
 1 is less than 3!
 ----
-==== Code indentation
+=== Code indentation
 
 Note that the commands in the block following the if statement (i.e. the lines after the curly brace, { ) are not written at the same level as the if statement itself. They should be indented slightly to the right. Indentation happens when you press the tab key, which is located to the left of q key. When the block ends with the closing curly brace, indentation ends as well. The closing curly brace } should be on the same level as the original if statement.
 
@@ -996,7 +1003,7 @@ Number 7 is odd.
 
 Hint: The number's remainder when dividing by 2 tells whether the number is even or odd. The remainder can be obtained with the % operator.
 
-==== else if
+=== else if
 
 If there are more than two conditions for the program to check, it is recommended to use the else if command. It works like the else command, but with an additional condition. else if comes after the if command. There can be multiple else if commands.
 [source,java]
@@ -1017,7 +1024,7 @@ The number is three!
 ----
 Let us read out loud the example above: If number is one, print out "The number is one.". Otherwise if the number is two, print out "The number is two.". Otherwise if the number is three, print out "The number is three!". Otherwise print out "Quite a lot!".
 
-==== Comparing strings
+=== Comparing strings
 
 Strings cannot be compared using the equality operator (==). For string comparison, we use the equals. command, which is always associated with the string to compare.
 [source,java]
@@ -1106,7 +1113,7 @@ Grade: 5
 </details></div><!-- end ex 18-->
 ++++
 
-==== Logical operations
+== Logical operations
 
 The condition statements can be made more complicated using logical operations. The logical operations are:
 
@@ -1262,7 +1269,7 @@ The year is a leap year.
 </details></div><!-- end ex 21-->
 ++++
 
-=== Introduction to loops
+== Introduction to loops
 
 Conditional statements allow us to execute different commands based on the conditions. For example, we can let the user login only if the username and password are correct.
 
@@ -1511,3 +1518,4 @@ command (points, goals, assists, penalties, player, club): quit
 ++++
 
 Note: When you first run the program, the execution might take a while because the information is downloaded from the internet. Execution should be quick after the first run.
+'''
