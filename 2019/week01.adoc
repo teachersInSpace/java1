@@ -1,3 +1,7 @@
+:doctitle: The program and the source code
+:tabcolumns: d,h,h,d,d,d,d,d,d,d,d,d,d,d,d,d
+include::../commonhead.adoc[]
+
 [#_part1_1]
 :source-language: java
 == MOOC Material Week 1
@@ -10,7 +14,7 @@ Commands
 Computers execute different operations, or actions, based on the commands. For example, when printing the text "Hello world!" on the screen, it is done by the command System.out.println.
 [source]
 ----
-System.out.println("Hello world!");
+  System.out.println("Hello world!");
 ----
 
 The System.out.println command prints the string given inside the brackets on the screen. The suffix ln is short for the word line. Therefore, this command prints out a line. This means that after the given string has been printed, the command will also print a line break.
@@ -23,15 +27,15 @@ When using a modern development environment (more on this later), it will take c
 ==== Components of commands
 ===== Semicolon
 
-A semicolon ; is used to separate different commands. The compiler and the interpreter both ignore line breaks in the source code, so we could write the entire program on a single line.
+A semicolon `;` is used to separate different commands. The compiler and the interpreter both ignore line breaks in the source code, so we could write the entire program on a single line.
 
-In the example below we will use the System.out.print command, which is similar to the System.out.println command except that it will not print a line break after printing the text.
+In the example below we will use the `System.out.print` command, which is similar to the `System.out.println` command except that it will not print a line break after printing the text.
 
 Example of how the semicolons are used
 [source]
 ----
-System.out.print("Hello "); System.out.print("world");
-System.out.print("!");
+  System.out.print("Hello "); System.out.print("world");
+  System.out.print("!");
 
 Hello world!
 ----
@@ -69,6 +73,7 @@ The printed text can contain both traditional characters and special characters.
   System.out.println("First\nSecond\nThird");
 
 When executed, the example above prints:
+[source]
 ----
 First
 Second
@@ -78,24 +83,24 @@ Third
 === Main program body
 
 The body for a program named "Example" is as follows:
-[source]
+[source,java]
 ----
 public class Example {
-public static void main(String[] args) {
+   public static void main(String[] args) {
     // program code
-  }
+   }
 }
 ----
 
 The program is stored in a text file named after the program with the .java extension. For a program named Example, the file should be named Example.java.
 
 The execution of the program begins at the part marked with the // program code comment above. During our first week of programming, we will limit ourselves to this part. When we are talking about commands such as printing, we need to write the commands into the program body. For example: System.out.print("Text to be printed");
-[source]
+[source,java]
 ----
 public class Example {
-public static void main(String[] args) {
-    System.out.print("Text to be printed");
-}
+    public static void main(String[] args) {
+        System.out.print("Text to be printed");
+    }
 }
 ----
 
@@ -108,50 +113,66 @@ Programming these days takes place in development environments almost without ex
 In this course, we will use the NetBeans development environment. A guide for using NetBeans is available here.
 
 Until you become familiar with NetBeans, follow the guides and steps precisely. Most of the following exercises show what needs to be printed to the screen for the program to function correctly.
+
+[NOTE]
 ====
-Note: Do not do the exercises by writing code and then clicking the test button. You should also execute the code manually (green arrow) and observe the result on the screen. This is especially useful if an exercise fails to pass the tests.
+Do not do the exercises by writing code and then clicking the test button. You should also execute the code manually (green arrow) and observe the result on the screen. This is especially useful if an exercise fails to pass the tests.
 ====
 In the following exercises, we will practice the use of NetBeans and printing of text on the screen.
 
 Remember to read the guide on using NetBeans before you continue!
 
-+++ <details><summary> +++
-Exercise 1: Name
-+++ </summary><div> +++
-Create a program that prints your name to the screen.
+++++
+<div class='ex'><details class='ex'><summary>Exercise 1: Name</summary>
+++++
 
+Create a program that prints your name to the screen. +
 The program output should resemble the following:
+[source,sh]
 ----
 Jane Doe
 ----
-+++ </div></details> +++
+++++
+</details></div><!--end ex 1-->
+++++
 
 
-+++ <details><summary> +++
-Exercise 2: Hello world! (And all the people of the world)
-+++ </summary><div> +++
+++++
+<div class='ex'><details class='ex' ><summary>Exercise 2: Hello world! (And all the people of the world)</summary>
+++++
 Create a program that prints out the following:
+[source,sh]
 ----
 Hello world!
 (And all the people of the world)
 ----
-+++ </div></details> +++
+++++
+</details></div>
+++++
 
-+++ <details><summary> +++
-Exercise 3: Spruce
-+++ </summary><div> +++
+++++
+<div class='ex'><details><summary> Exercise 3: Spruce</summary>
+++++
 Create a program that prints the following:
+[source,sh]
 ----
-*
-***
-*****
-*******
-*********
-*
+     *
+    ***
+   *****
+  *******
+ *********
+     *
 ----
-+++ </div></details> +++
+++++
+</details></div><!-- end ex 3-->
+++++
 
-Note: You probably wrote System.out.println("...") quite a few times. Try typing only sout on an empty line in NetBeans and then press the tab key. What happened? This tip will save a lot of your time in the future!
+[TIP]
+====
+You probably wrote `System.out.println("...")` quite a few times.
+Try typing only sout on an empty line in NetBeans and then press the tab key.
+What happened? This tip will save a lot of your time in the future!
+====
 
 === Variables and assignment
 
@@ -207,17 +228,20 @@ When a variable is declared with a data type, it cannot be changed later. For ex
 String text = "yabbadabbadoo!";
 text = 42; // Does not work! :(
 ----
+
 Integer values can be assigned to decimal number variables, because whole numbers are also decimal numbers.
+
 ----
 double decimalNumber = 0.42;
 decimalNumber = 1; // Works! :)
 ----
 
+++++
+<div class='ex'><details class='ex'><summary>Exercise 4: Varying variables</summary>
+++++
 
-+++ <details><summary> +++
-Exercise 4: Varying variables
-+++ </summary><div> +++
 The exercise file initially contains a program which prints:
+[source,sh]
 ----
 Chickens:
 3
@@ -233,6 +257,7 @@ There is none!
 ----
 
 Change the program in the specified places so that it will print:
+[source,sh]
 ----
 Chickens:
 9000
@@ -246,7 +271,10 @@ In a nutshell:
 0.1
 Zetor
 ----
-+++ </div></details> +++
+
+++++
+</details></div><!-- end ex 4-->
+++++
 
 
 ==== Allowed and descriptive variable names
@@ -258,34 +286,40 @@ Variable names must not contain certain special characters like exclamation mark
   int camelCaseVariable = 7;
 
 Variable names can contain numbers as long it does not start with one. Variable names cannot be composed solely of numbers, either.
+[source,java]
 ----
 int 7variable = 4; // Not allowed!
 int variable7 = 4; // A valid, but not descriptive variable name
 ----
 Variable names that have been defined before cannot be used. Command names such as System.out.print cannot be used, either.
+[source,java]
 ----
 int camelCase = 2;
 int camelCase = 5; // Not allowed, the variable camelCase is already defined!
 ----
 It is strongly recommended to name variables so that their purpose can be understood without comments and without thinking. Variable names used in this course must be descriptive.
 
-===== Valid variable names
-
+.Valid variable names
+[source,java]
+----
     lastDay = 20
     firstYear = 1952
     name = "Matti"
+----
 
-===== Invalid variable names
-
+.Invalid variable names
+[source,java]
+----
     last day of the month = 20
     1day = 1952
     watchout! = 1910
     1920 = 1
+----
 
 === Calculation
 
 The calculation operations are pretty straightforward: +, -, * and /. A more peculiar operation is the modulo operation %, which calculates the remainder of a division. The order of operations is also pretty straightforward: the operations are calculated from left to right taking the parentheses into account.
-[source]
+[source,java]
 ----
 int first = 2;   // variable of whole number type is assigned the value 2
 int second = 4;  // variable of whole number type is assigned the value 4
@@ -297,8 +331,10 @@ System.out.println(sum); // the value of the sum of variables is printed
 int calcWithParens = (1 + 1) + 3 * (2 + 5);  // 23
 int calcWithoutParens = 1 + 1 + 3 * 2 + 5;   // 13
 ----
+
 The parentheses example above can also be done step by step.
-[source]
+
+[source,java]
 ----
 int calcWithParens = (1 + 1);
 calcWithParens = calcWithParens + 3 * (2 + 5);  // 23
@@ -308,7 +344,7 @@ calcWithoutParens = calcWithoutParens + 3 * 2;
 calcWithoutParens = calcWithoutParens + 5;      // 13
 ----
 Calculation operations can be used almost anywhere in the program code.
-[source]
+[source,java]
 ----
 int first = 2;
 int second = 4;
@@ -319,7 +355,7 @@ System.out.println(2 + second - first - second);
 ==== Floating point numbers (decimal numbers)
 
 Calculating the division and remainder of whole numbers is a little trickier. A floating point number (decimal number) and integer (whole number) often get mixed up. If all the variables in a calculation operation are integers, the end result will also be an integer.
-[source]
+[source,java]
 ----
 int result = 3 / 2;  // result is 1 (integer) because 3 and 2 are integers as well
 
@@ -328,18 +364,18 @@ int second = 2;
 double result = first / second;  // the result is again 1 because first and second are integers
 ----
 The remainder can be calculated using the remainder operation (%). For example, the calculation 7 % 2 yields 1.
-[source]
+[source,java]
 ----
 int remainder = 7 % 2;  // remainder is 1 (integer)
 ----
 If either the dividend or the divisor (or both!) is a floating point number (decimal number) the end result will also be a floating point number.
-[source]
+[source,java]
 ----
 double whenDividendIsFloat = 3.0 / 2;  // result is: 1.5
 double whenDivisorIsFloat = 3 / 2.0;   // result is: 1.5
 ----
 If needed, integers can be converted to floating point using the type cast operation (double) as follows:
-[source]
+[source,java]
 ----
 int first = 3;
 int second = 2;
@@ -352,12 +388,12 @@ double result3 = (double)(first / second);  // result is: 1
 In the last example calculation, the result is rounded incorrectly because the calculation between the integers is done before the type cast to a floating point number.
 
 If the quotient is assigned to a variable of integer type, the result will be an integer as well.
-[source]
+[source,java]
 ----
 int integerResultBecauseTypeIsInteger = 3.0 / 2;  // quotient is automatically integer: 1
 ----
 The next example will print "1.5" because the dividend is transformed into a floating point number by multiplying it with a floating point number (1.0 * 3 = 3.0) before the division.
-[source]
+[source,java]
 ----
 int dividend = 3;
 int divisor = 2;
@@ -367,7 +403,7 @@ System.out.println(quotient);
 ----
 
 What does the following code print?
-[source]
+[source,java]
 ----
 int dividend = 3;
 int divisor = 2;
@@ -377,23 +413,30 @@ System.out.println(quotient);
 ----
 From now on, make sure that you name your variables that follow good conventions like the variables in the examples above.
 
-Seconds in a year
+++++
+<div class='ex'><details class='ex'><summary>Exercise 5: Seconds in a year</summary>
+++++
 
 Create a program that counts how many seconds there are in a year. You can assume that a year consists of 365 days (therefore the year is not a leap year).
 
 The program should print the following:
 
+[source]
+----
 There are X seconds in a year.
-
+----
 
 X should be replaced with the calculation of your program.
+++++
+</details></div><!--end ex 5-->
+++++
 
 === Concatenation or combining strings
 
 Let us take a closer look on combining strings with the + operator.
 
 If the + operator is used between two strings, a new string is created with the two strings combined. Note the clever use of space characters in the values of the variables below!
-[source]
+[source,java]
 ----
 String greeting = "Hi ";
 String name = "John";
@@ -407,22 +450,24 @@ Hi John, and goodbye!
 ----
 
 If a string is on either side of the + operator, the other side is converted to a string and a new string is created. For example, the integer 2 will be converted into the string "2" and then combined with the other string.
-[source]
+[source,java]
 ----
 System.out.println("there is an integer --> " + 2);
 System.out.println(2 + " <-- there is an integer");
 ----
 What we learned earlier about the order of operations is still valid:
-[source]
+[source,java]
 ----
 System.out.println("Four: " + (2 + 2));
 System.out.println("But! Twenty-two: " + 2 + 2);
 ----
+[source,sh]
+----
 Four: 4
 But! Twenty-two: 22
-
+----
 Using this information, we can print a mix of strings and values of variables:
-[source]
+[source,java]
 ----
 int x = 10;
 
@@ -434,61 +479,83 @@ int z = 6;
 System.out.println("y has the value  " + y + " and z has the value " + z);
 ----
 This program obviously prints:
+[source,sh]
 ----
 variable x has the following value: 10
 y has the value 5 and z has the value 6
 ----
-Addition
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 6: Addition</summary>
+++++
 
 Create a program to calculate the sum of two numbers. At the beginning of the program two variables are introduced and those variables hold the numbers to be summed. Feel free to use other variables if you need to.
 
 For example, if the variables hold numbers 5 and 4, the program should output:
-
+[source]
+----
   5 + 4 = 9
-
+----
 
 If the variables hold numbers 73457 and 12888, the program output should be:
 
-  73457 + 12888 = 86345
+[source]
+----
+73457 + 12888 = 86345
+----
+++++
+</details></div><!-- end ex 6-->
+++++
 
+++++
+<div class='ex'><details class='ex'><summary>Exercise 7: Multiplication</summary>
+++++
 
-Multiplication
 
 Create a program similar to the previous one except that it multiplies the two numbers instead of adding them.
 
 For example, if the variables hold numbers 2 and 8, the program output should be:
 
-  2 * 8 = 16
-
+[source]
+----
+2 * 8 = 16
+----
 
 If the variables hold numbers 277 and 111, the program output should be:
-
-  277 * 111 = 30747
+[source]
+----
+277 * 111 = 30747
+----
 
 
 What is the biggest multiplication that your program is able to calculate?
+
+++++
+</details></div><!-- end ex 7-->
+++++
+
 
 === Reading user input
 
 So far our programs have been rather one-sided. Next we will learn how to read input from the user. We will use a special Scanner tool to read the user input.
 
 Let us add the Scanner to our existing main program body. Do not worry if the main program body seems obscure as we will continue to write our code in the part marked // program code.
-[source]
+[source,java]
 ----
 import java.util.Scanner;
 
 public class ProgramBody {
-public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+      public static void main(String[] args) {
+          Scanner reader = new Scanner(System.in);
 
-    // program code
-}
+          // program code
+      }
 }
 ----
 ==== Reading a string
 
 The following code reads the user's name and prints a greeting:
-[source]
+[source,java]
 ----
 
 System.out.print("What is your name? ");
@@ -501,24 +568,25 @@ What is your name? John
 Hi, John
 ----
 The program above combined along with the main program body is shown below. The name of the program is Greeting, which means that it must be located in a file named Greeting.java.
-[source]
+[source,java]
 ----
 
 import java.util.Scanner;
 
 public class Greeting {
-public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
 
-    System.out.print("Who is greeted: ");
-    String name = reader.nextLine(); // Reads a line of input from the user and assigns it
-                                     //     to the variable called name
+        System.out.print("Who is greeted: ");
+        String name = reader.nextLine(); // Reads a line of input from the user and assigns it
+                                         //     to the variable called name
 
-    System.out.print("Hi " + name);
-}
+        System.out.print("Hi " + name);
+    }
 }
 ----
 When the program above is executed, you can type the input. The output tab in NetBeans (at the bottom) looks as follows when the program has finished (the user inputs the name "John").
+[source,sh]
 ----
 run:
 Who is greeted: John
@@ -530,7 +598,7 @@ BUILD SUCCESSFUL (total time: 6 seconds)
 Our Scanner tool is not good for reading integers, so we will use another special tool to read an integer. The command Integer.parseInt converts the string given to it into an integer. The command's parameter is given between brackets and it returns an integer that can be assigned to an integer variable.
 
 Basically, we are joining two commands together. First we read the input as a string from the user and immediately give it to the command Integer.parseInt.
-[source]
+[source,java]
 ----
 System.out.print("Type an integer: ");
 int number = Integer.parseInt(reader.nextLine());
@@ -538,49 +606,51 @@ int number = Integer.parseInt(reader.nextLine());
 System.out.println("You typed " + number);
 ----
 Next we will ask the user to give us his name and age. The program body is included this time.
-[source]
+[source,java]
 ----
 import java.util.Scanner;
 
 public class NameAndAgeGreeting {
-public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
 
-    System.out.print("Your name: ");
-    String name = reader.nextLine();   // Reads a line from the users keyboard
+        System.out.print("Your name: ");
+        String name = reader.nextLine();   // Reads a line from the users keyboard
 
-    System.out.print("How old are you: ");
-    int age = Integer.parseInt(reader.nextLine()); // Reads a string variable from the keyboard and transfers it to an integer
+        System.out.print("How old are you: ");
+        int age = Integer.parseInt(reader.nextLine()); // Reads a string variable from the keyboard and transfers it to an integer
 
-    System.out.println("Your name is: " + name + ", and you are " + age + " years old, nice to meet you!");
-}
+        System.out.println("Your name is: " + name + ", and you are " + age + " years old, nice to meet you!");
+    }
 }
 ----
 ==== Summary
 
 The program body for interaction with the user is as follows:
-[source]
+[source,java]
 ----
 import java.util.Scanner;
 public class ProgramName {
-public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
 
-    // code here
-}
+        // code here
+    }
 }
 ----
 Reading a string:
-[source]
+[source,java]
   String text = reader.nextLine();
 
 Reading an integer:
 [source]
   int number = Integer.parseInt(reader.nextLine());
 
-Adder
-
+++++
+<div class='ex'><details class='ex'><summary>Exercise 8: Adder</summary>
+++++
 Create a program that asks the user for two integers and then prints their sum.
+[source,sh]
 ----
   Type a number: 6
   Type another number: 2
@@ -589,40 +659,69 @@ Create a program that asks the user for two integers and then prints their sum.
 ----
 
 In this example the user input is marked in red color. From now on the red color will indicate user input in examples.
-Divider
+++++
+</details></div><!--end ex 8-->
+++++
+
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 9: Divider</summary>
+++++
 
 Create a program that asks the user for two integers and prints their quotient. Make sure that 3 / 2 = 1.5. If the decimal part is missing, take another look at 5.1 Floating point numbers (decimal numbers) to find the solution.
+[source,sh]
 ----
   Type a number: 3
   Type another number: 2
 
   Division: 3 / 2 = 1.5
 ----
+++++
+</details></div><!--end ex 9-->
+++++
 
-Calculating the circumference
+++++
+<div class='ex'><details class='ex'><summary>Exercise 10: Calculating the circumference</summary>
+++++
+
 
 The circumference of a circle is calculated using the formula 2 * pi * radius. Create a program that asks the user for the radius and then calculates the circumference using the given radius. Java already contains the value of pi in the Math.PI variable, which you can use in your calculation.
+[source,sh]
 ----
 Type the radius: 20
 
 Circumference of the circle: 125.66370614359172
 ----
+++++
+</details></div><!--end ex 10-->
+++++
 
-Bigger number
+++++
+<div class='ex'><details class='ex'><summary>Exercise 11: Bigger number</summary>
+++++
+
 
 Create a program that asks the user for two integers and then prints the larger of the two.
 
 Tip: When you write Math. (that is, Math followed by a dot) in NetBeans, it shows you a bunch of available mathematical calculations. For example, Math.cos(10) calculates the cosine of the number 10. Try to find a suitable tool in Math to complete this exercise! If you cannot find anything suitable or do not know how to complete the exercise, skip the exercise for now. We will return to the matter later on.
+[source,sh]
 ----
 Type a number: 20
 Type another number: 14
 
 The bigger number of the two numbers given was: 20
 ----
+++++
+</details></div><!--end ex 11-->
+++++
 
-Sum of the ages
+++++
+<div class='ex'><details class='ex'><summary>Exercise 12: Sum of the ages</summary>
+++++
+
 
 Create a program that asks for the names and ages of two users. After that the program prints the sum of their ages.
+[source,sh]
 ----
 Type your name: Matti
 Type your age: 14
@@ -633,28 +732,33 @@ Type your age: 12
 Matti and Arto are 26 years old in total.
 ----
 
-NHL statistics, part 1
+++++
+</details></div><!--end ex 12-->
+++++
+
+*NHL statistics, part 1*
 
 A ready-made component NHLStatistics is included along with the exercise files for this excercise. It can be used to fetch and see NHL players' score data, including their number of played games, goals, assists, points, and penalty amount.
 
 The main program imports (i.e. enables the use of) the component by adding the following line to the beginning of the file: import nhlstats.NHLStatistics;. The next example prints the top 10 players based on points:
-[source]
+[source,java]
 ----
 import java.util.Scanner;
 import nhlstats.NHLStatistics;
 
 public class Mainprogram {
-public static void main(String[] args) throws Exception {
-    Scanner reader = new Scanner(System.in);
+    public static void main(String[] args) throws Exception {
+        Scanner reader = new Scanner(System.in);
 
-    System.out.println("Top ten by points");
-    NHLStatistics.sortByPoints();
-    NHLStatistics.top(10);
-}
+        System.out.println("Top ten by points");
+        NHLStatistics.sortByPoints();
+        NHLStatistics.top(10);
+    }
 }
 ----
 
 It will print (this was the situation on the 9th of January 2012):
+[source,sh]
 ----
 Top ten by points
 Henrik Sedin           VAN        43 11 + 38= 49  36
@@ -674,7 +778,7 @@ The name, abbreviation of the club, matches played, assists, points and penaltie
 The first command NHLStatistics.sortByPoints() sorts the list of NHL players by the points they have gathered. The second command NHLStatistics.top(10); prints the ten first players from the list. Any integer can be given as a parameter.
 
 Similarly the players can be printed ordered by the goals or assists they have made, or by penalty minutes they have been given. First, we call the command to sort the players:
-[source]
+[source,java]
 ----
 NHLStatistics.sortByPoints();     // orders the players by points
 NHLStatistics.sortByGoals();      // orders the players by goals
@@ -685,7 +789,7 @@ NHLStatistics.sortByPenalties();  // orders the players by penalty minutes
 After that the players are printed with the command top using the number of players to be printed as its parameter.
 
 It is also possible to use the component to request the statistics of a certain player:
-[source]
+[source,java]
 ----
 NHLStatistics.searchByPlayer("Jaromir Jagr");  // prints stats of Jaromir Jagr
 NHLStatistics.searchByPlayer("Koivu");         // prints stats of Mikko Koivu and Saku Koivu
@@ -693,15 +797,20 @@ NHLStatistics.searchByPlayer("Teemu");         // prints stats of all players na
 ----
 
 The component can also print the statistics of all players in a club:
-[source]
+[source,java]
+----
   NHLStatistics.teamStatistics("NYR");  // Statistics of New York Rangers
-
+----
 
 The order of the printed club statistics can be changed using a sortBy...() first.
 
-The name of the club must be given using the official three letter abbreviation. You can check the abbreviations here . The statistics component prints a list of the available abbreviations if you request the statistics of an invalid club.
-<
+The name of the club must be given using the official three letter abbreviation.
+You can check the abbreviations here . The statistics component prints a list of
+the available abbreviations if you request the statistics of an invalid club.
 
+++++
+<div class='ex'><details class='ex'><summary>Exercise 13: NHL Players</summary>
+++++
 Create a program that does the following tasks into the main program body. The tasks must be done in exactly the same order as listed below. Do the tasks in the program body one after another without deleting tasks you have already done.
 
 Note: When you first run the program, the execution might take a while because the information is downloaded from the web. Execution should be quick after the first run.
@@ -715,16 +824,19 @@ The program must do the following:
 * Print the players in Anaheim Ducks (abbreviation: ANA) ordered by points
 
 After you have successfully submitted the exercise, you can play with the code as you wish!
+++++
+</details></div><!--end ex 13-->
+++++
 
 === Conditional statements and truth values
 
 So far, our programs have progressed from one command to another in a straightforward manner. In order for the program to branch to different execution paths based on e.g. user input, we need conditional statements.
-[source]
+[source,java]
 ----
 int number = 11;
 
 if (number > 10) {
-System.out.println("The number was greater than 10");
+    System.out.println("The number was greater than 10");
 }
 ----
 The condition (number > 10) evaluates into a truth value; either true or false. The if command only handles truth values. The conditional statement above is read as "if the number is greater than 10".
@@ -735,41 +847,42 @@ After the condition, the opening curly brace { starts a new block, which is exec
 
 The comparison operators are:
 
+----
     > Greater than
     >= Greater than or equal to
     < Less than
     <= Less than or equal to
     == Equals
     != Not equal
-
-[source]
+----
+[source,java]
 ----
 int number = 55;
 
 if (number != 0) {
-System.out.println("The number was not equal to 0");
+    System.out.println("The number was not equal to 0");
 }
 
 if (number >= 1000) {
-System.out.println("The number was greater than or equal to 1000");
+    System.out.println("The number was greater than or equal to 1000");
 }
 ----
 A block can contain any code including other if statements.
-[source]
+[source,java]
 ----
 int x = 45;
 int number = 55;
 
 if (number > 0) {
-System.out.println("The number is positive!");
-if (number > x) {
-    System.out.println(" and greater than the value of variable x");
-    System.out.println("after all, the value of variable x is " + x);
-}
+   System.out.println("The number is positive!");
+   if (number > x) {
+       System.out.println(" and greater than the value of variable x");
+       System.out.println("after all, the value of variable x is " + x);
+   }
 }
 ----
 The comparison operators can also be used outside the if statements. In such case the truth value will be stored in a truth value variable.
-[source]
+[source,java]
 ----
 int first = 1;
 int second = 3;
@@ -779,7 +892,7 @@ boolean isGreater = first > second;
 In the example above the boolean (i.e. a truth value) variable isGreater now includes the truth value false.
 
 A boolean variable can be used as a condition in a conditional sentence.
-[source]
+[source,java]
 ----
 int first = 1;
 int second = 3;
@@ -787,7 +900,7 @@ int second = 3;
 boolean isLesser = first < second;
 
 if (isLesser) {
-System.out.println(first + " is less than " + second + "!");
+    System.out.println(first + " is less than " + second + "!");
 }
 
 1 is less than 3!
@@ -801,21 +914,26 @@ The use of indentation is crucial for the readability of program code. During th
 ==== else
 
 If the truth value of the comparison is false, another optional block can be executed using the else command.
-[source]
+[source,java]
 ----
 int number = 4;
 
 if (number > 5) {
-System.out.println("Your number is greater than five!");
+    System.out.println("Your number is greater than five!");
 } else {
-System.out.println("Your number is equal to or less than five!");
+    System.out.println("Your number is equal to or less than five!");
 }
-
+----
+[source,sh]
+----
 Your number is equal to or less than five!
 ----
-A positive number
 
+++++
+<div class='ex'><details class='ex'><summary>Exercise 14: A positive number</summary>
+++++
 Create a program that asks the user for a number and tells if the number is positive (i.e. greater than zero).
+[source,sh]
 ----
 Type a number: 5
 
@@ -826,13 +944,23 @@ Type a number: -2
 
 The number is not positive.
 ----
+++++
+</details></div><!--end ex 14-->
+++++
 
 Are you certain that your code is indented correctly?
 
-Reread the section on code indentation. Observe what happens when you press shift, alt and f simultaneously! The same automatic indentation functionality can also be used using the menu bar by selecting Source and then Format.
-Age of majority
+Reread the section on code indentation. Observe what happens when you press shift, alt and f simultaneously! +
+The same automatic indentation functionality can also be used using the menu bar by selecting Source and then Format.
+
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 15: Age of majority</summary>
+++++
 
 Create a program that asks for the user's age and tells whether the user has reached the age of majority (i.e. 18 years old or older).
+
+[source,sh]
 ----
 How old are you? 12
 
@@ -843,10 +971,17 @@ How old are you? 32
 
 You have reached the age of majority!
 ----
+++++
+</details></div><!--end ex 15-->
+++++
 
-Even or odd?
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 16: Even or Odd?</summary>
+++++
 
 Create a program that asks the user for a number and tells whether the number is even or odd.
+[source,sh]
 ----
 Type a number: 2
 Number 2 is even.
@@ -855,24 +990,27 @@ Number 2 is even.
 Type a number: 7
 Number 7 is odd.
 ----
+++++
+</details></div><!--end ex 16-->
+++++
 
 Hint: The number's remainder when dividing by 2 tells whether the number is even or odd. The remainder can be obtained with the % operator.
 
 ==== else if
 
 If there are more than two conditions for the program to check, it is recommended to use the else if command. It works like the else command, but with an additional condition. else if comes after the if command. There can be multiple else if commands.
-[source]
+[source,java]
 ----
 int number = 3;
 
 if (number == 1) {
-System.out.println("The number is one.");
+    System.out.println("The number is one.");
 } else if (number == 2) {
-System.out.println("The number is two.");
+    System.out.println("The number is two.");
 } else if (number == 3) {
-System.out.println("The number is three!");
+    System.out.println("The number is three!");
 } else {
-System.out.println("Quite a lot!");
+    System.out.println("Quite a lot!");
 }
 
 The number is three!
@@ -882,34 +1020,37 @@ Let us read out loud the example above: If number is one, print out "The number 
 ==== Comparing strings
 
 Strings cannot be compared using the equality operator (==). For string comparison, we use the equals. command, which is always associated with the string to compare.
-[source]
+[source,java]
 ----
 String text = "course";
 
 if (text.equals("marzipan")) {
-System.out.println("The variable text contains the text marzipan");
+    System.out.println("The variable text contains the text marzipan");
 } else {
-System.out.println("The variable text does not contain the text marzipan");
+    System.out.println("The variable text does not contain the text marzipan");
 }
 ----
 The equals command is always attached to the string variable with a dot in between. A string variable can also be compared to another string variable.
-[source]
+[source,java]
 ----
 String text = "course";
 String anotherText = "horse";
 
 if (text.equals(anotherText)) {
-System.out.println("The texts are the same!");
+    System.out.println("The texts are the same!");
 } else {
-System.out.println("The texts are not the same!");
+    System.out.println("The texts are not the same!");
 }
 ----
 When comparing strings, it is crucial to make sure that both string variables have been assigned some value. If a value has not been assigned, the program execution terminates with a NullPointerException error, which means that variable has no value assigned to it (null).
-Greater number
 
+++++
+<div class='ex'><details class='ex'><summary>Exercise 17: Greater number</summary>
+++++
 Create a program that asks the user for two numbers and prints the greater of those two. The program should also handle the case in which the two numbers are equal.
 
 Example outputs:
+[source,sh]
 ----
 Type the first number: 5
 Type the second number: 3
@@ -929,9 +1070,17 @@ Type the second number: 5
 The numbers are equal!
 ----
 
-Grades and points
+++++
+</details></div><!-- end ex 17-->
+++++
+
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 18: Grades and points</summary>
+++++
 
 Create a program that gives the course grade based on the following table.
+[source]
 ----
 Points	Grade
 0–29	failed
@@ -942,6 +1091,7 @@ Points	Grade
 50–60	5
 ----
 Example outputs:
+[source]
 ----
 Type the points [0-60]: 37
 
@@ -952,6 +1102,9 @@ Type the points [0-60]: 51
 
 Grade: 5
 ----
+++++
+</details></div><!-- end ex 18-->
+++++
 
 ==== Logical operations
 
@@ -962,66 +1115,70 @@ The condition statements can be made more complicated using logical operations. 
     !condition is true if the condition is false.
 
 Below we will use the AND operation && to combine two individual conditions in order to check if the value of the variable is greater than 4 and less than 11 (i.e. in the range 5 - 10).
-[source]
+[source,java]
 ----
 System.out.println("Is the number between 5-10?");
 int number = 7;
 
 if (number > 4 && number < 11) {
-System.out.println("Yes! :)");
+   System.out.println("Yes! :)");
 } else {
-System.out.println("Nope :(")
+   System.out.println("Nope :(")
 }
 
 Is the number between 5-10?
 Yes! :)
 ----
 Next up is the OR operation ||, which will be used to check if the value is less than 0 or greater than 100. The condition evaluates to true if the value fulfills either condition.
-[source]
+[source,java]
 ----
 System.out.println("Is the number less than 0 or greater than 100?");
 int number = 145;
 
 if (number < 0 || number > 100) {
-System.out.println("Yes! :)");
+   System.out.println("Yes! :)");
 } else {
-System.out.println("Nope :(")
+   System.out.println("Nope :(")
 }
 
 Is the number less than 0 or greater than 100?
 Yes! :)
 ----
 Now we will use the negation operation ! to negate the condition:
-[source]
+[source,java]
 ----
 System.out.println("Is the string equal to 'milk'?");
 String text = "water";
 
 if (!(text.equals("milk"))) {  // true if the condition text.equals("milk") is false
-System.out.println("No!");
+    System.out.println("No!");
 } else {
-System.out.println("Yes")
+    System.out.println("Yes")
 }
 
 Is the text equal to 'milk'?
 No!
 ----
 For complicated conditions, we often need parentheses:
-[source]
+[source,java]
 ----
 int number = 99;
 
 if ((number > 0 && number < 10) || number > 100 ) {
-System.out.println("The number was in the range 1-9 or it was over 100");
+    System.out.println("The number was in the range 1-9 or it was over 100");
 } else {
-System.out.println("The number was equal to or less than 0 or it was in the range 10-99");
+    System.out.println("The number was equal to or less than 0 or it was in the range 10-99");
 }
 
 The number was equal to or less than 0 or it was in the range 10-99
 ----
-Age check
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 19: Age check</summary>
+++++
 
 Create a program that asks for the user's age and checks that it is reasonable (at least 0 and at most 120).
+[source,sh]
 ----
 How old are you? 10
 OK
@@ -1038,16 +1195,24 @@ Impossible!
 How old are you? 150
 Impossible!
 ----
+++++
+</details></div><!-- end ex 19-->
+++++
 
-Usernames
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 20: Usernames</summary>
+++++
 
 Create a program that recognizes the following users:
+[source,sh]
 ----
 Username	Password
 alex	mightyducks
 emily	cat
 ----
 The program should check for the username and password as follows:
+[source,sh]
 ----
 Type your username: alex
 Type your password: mightyducks
@@ -1063,13 +1228,20 @@ Type your username: emily
 Type your password: dog
 Your username or password was invalid!
 ----
+++++
+</details></div><!-- end ex 20-->
+++++
 
 Note: Remember that you cannot compare strings with the == operation!
-Leap year
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 21: Leap Year</summary>
+++++
 
 A year is a leap year if it is divisible by 4. But if the year is divisible by 100, it is a leap year only when it is also divisible by 400.
 
 Create a program that checks whether the given year is a leap year.
+[source,sh]
 ----
 Type a year: 2011
 The year is not a leap year.
@@ -1086,6 +1258,9 @@ The year is not a leap year.
 Type a year: 2000
 The year is a leap year.
 ----
+++++
+</details></div><!-- end ex 21-->
+++++
 
 === Introduction to loops
 
@@ -1094,7 +1269,7 @@ Conditional statements allow us to execute different commands based on the condi
 In addition to conditions we also need repetitions. We may, for example, need to keep asking the user to input a username and password until a valid pair is entered.
 
 The most simple repetition is an infinite loop. The following code will print out the string I can program! forever or "an infinite number of times":
-[source]
+[source,java]
 ----
 while (true) {
 System.out.println("I can program!");
@@ -1103,21 +1278,22 @@ System.out.println("I can program!");
 In the example above, the while (true) command causes the associated block (i.e. the code between the curly braces {}) to be looped (or repeated) infinitely.
 
 We generally do not want an infinite loop. The loop can be interrupted using e.g. the break command.
-[source]
+[source,java]
 ----
 while (true) {
-System.out.println("I can program!");
+    System.out.println("I can program!");
 
-System.out.print("Continue? ('no' to quit)? ");
-String command = reader.nextLine();
-if (command.equals("no")) {
-    break;
-}
+    System.out.print("Continue? ('no' to quit)? ");
+    String command = reader.nextLine();
+    if (command.equals("no")) {
+        break;
+    }
 }
 
 System.out.println("Thank you and see you later!");
 ----
 Now the loop progresses like this: First, the program prints I can program!. Then, the program will ask the user if it should continue. If the user types no, the break command is executed and the loop is interrupted and Thank you and see you again! is printed.
+[source,sh]
 ----
 I can program!
 Continue? ('no' to quit)?yeah
@@ -1127,14 +1303,18 @@ I can program!
 Continue? ('no' to quit)? no
 Thank you and see you again!
 ----
-Many different things can be done inside a loop. Next we create a simple calculator, which performs calculations based on commands that the user enters. If the command is quit, the break command will be executed to end the loop. Otherwise two numbers are asked. Then, if the initial command was sum, the program calculates and prints the sum of the two numbers. If the command was difference, the program calculates and prints the difference of the two numbers. If the command was something else, the program reports that the command was unknown.
-[source]
+Many different things can be done inside a loop. Next we create a simple calculator,
+which performs calculations based on commands that the user enters. If the command is quit,
+the break command will be executed to end the loop. Otherwise two numbers are asked. Then, if the initial command was sum,
+the program calculates and prints the sum of the two numbers. If the command was difference,
+the program calculates and prints the difference of the two numbers. If the command was something else,
+the program reports that the command was unknown.
+[source,java]
 ----
 System.out.println("welcome to the calculator");
 
 while (true) {
-System.out.print("Enter a command (sum, difference, quit): ");
-String command = reader.nextLine();
+    String command = reader.nextLine();
 if (command.equals("quit")) {
     break;
 }
@@ -1157,7 +1337,11 @@ if (command.equals("sum") ) {
 
 System.out.println("Thanks, bye!");
 ----
-Password
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 22: Password</summary>
+++++
+
 
 In this exercise we create a program that asks the user for a password. If the password is right, a secret message is shown to the user.
 ----
@@ -1171,8 +1355,9 @@ Right!
 The secret is: jryy qbar!
 ----
 
-The program will be done in three steps.
-Asking for the password
+The program will be done in three steps. +
+
+1. Asking for the password
 
 The initial exercise template defines the variable String password with a value of carrot. Do not change this password! You should make the program ask the user to enter a password and then compare it with the value in the variable password. Remember what that there is a special way to compare strings!
 ----
@@ -1188,7 +1373,7 @@ Type the password: potato
 Wrong!
 ----
 
-Asking for the password until the user gives the correct one
+2. Asking for the password until the user gives the correct one
 
 Modify the program so that it asks the user to type a password until it gets the correct one. Implement this using a while-true loop statement. The loop statement can be interrupted if and only if the entered password matches the value of the password variable.
 ----
@@ -1200,7 +1385,7 @@ Type the password: carrot
 Right!
 ----
 
-Secret message
+3. Secret message
 
 Add your own secret message to the program and show it to the user when the password is correct. Your message can be whatever you want!
 ----
@@ -1213,9 +1398,17 @@ Right!
 
 The secret is: jryy qbar!
 ----
+++++
+</details></div><!-- end ex 22-->
+++++
 
 The secret above has been encrypted using the Rot13 algorithm. During this course we will implement our own encryption program.
-Temperatures
+
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 23: Temperatures</summary>
+++++
+
 
 You will get the Graph component along with the exercise template. Graph draws graphs based on numbers that are given to it. You can give it numbers as follows:
 
@@ -1223,6 +1416,7 @@ You will get the Graph component along with the exercise template. Graph draws g
 
 
 We will create a program that draws a graph based on daily temperatures given to it.
+
 Asking for numbers
 
 Create a program that asks the user to input floating point numbers (double) and then adds the numbers to the graph. Use the while-true structure again.
@@ -1231,42 +1425,48 @@ Note: To read a double, use: `double number = Double.parseDouble(reader.nextLine
 Checking
 
 Improve your program so that temperatures below -30 degrees or over +40 degrees are ignored and not added to the graph.
-NHL statistics, part 2
+++++
+</details></div><!-- end ex 23-->
+++++
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 24: NHL statistics, part 2</summary>
+++++
 
 We will continue using the NHL component introduced earlier and create a program that the user can use to query for statistics.
 
 The program is structured similarly to the Calculator example program above. The program body is as follows:
-[source]
+[source,java]
 ----
 public static void main(String[] args) throws Exception {
-Scanner reader = new Scanner(System.in);
+    Scanner reader = new Scanner(System.in);
 
-System.out.println("NHL statistics service");
-while (true) {
-    System.out.println("");
-    System.out.print("command (points, goals, assists, penalties, player, club, quit): ");
-    String command = reader.nextLine();
+    System.out.println("NHL statistics service");
+    while (true) {
+        System.out.println("");
+        System.out.print("command (points, goals, assists, penalties, player, club, quit): ");
+        String command = reader.nextLine();
 
-    if (command.equals("quit")) {
-        break;
+        if (command.equals("quit")) {
+            break;
+        }
+
+        if (command.equals("points")) {
+            // print the top ten playes sorted by points
+        } else if (command.equals("goals")) {
+            // print the top ten players sorted by goals
+        } else if (command.equals("assists")) {
+            // print the top ten players sorted by assists
+        } else if (command.equals("penalties")) {
+            // print the top ten players sorted by penalties
+        } else if (command.equals("player")) {
+            // ask the user for the player name and print the statistics for that player
+        } else if (command.equals("club")) {
+            // ask the user for the club abbreviation and print the statistics for the club
+            // note: the statistics should be sorted by points
+            //     (players with the most points are first)
+        }
     }
-
-    if (command.equals("points")) {
-        // print the top ten playes sorted by points
-    } else if (command.equals("goals")) {
-        // print the top ten players sorted by goals
-    } else if (command.equals("assists")) {
-        // print the top ten players sorted by assists
-    } else if (command.equals("penalties")) {
-        // print the top ten players sorted by penalties
-    } else if (command.equals("player")) {
-        // ask the user for the player name and print the statistics for that player
-    } else if (command.equals("club")) {
-        // ask the user for the club abbreviation and print the statistics for the club
-        // note: the statistics should be sorted by points
-        //     (players with the most points are first)
-    }
-}
 }
 ----
 
@@ -1275,6 +1475,7 @@ The program asks the user to give commands and then executes the operation that 
 You should write code in the parts marked with comments.
 
 Here is an example demonstrating the program in action:
+[source]
 ----
 NHL statistics service
 
@@ -1305,5 +1506,8 @@ Henrik Zetterberg      DET        41  8 + 24= 32  14
 
 command (points, goals, assists, penalties, player, club): quit
 ----
+++++
+</details></div><!-- end ex 24-->
+++++
 
 Note: When you first run the program, the execution might take a while because the information is downloaded from the internet. Execution should be quick after the first run.
