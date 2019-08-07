@@ -1,0 +1,7 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise xx: </summary>
+++++
+
+++++
+</details></div><!-- end ex -->
+++++
