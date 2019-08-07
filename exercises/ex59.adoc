@@ -1,0 +1,26 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 59: Words in reverse order</summary>
+++++
+
+Create a program that asks the user to input words, until the user gives an empty string. Then
+the program prints the words the user gave in reversed order, the last word is printed
+first etc.
+
+[source]
+----
+Type a word: <font color="red">Mozart</font>
+Type a word: <font color="red">Schubert</font>
+Type a word: <font color="red">Bach</font>
+Type a word: <font color="red">Sibelius</font>
+Type a word: <font color="red">Liszt</font>
+Type a word:
+You typed the following words:
+Liszt
+Sibelius
+Bach
+Schubert
+Mozart
+----
+++++
+</details></div><!-- end ex 59 -->
+++++

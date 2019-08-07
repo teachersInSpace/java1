@@ -1,0 +1,28 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 60: Words in alphabetical order</summary>
+++++
+
+  <div class="tehtava">
+    <h3 class="req"></h3>
+
+    Create a similar program as the previous one, but in which the words are printed in alphabetical
+    order.
+
+[source]
+----
+Type a word: <font color="red">Mozart</font>
+Type a word: <font color="red">Schubert</font>
+Type a word: <font color="red">Bach</font>
+Type a word: <font color="red">Sibelius</font>
+Type a word: <font color="red">Liszt</font>
+Type a word:
+You typed the following words:
+Bach
+Liszt
+Mozart
+Schubert
+Sibelius
+----
+++++
+</details></div><!-- end ex 60 -->
+++++

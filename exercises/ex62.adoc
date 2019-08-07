@@ -1,0 +1,39 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 62: Remove last</summary>
+++++
+
+Create the method `public static void removeLast(ArrayList<String> list)`, which
+removes the last item from the list. Example code:
+
+[source,java]
+----
+ArrayList<String> brothers = new ArrayList<String>();
+brothers.add("Dick");
+brothers.add("Henry");
+brothers.add("Michael");
+brothers.add("Bob");
+
+System.out.println("brothers:");
+System.out.println(brothers);
+
+// sorting brothers
+brothers.sort();
+
+// removing the last item
+removeLast(brothers);
+
+System.out.println(brothers);
+----
+
+Example output:
+
+[source]
+----
+
+brothers:
+[Dick, Henry, Michael, Bob]
+[Bob, Dick, Henry]
+----
+++++
+</details></div><!-- end ex 62-->
+++++

@@ -512,7 +512,7 @@ import java.util.ArrayList;
 public class ListProgram {
 
     public static void main(String[] args) {
-        ArrayList&lt;String&gt; wordList = new ArrayList&lt;String&gt;();
+        ArrayList<String> wordList = new ArrayList<String>();
 
         wordList.add("First");
         wordList.add("Second");
@@ -522,8 +522,8 @@ public class ListProgram {
 
 In the above main program method, the first row creates a new ArrayList called `wordList`, which
 can be used as a container for String variables. The type of the ArrayList is
-`ArrayList&lt;String&gt;`, which means that the ArrayList is meant for storing Strings. The
-list is created using the command `new ArrayList&lt;String&gt;();`.
+`ArrayList<String>`, which means that the ArrayList is meant for storing Strings. The
+list is created using the command `new ArrayList<String>();`.
 
 <b>Note:</b> to make the ArrayList work, we must first write an import statement at the beginning of the program  either `import java.util.ArrayList;` or `import
   java.util.*;`
@@ -542,7 +542,7 @@ ArrayList provides us with many useful methods:
 [source,java]
 ----
 public static void main(String[] args) {
-    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+    ArrayList<String> teachers = new ArrayList<String>();
 
     teachers.add("Anthony");
     teachers.add("Barto");
@@ -606,7 +606,7 @@ In the following example 4 names are added to the list. Then the whole list is p
 [source,java]
 ----
 public static void main(String[] args) {
-    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+    ArrayList<String> teachers = new ArrayList<String>();
 
     teachers.add("Anthony");
     teachers.add("Paul");
@@ -724,7 +724,7 @@ include::{exercises}/ex58.adoc[]
 </div> <!--ex group array list-->
 ++++
 
-<h3>Ordering, reversing and shuffling a list</h3>
+=== Ordering, reversing and shuffling a list
 
 Items in an ArrayList are easy to order by size. Ordering by size means an alphabetic order when the
 list items are of type String. Ordering is done as follows:
@@ -732,7 +732,7 @@ list items are of type String. Ordering is done as follows:
 [source,java]
 ----
 public static void main(String[] args) {
-    ArrayList&lt;String&gt; teachers = new ArrayList&lt;String&gt;();
+    ArrayList<String> teachers = new ArrayList<>();
 
     // ...
 
@@ -763,77 +763,29 @@ of the program in order to get tools of Collections working in our program.
 
 Collections also includes other useful methods:
 
-<ul>
-  <li>`shuffle` shuffles the list items, can be useful for example in games</li>
+* `shuffle` shuffles the list items, can be useful for example in games
+* `reverse` reverses the order of list items
 
-  <li>`reverse` reverses the order of list items</li>
-</ul>
 
-<div class="tehtavat">
-  <div class="tehtava">
-    <h3 class="req">Words in reverse order</h3>
+include::{exercises}/ex59.adoc[]
 
-    Create a program that asks the user to input words, until the user gives an empty string. Then
-    the program prints the words the user gave in reversed order, the last word is printed
-    first etc.
+include::{exercises}/ex60.adoc[]
 
-[source]
-----
 
-Type a word: <font color="red">Mozart</font>
-Type a word: <font color="red">Schubert</font>
-Type a word: <font color="red">Bach</font>
-Type a word: <font color="red">Sibelius</font>
-Type a word: <font color="red">Liszt</font>
-Type a word:
-You typed the following words:
-Liszt
-Sibelius
-Bach
-Schubert
-Mozart
-    ----
-  </div>
-
-  <div class="tehtava">
-    <h3 class="req">Words in alphabetical order</h3>
-
-    Create a similar program as the previous one, but in which the words are printed in alphabetical
-    order.
-
-[source]
-----
-
-Type a word: <font color="red">Mozart</font>
-Type a word: <font color="red">Schubert</font>
-Type a word: <font color="red">Bach</font>
-Type a word: <font color="red">Sibelius</font>
-Type a word: <font color="red">Liszt</font>
-Type a word:
-You typed the following words:
-Bach
-Liszt
-Mozart
-Schubert
-Sibelius
-    ----
-  </div>
-</div>
-
-<h3>ArrayList as a parameter for a method</h3>
+=== ArrayList as a parameter for a method
 
 ArrayList can be given to a method as a parameter:
 
 [source,java]
 ----
-public static void print(ArrayList&lt;String&gt; list) {
+public static void print(ArrayList<String> list) {
     for (String word : list) {
         System.out.println( word );
     }
 }
 
 public static void main(String[] args) {
-    ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
+    ArrayList<String> list = new ArrayList<String>();
     list.add("Java");
     list.add("Python");
     list.add("Ruby");
@@ -850,20 +802,20 @@ Note that the name of the parameter can be anything:
 
 [source,java]
 ----
-public static void print(ArrayList&lt;String&gt; printed) {
+public static void print(ArrayList<String> printed) {
     for (String word : printed) {
         System.out.println( word );
     }
 }
 
 public static void main(String[] args) {
-    ArrayList&lt;String&gt; programmingLanguages = new ArrayList&lt;String&gt;();
+    ArrayList<String> programmingLanguages = new ArrayList<String>();
     programmingLanguages.add("Java");
     programmingLanguages.add("Python");
     programmingLanguages.add("Ruby");
     programmingLanguages.add("C++");
 
-    ArrayList&lt;String&gt; countries = new ArrayList&lt;String&gt;();
+    ArrayList<String> countries = new ArrayList<String>();
     countries.add("Finland");
     countries.add("Sweden");
     countries.add("Norway");
@@ -881,133 +833,20 @@ refers to the list given as a parameter with the name *printed*! Next, the print
 the list *countries*. Now, the method uses again the name *printed* referring to the parameter
 list.
 
-<div class="tehtavat">
-  <div class="tehtava">
-    <h3 class="req">Amount of items in a list</h3>
+include::{exercises}/ex61.adoc[]
 
-    Create the method `public static int countItems(ArrayList&lt;String&gt; list)` that
-    returns the number of the items in the list. Your method should not print anything. Use a
-    `return` statement to return the number as shown in the following example:
+include::{exercises}/ex62.adoc[]
 
-[source,java]
-----
-ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
-list.add("Hallo");
-list.add("Ciao");
-list.add("Hello");
-System.out.println("There are this many items in the list:");
-System.out.println(countItems(list));
-    ----
+As we notice from the example above, an ArrayList can be printed as it is. The print formatting is
+not usually what iwhat you want, so we are forced to handle the printing ourself. For example, with the help of the
+`for` command.
 
-[source]
-----
-
-
-There are this many items in the list:
-3
-    ----
-
-    Inside the method, it is possible to influence the items in the parameter list. In the following
-    example, the method `removeFirst` --as the name suggests-- removes the first string from
-    the list. What would happen if the list was empty?
-
-[source,java]
-----
-public static void print(ArrayList&lt;String&gt; printed) {
-    for (String word : printed) {
-        System.out.println( word );
-    }
-}
-
-public static void removeFirst(ArrayList&lt;String&gt; list) {
-    list.remove(0);  // removes the first item (indexed 0)
-}
-
-public static void main(String[] args) {
-    ArrayList&lt;String&gt; programmingLanguages = new ArrayList&lt;String&gt;();
-    programmingLanguages.add("Pascal");
-    programmingLanguages.add("Java");
-    programmingLanguages.add("Python");
-    programmingLanguages.add("Ruby");
-    programmingLanguages.add("C++");
-
-    print(programmingLanguages);
-
-    removeFirst(programmingLanguages);
-
-    System.out.println();  // prints an empty line
-
-   print(programmingLanguages);
-}
-    ----
-
-    Output:
-
-[source]
-----
-
-Pascal
-Java
-Python
-Ruby
-C++
-
-Java
-Python
-Ruby
-C++
-    ----
-
-    Similarly a method could, for example, add more strings to the list it received as a parameter.
-  </div>
-
-  <div class="tehtava">
-    <h3 class="req">Remove last</h3>
-
-    Create the method `public static void removeLast(ArrayList&lt;String&gt; list)`, which
-    removes the last item from the list. Example code:
-
-[source,java]
-----
-ArrayList&lt;String&gt; brothers = new ArrayList&lt;String&gt;();
-brothers.add("Dick");
-brothers.add("Henry");
-brothers.add("Michael");
-brothers.add("Bob");
-
-System.out.println("brothers:");
-System.out.println(brothers);
-
-// sorting brothers
-brothers.sort();
-
-// removing the last item
-removeLast(brothers);
-
-System.out.println(brothers);
-    ----
-
-    Example output:
-
-[source]
-----
-
-brothers:
-[Dick, Henry, Michael, Bob]
-[Bob, Dick, Henry]
-    ----
-  </div>
-
-  As we notice from the example above, an ArrayList can be printed as it is. The print formatting is
-  not usually what is sought after, so we are forced to handle the printing ourself. For example, with the help of the
-  `for` command.
-</div>
 
 <h3>Numbers in an ArrayList</h3>
 
 ArrayLists can be used to store any type of values. If the stored variables are of integer type, there
 are a couple of details to remember. An integer ArrayList is defined like this:
-`ArrayList&lt;Integer&gt;`, instead of writing `int` you must write
+`ArrayList<Integer>`, instead of writing `int` you must write
 `Integer`.
 
 The method `remove` does not work like expected when the list consists of `int`
@@ -1166,12 +1005,12 @@ public class Main {
 
 [source,java]
 ----
-public static ArrayList&lt;Integer&gt; lengths(ArrayList&lt;String&gt; list) {
+public static ArrayList&lt;Integer&gt; lengths(ArrayList<String> list) {
     // write your code here
 }
 
 public static void main(String[] args) {
-    ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
+    ArrayList<String> list = new ArrayList<String>();
     list.add("Hallo");
     list.add("Moi");
     list.add("Benvenuto!");
