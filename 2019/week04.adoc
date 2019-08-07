@@ -164,12 +164,12 @@ public static void main(String[] args) {
 
   <p>Now, you probably start to wonder why does the value of the parameter get copied and the original variable stay intact when the
   parameter is of <code>int</code> type, but the original list is given to the method when the parameter
-  is of <code>ArrayList</code> type? In Java only the values of <strong><em>primitive data
-      types</em></strong> (which are <code>int</code>, <code>double</code>, <code>char</code>,
+  is of <code>ArrayList</code> type? In Java only the values of *<em>primitive data
+      types</em>* (which are <code>int</code>, <code>double</code>, <code>char</code>,
   <code>boolean</code> and a couple of others that we have not yet discussed) get copied to the method.
   When the method parameters are of other types only the <em>references</em> are copied to the method. A
   reference is like a "wire", therefore the method can access the list using it directly. The
-  variables that are not of primitive data types are of <strong><em>reference data types</em></strong>
+  variables that are not of primitive data types are of *<em>reference data types</em>*
   and are "wired" just like the ArrayList in the previous example. The method is given the
   wire and the method can access the parameter directly.</p>
 
@@ -387,7 +387,7 @@ modify and does not include any copy-paste.</p><!--
 DEPRECATED
 <div class="tehtavat">
   <h3>Texter</h3>
-<p><b>Note: the assignment has proved to be quite challenging for the first assignment of the week. If you do not immediately get what is the point in this assignment, skip it and do the rest of the assignments first before getting back to this.</b></p>
+<p>*Note: the assignment has proved to be quite challenging for the first assignment of the week. If you do not immediately get what is the point in this assignment, skip it and do the rest of the assignments first before getting back to this.*</p>
   <p>The assignment files contain a text editor made by Curtis Coder. The program is created as one single method!  Your job is to <em>refactor the code</em>, meaning that you should clean the code up following the principals given in the example above.</p>
   <h4>Commands away from main</h4>
   <p> Create an own method for each of the commands excluding quit. The method that corresponds to the command gets a reader (so that it can interact with the user) and a list of lines (so that it is able to modify them) as parameters. Create the methods:</p>
@@ -402,7 +402,7 @@ DEPRECATED
   <h4>Reading the line number</h4>
   <p>After the now taken measures the code still has some repetition left, the reading of the line numbers. Create the method <code>public static int askLineNumber(String question,
  Scanner reader)</code>. This method prints the question and reads the line number. Return value is -1 if the user entered a blank line (i.e. just pressed enter).</p>
-<p><strong>Hint:</strong> you can use the following method body:</p>
+<p>*Hint:* you can use the following method body:</p>
 <pre class="sh_java">
     public static int askLineNumber(String question, Scanner reader) {
         System.out.println(question);
@@ -517,7 +517,7 @@ respectively all <code>String</code> objects have the same methods (<code>substr
 <code>length</code>, <code>charAt</code>, ...). Arraylist and String objects do not have the same
 methods because they are different types of objects.</p>
 
-<p>The type of a certain group of objects is called a <strong>class</strong>. <code>ArrayList</code> is
+<p>The type of a certain group of objects is called a *class*. <code>ArrayList</code> is
 a class, as are <code>String</code>, <code>Scanner</code>, and so forth. Objects, on the other hand, are
 <em>instances</em> of classes.</p>
 
@@ -527,13 +527,13 @@ an <code>ArrayList</code> object consists of elements inserted to the list while
 
 <h3>A class and its objects</h3>
 
-<p>A <b>class defines</b> what kind of objects it has:</p>
+<p>A *class defines* what kind of objects it has:</p>
 
 <ul>
-  <li><b>what methods the objects have</b></li>
+  <li>*what methods the objects have*</li>
 
-  <li><b>what the state of the objects are, or in other words, what kind of attributes the objects
-    have</b></li>
+  <li>*what the state of the objects are, or in other words, what kind of attributes the objects
+    have*</li>
 </ul>
 
 <p>A class describes the "blueprint" of the objects that are made out of it (are instances of it).</p>
@@ -589,16 +589,16 @@ System.out.println(bartosSwissAccount);
 
     <h4>Your first account</h4>
 
-    <p><b>Note:</b> there is a different exercise template for each of the sub-exercises.
+    <p>*Note:* there is a different exercise template for each of the sub-exercises.
     For this exercise use the template 072.1</p>
 
     <p>Create a program that creates an account with the balance of 100.0, deposits 20.0 and prints
-    the account. <strong>Note!</strong> do all the steps described in the exercise exactly in the
+    the account. *Note!* do all the steps described in the exercise exactly in the
     described order!</p>
 
     <h4>Your first money transfer</h4>
 
-    <p><b>Note:</b> there is a different exercise template for each of the sub-exercises.
+    <p>*Note:* there is a different exercise template for each of the sub-exercises.
     For this exercise use the template 072.2</p>
 
     <p>Create a program that:</p>
@@ -618,7 +618,7 @@ System.out.println(bartosSwissAccount);
 
     <h4>Money transfers</h4>
 
-    <p><b>Note:</b> there is a different exercise template for each of the sub-exercises.
+    <p>*Note:* there is a different exercise template for each of the sub-exercises.
     For this exercise use the template 072.3</p>
 
     <p>In the above program, you made a money transfer from one person to another. Let us next
@@ -1163,7 +1163,7 @@ value: 0
 value: 100
     </pre>
 
-    <p><strong>Hint</strong>: add to the class a new object variable that remembers the initial
+    <p>*Hint*: add to the class a new object variable that remembers the initial
     value of the counter</p>
   </div>
 
@@ -1531,7 +1531,7 @@ does not have to be written, as Java adds it automatically. When the programmer 
 <p>What happens is that the object is asked for its string representation. The string representation the
 object is returned and is printed normally with the <code>System.out.println</code> command.</p>
 
-<p><b>We can get rid of the obsolete <code>printObject</code> method.</b></p><!-- screencast -->
+<p>*We can get rid of the obsolete <code>printObject</code> method.*</p><!-- screencast -->
 
 <div class="tehtavat">
   <div class="tehtava">
@@ -1963,7 +1963,7 @@ public class BoundedCounter {
 }
     </pre>
 
-    <p><b>Note</b>: you cannot return an integer value directly from the method toString since the
+    <p>*Note*: you cannot return an integer value directly from the method toString since the
     method should return a string. Integer variable <code>value</code> can be turned into a string
     by prefixing it with an empty string: <code>"" + value</code>.</p>
 
@@ -2148,7 +2148,7 @@ hours: <font color="red">23</font>
 ...
     </pre>
 
-    <p><strong>Bonus: eternal clock (exercise not assessed with TMC!)</strong></p>
+    <p>*Bonus: eternal clock (exercise not assessed with TMC!)*</p>
 
     <p>Before you start, submit the exercise for assesment.</p>
 
@@ -2177,15 +2177,15 @@ public class Main {
     <p>Now, the clock goes on forever and the value is updated as it should be, once in a second. The clock estimates the duration of a
     second with the command <code>Thread.sleep(1000);</code> The parameter in the command
     is the time to sleep in milliseconds. In order to use the sleep command, you should do an
-    addition to the definition of main: <code>public static void main(String[] args) <b>throws
-        Exception</b> {</code></p>
+    addition to the definition of main: <code>public static void main(String[] args) *throws
+        Exception* {</code></p>
 
     <p>You can end the eternal clock by pressing the red box in the NetBeans console (i.e. the area
     in NB where the output of programs gets printed).</p>
   </div>
 </div>
 
-<p><big><b>Important notes regarding the use of objects. You should definately read these.</b></big></p>
+<p><big>*Important notes regarding the use of objects. You should definately read these.*</big></p>
 
 <p>Object-oriented programming is mostly about turning concepts into their own entities, or in other
 words forming abstractions. One might think that it is pointless to create an object that only holds
@@ -2372,7 +2372,7 @@ average: 2.75
     <p>Create a program that asks the user to input numbers of type integer. When the user
     gives -1, the program stops and prints the sum of the given numbers (excluding the -1).</p>
 
-    <p><strong>Note:</strong> you should not make any changes to class NumberStatistics!</p>
+    <p>*Note:* you should not make any changes to class NumberStatistics!</p>
 
     <p>The program should use a <code>NumberStatistics</code> object to calculate the sum.</p>
 
@@ -2391,12 +2391,12 @@ sum: 15
     <p>Change your program so that it also calculates the sum of even and odd numbers in the user
     input (again -1 excluded).</p>
 
-    <p><b>NOTE</b>: define in your program <i>three</i> <code>NumberStatistics</code> objects. The
+    <p>*NOTE*: define in your program <i>three</i> <code>NumberStatistics</code> objects. The
     first is used to track the sum of all the numbers. The second takes care of even numbers and
     the third the odd numbers. Remember also that you should not make any changes to class
     NumberStatistics!</p>
 
-    <p><b>The tests does not work if you do not create the objects in the order mentioned above!!</b></p>
+    <p>*The tests does not work if you do not create the objects in the order mentioned above!!*</p>
 
     <p>The program should work as follows:</p>
 
@@ -2697,14 +2697,14 @@ Password: dzaccatonjcqu
 Password: bpqmedlbqaopq
     </pre>
 
-    <p><b>Tip 1:</b> this is how you turn the integer <tt>number</tt> into a character:</p>
+    <p>*Tip 1:* this is how you turn the integer <tt>number</tt> into a character:</p>
 
     <pre class="sh_java">
 int number = 17;
 char symbol = "abcdefghijklmnopqrstuvwxyz".charAt(number);
     </pre>
 
-    <p><b>Tip 2:</b> The tip in assignment 58 might be useful in this one too.</p>
+    <p>*Tip 2:* The tip in assignment 58 might be useful in this one too.</p>
   </div>
 
   <div class="tehtava">
@@ -2787,7 +2787,7 @@ Lottery numbers:
 2 9 11 18 23 32 34
     </pre>
 
-    <p><strong>Note!</strong> a number can be in one set of numbers only once (per draw of
+    <p>*Note!* a number can be in one set of numbers only once (per draw of
     course).</p>
   </div>
 
@@ -2856,7 +2856,7 @@ public class HangmanLogic {
       the functionality of the methods <code>guessLetter(String letter)</code> and
       <code>hiddenWord()</code></em>.</p>
 
-    <p><strong>Testing the code</strong></p>
+    <p>*Testing the code*</p>
 
     <p>The TMC project includes <em>two</em> classes that help you with testing. The class
     <code>Main</code> starts the graphical version of the game. The class <code>TestProgram</code>
@@ -2951,4 +2951,3 @@ game.start();
             </div>
         </div>
     </section>
-

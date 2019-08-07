@@ -1,0 +1,48 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 68: Is the number more than once in the list?</summary>
+++++
+Create the method `moreThanOnce` that gets a list of integers and an integer (i.e.
+number) as parameter. If the number appears on the list *more than once* the method returns
+`true` and otherwise `false`.
+
+The program body is the following:
+
+[source,java]
+----
+public static boolean moreThanOnce(ArrayList<Integer> list, int number) {
+    // write your code here
+}
+
+public static void main(String[] args) {
+    Scanner reader = new Scanner(System.in);
+
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    list.add(3);
+    list.add(2);
+    list.add(7);
+    list.add(2);
+
+    System.out.println("Type a number: ");
+    int number = Integer.parseInt(reader.nextLine());
+    if (moreThanOnce(list, number)) {
+        System.out.println(number + " appears more than once.");
+    } else {
+        System.out.println(number + " does not appear more than once.");
+    }
+}
+----
+
+[source]
+----
+Type a number: <font color="red">2</font>
+2  appears more than once
+----
+
+[source]
+----
+Type a number: <font color="red">3</font>
+3 does not appear more than once.
+----
+++++
+</details></div><!-- end 68 -->
+++++

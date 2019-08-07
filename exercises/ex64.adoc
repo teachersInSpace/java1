@@ -1,0 +1,41 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 64: Average of numbers</summary>
+++++
+
+Create the method `average`, which receives a list of numbers
+(`ArrayList<Integer>`) as a parameter and then calculates the average of the items
+in that list.
+
+*Note:* the method should use the method `sum` from the previous exercise to
+calculate the sum of the parameters.
+
+Create the method using the following program body:
+
+[source,java]
+----
+public static double average(ArrayList<Integer> list) {
+  // write your code here
+}
+
+public static void main(String[] args) {
+  ArrayList&lt;Integer&gt; list = new ArrayList<Integer>();
+  list.add(3);
+  list.add(2);
+  list.add(7);
+  list.add(2);
+
+  System.out.println("The average is: " + average(list));
+}
+----
+
+Program output:
+
+[source]
+----
+
+
+The average is: 3.5
+----
+++++
+</details></div><!-- end 64 -->
+++++

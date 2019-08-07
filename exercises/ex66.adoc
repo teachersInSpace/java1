@@ -1,0 +1,34 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 66: The Greatest</summary>
+++++
+
+Create the method `greatest`, which receives a list of numbers
+(`ArrayList<Integer>`) as a parameter and then returns the greatest number in the list
+as a return value.
+
+[source,java]
+----
+public static int greatest(ArrayList<Integer> list) {
+    // write your code here
+}
+
+public static void main(String[] args) {
+    ArrayList<Integer> list = new ArrayList<>();
+    list.add(3);
+    list.add(2);
+    list.add(7);
+    list.add(2);
+
+    System.out.println("The greatest number is: " + greatest(list));
+}
+----
+
+Program output:
+
+[source]
+----
+The greatest number is: 7
+----
+++++
+</details></div><!-- end ex 66-->
+++++

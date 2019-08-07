@@ -662,7 +662,7 @@ public static void main(String[] args) {
     teachers.add("Matt");
 
     int place = 0;
-    while ( place &lt; teachers.size() )  // remember why place &lt;= teachers.size() doesn't work?
+    while ( place < teachers.size() )  // remember why place <= teachers.size() doesn't work?
         System.out.println( teachers.get(place) );
         place++;
     }
@@ -842,7 +842,7 @@ not usually what iwhat you want, so we are forced to handle the printing ourself
 `for` command.
 
 
-<h3>Numbers in an ArrayList</h3>
+=== Numbers in an ArrayList
 
 ArrayLists can be used to store any type of values. If the stored variables are of integer type, there
 are a couple of details to remember. An integer ArrayList is defined like this:
@@ -855,7 +855,7 @@ numbers::
 [source,java]
 ----
 public static void main(String[] args) {
-    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+    ArrayList<Integer> numbers = new ArrayList<>();
 
     numbers.add(4);
     numbers.add(8);
@@ -872,98 +872,19 @@ public static void main(String[] args) {
 items in the list, so the command generates an error. We must use a slightly more complicated command if
 the number 4 needs to be removed: `numbers.remove( Integer.valueOf(4) );`
 
-ArrayLists can also be used to store `double`s (decimal numbers) and characters (`char` variables). The lists can be defined as follows:
+ArrayLists can also be used to store `doubles` (decimal numbers) and characters (`char` variables). The lists can be defined as follows:
 
 [source,java]
 ----
-
-        ArrayList&lt;Double&gt; doubles = new ArrayList&lt;Double&gt;();
-        ArrayList&lt;Character&gt; characters = new ArrayList&lt;Character&gt;();
+      ArrayList<Double> doubles = new ArrayList<>();
+      ArrayList<Character> characters = new ArrayList<>();
 ----
 
-<div class="tehtavat">
-  <div class="tehtava">
-    <h3 class="req">Sum of the numbers</h3>
+include::{exercises}/ex63.adoc[]
 
-    Create the method `sum`, which receives a list of numbers
-    (`ArrayList&lt;Integer&gt;`) as a parameter and then calculates the sum of the items in
-    that list.
+include::{exercises}/ex64.adoc[]
 
-    Create the method using the following program body:
-
-[source,java]
-----
-public static int sum(ArrayList&lt;Integer&gt; list) {
-    // write your code here
-}
-
-public static void main(String[] args) {
-    ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
-    list.add(3);
-    list.add(2);
-    list.add(7);
-    list.add(2);
-
-    System.out.println("The sum: " + sum(list));
-
-    list.add(10);
-
-    System.out.println("the sum: " + sum(list));
-}
-    ----
-
-    Program output:
-
-[source]
-----
-
-
-The sum: 14
-The sum: 24
-    ----
-  </div>
-
-  <div class="tehtava">
-    <h3 class="req">Average of numbers</h3>
-
-    Create the method `average`, which receives a list of numbers
-    (`ArrayList&lt;Integer&gt;`) as a parameter and then calculates the average of the items
-    in that list.
-
-    <b>Note:</b> the method should use the method `sum` from the previous exercise to
-    calculate the sum of the parameters.
-
-    Create the method using the following program body:
-
-[source,java]
-----
-public static double average(ArrayList&lt;Integer&gt; list) {
-    // write your code here
-}
-
-public static void main(String[] args) {
-    ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
-    list.add(3);
-    list.add(2);
-    list.add(7);
-    list.add(2);
-
-    System.out.println("The average is: " + average(list));
-}
-    ----
-
-    Program output:
-
-[source]
-----
-
-
-The average is: 3.5
-    ----
-  </div>
-</div>
-
-<h3>ArrayList as return value of a method</h3>
+=== ArrayList as return value of a method
 
 ArrayList can also be returned from a method as a return value. In the next example, a method creates an
 ArrayList, adds three integers into the list and then returns the list. Pay attention to how the main program
@@ -974,8 +895,8 @@ value:
 ----
 public class Main {
 
-    public static ArrayList&lt;Integer&gt; addNumbersToList(int num1, int num2, int num3){
-        ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
+    public static ArrayList<Integer> addNumbersToList(int num1, int num2, int num3){
+        ArrayList<Integer> list = new ArrayList<Integer>();
 
         list.add(num1);
         list.add(num2);
@@ -985,7 +906,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        ArrayList&lt;Integer&gt; numbers = addNumbersToList(3, 5, 2);
+        ArrayList<Integer> numbers = addNumbersToList(3, 5, 2);
 
         for (int number : numbers) {
             System.out.println( number );
@@ -995,121 +916,11 @@ public class Main {
 ----
 
 
-<div class="tehtavat">
-  <div class="tehtava">
-    <h3 class="req">The lengths of the Strings</h3>
+include::{exercises}/ex65.adoc[]
 
-    Create the method `lengths` that gets a list of String variables as a parameter and
-    returns an ArrayList that contains the lengths of the Strings in the same order as the original
-    list.
+include::{exercises}/ex66.adoc[]
 
-[source,java]
-----
-public static ArrayList&lt;Integer&gt; lengths(ArrayList<String> list) {
-    // write your code here
-}
-
-public static void main(String[] args) {
-    ArrayList<String> list = new ArrayList<String>();
-    list.add("Hallo");
-    list.add("Moi");
-    list.add("Benvenuto!");
-    list.add("badger badger badger badger");
-    ArrayList&lt;Integer&gt; lengths = lengths(list);
-
-    System.out.println("The lengths of the Strings: " + lengths);
-}
-    ----
-
-    Program output:
-
-[source]
-----
-
-
-The lengths of the Strings: [5, 3, 10, 27]
-    ----
-  </div>
-  <div class="tehtava">
-
-    <h3>The Greatest</h3>
-
-    Create the method `greatest`, which receives a list of numbers
-    (`ArrayList&lt;Integer&gt;`) as a parameter and then returns the greatest number in the list
-    as a return value.
-
-[source,java]
-----
-public static int greatest(ArrayList&lt;Integer&gt; list) {
-    // write your code here
-}
-
-public static void main(String[] args) {
-    ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
-    list.add(3);
-    list.add(2);
-    list.add(7);
-    list.add(2);
-
-    System.out.println("The greatest number is: " + greatest(list));
-}
-    ----
-
-    Program output:
-
-[source]
-----
-
-
-The greatest number is: 7
-    ----
-  </div>
-  <div class="tehtava">
-
-    <h3>Variance</h3>
-
-    Create the method `variance`, which receives a list of integers as a parameter and then returns
-    the sample variance of that list. You can check how a sample variance is calculated in <a href=
-      "http://en.wikipedia.org/wiki/Variance#Population_variance_and_sample_variance">Wikipedia</a>, under
-    "Population variance and sample variance".
-
-    <b>Note:</b> the method should use the method `average` of exercise 64 to calculate the
-    average of the parameters. The method should be called only once!
-
-[source,java]
-----
-public static double variance(ArrayList&lt;Integer&gt; list) {
-    // write your code here
-}
-
-public static void main(String[] args) {
-    ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
-    list.add(3);
-    list.add(2);
-    list.add(7);
-    list.add(2);
-
-    System.out.println("The variance is: " + variance(list));
-}
-    ----
-
-    Program output:
-
-[source]
-----
-
-
-The variance is: 5.666667
-    ----
-
-    (The average of the numbers is 3.5, so the sample variance is ((3 - 3.5)² + (2 - 3.5)² + (7 - 3.5)²
-    + (2 - 3.5)²)/(4 - 1) ? 5,666667.)
-
-    *Note while testing your program!* Sample variance for a list that
-    contains only one item is not defined! It causes a division by zero in the formula. Java considers
-    the result of division by zero as a *Not a Number* (`NaN`).
-  </div>
-</div>
+include::{exercises}/ex67.adoc[]
 
 <h2>Using truth values</h2>
 
@@ -1123,7 +934,7 @@ int num2 = 5;
 
 boolean firstGreater = true;
 
-if (num1 &lt;= num2) {
+if (num1 <= num2) {
     firstGreater = false;
 }
 
@@ -1167,7 +978,7 @@ if (!firstGreater) {  // means the same as firstGreater==false
 ----
 
 
-<h3>Methods that return a truth value</h3>
+=== Methods that return a truth value
 
 Truth values come in especially handy when we want to write methods that check for validity. Let us create a
 method that checks if the list it gets as a parameter includes only positive numbers (here 0 is considered
@@ -1175,11 +986,11 @@ positive). The method returns the information as a boolean (i.e. truth value).
 
 [source,java]
 ----
-public static boolean allPositive(ArrayList&lt;Integer&gt; numbers) {
+public static boolean allPositive(ArrayList<Integer> numbers) {
     boolean noNegative = true;
 
     for (int number : numbers) {
-        if (number &lt; 0) {
+        if (number < 0) {
             noNegative = false;
         }
     }
@@ -1201,7 +1012,7 @@ The method is used as follows:
 ----
 public static void main(String[] args) {
 
-    ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+    ArrayList<Integer> numbers = new ArrayList<>();
     numbers.add(3);
     numbers.add(1);
     numbers.add(-1);
@@ -1221,7 +1032,7 @@ the condition:
 
 [source,java]
 ----
-ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();
+ArrayList<Integer> numbers = new ArrayList<>();
 numbers.add(4);
 numbers.add(7);
 numbers.add(12);
@@ -1234,16 +1045,16 @@ if (allPositive(numbers)) {
 }
 ----
 
-<h3>The return command and ending a method</h3>
+=== The return command and ending a method
 
 The execution of a method is stopped immediately when a command called `return` is executed.
 Using this information to our advantage, we write the `allPositive` method easier to understand.
 
 [source,java]
 ----
-public static boolean allPositive(ArrayList&lt;Integer&gt; numbers) {
+public static boolean allPositive(ArrayList<> numbers) {
     for (int number : numbers) {
-        if (number &lt; 0) {
+        if (number < 0) {
             return false;
         }
     }
@@ -1258,106 +1069,6 @@ When we are going through the list of numbers and we find a negative number, we 
 returning false. If there are no negative numbers on the list, we get to the end and therefore can return the value true.
 We now got rid of the helper variable inside the method!
 
-<div class="tehtavat">
-  <div class="tehtava">
-    <h3 class="req">Is the number more than once in the list?</h3>
+include::{exercises}/ex68.adoc[]
 
-    Create the method `moreThanOnce` that gets a list of integers and an integer (i.e.
-    number) as parameter. If the number appears on the list *more than once* the method returns
-    `true` and otherwise `false`.
-
-    The program body is the following:
-
-[source,java]
-----
-public static boolean moreThanOnce(ArrayList&lt;Integer&gt; list, int number) {
-    // write your code here
-}
-
-public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
-
-    ArrayList&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;();
-    list.add(3);
-    list.add(2);
-    list.add(7);
-    list.add(2);
-
-    System.out.println("Type a number: ");
-    int number = Integer.parseInt(reader.nextLine());
-    if (moreThanOnce(list, number)) {
-        System.out.println(number + " appears more than once.");
-    } else {
-        System.out.println(number + " does not appear more than once.");
-    }
-}
-    ----
-
-[source]
-----
-
-
-Type a number: <font color="red">2</font>
-2  appears more than once
-    ----
-
-[source]
-----
-
-
-Type a number: <font color="red">3</font>
-3 does not appear more than once.
-    ----
-  </div>
-
-  <div class="tehtava">
-    <h3>Palindrome</h3>
-
-    Create the method `palindrome` that checks if a string is a palindrome (reads
-    the same forward and backward).
-
-    The method can use the method `reverse` (<a href="#e56">from assignment number 56.
-      Reversing text</a>) as a helper. The method type is `boolean`, so it returns either
-    `true` (the string is a palindrome) or `false` (the string is not a
-    palindrome).
-
-[source,java]
-----
-public static boolean palindrome(String text) {
-    // write your code here
-}
-
-public static void main(String[] args) {
-    Scanner reader = new Scanner(System.in);
-
-    System.out.println("Type a text: ");
-    String text = reader.nextLine();
-    if (palindrome(text)) {
-       System.out.println("The text is a palindrome!");
-    } else {
-       System.out.println("The text is not a palindrome!");
-    }
-}
-    ----
-
-    Example outputs:
-
-[source]
-----
-
-
-Type a text: <font color="red">madam</font>
-The text is a palindrome!
-    ----
-
-[source]
-----
-
-
-Type a word: <font color="red">example</font>
-The text is not a palindrome!
-    ----
-  </div>
-</div>
-    </div>
-    </section>
+include::{exercises}/ex69.adoc[]

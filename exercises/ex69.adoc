@@ -1,0 +1,47 @@
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 69: Palindrome</summary>
+++++
+Create the method `palindrome` that checks if a string is a palindrome (reads
+the same forward and backward).
+
+The method can use the method `reverse` (<a href="#e56">from assignment number 56.
+  Reversing text</a>) as a helper. The method type is `boolean`, so it returns either
+`true` (the string is a palindrome) or `false` (the string is not a
+palindrome).
+
+[source,java]
+----
+public static boolean palindrome(String text) {
+    // write your code here
+}
+
+public static void main(String[] args) {
+    Scanner reader = new Scanner(System.in);
+
+    System.out.println("Type a text: ");
+    String text = reader.nextLine();
+    if (palindrome(text)) {
+       System.out.println("The text is a palindrome!");
+    } else {
+       System.out.println("The text is not a palindrome!");
+    }
+}
+----
+
+Example outputs:
+
+[source]
+----
+Type a text: <font color="red">madam</font>
+The text is a palindrome!
+----
+
+[source]
+----
+Type a word: <font color="red">example</font>
+The text is not a palindrome!
+----
+++++
+</details></div><!-- end ex 69 -->
+++++

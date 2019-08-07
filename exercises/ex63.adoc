@@ -1,0 +1,41 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 63: Sum of the numbers</summary>
+++++
+
+Create the method `sum`, which receives a list of numbers
+(`ArrayLis<Integer>;`) as a parameter and then calculates the sum of the items in
+that list.
+
+Create the method using the following program body:
+
+[source,java]
+----
+public static int sum(ArrayList<Integer> list) {
+    // write your code here
+}
+
+public static void main(String[] args) {
+    ArrayList<Integer> list = new ArrayList<>();
+    list.add(3);
+    list.add(2);
+    list.add(7);
+    list.add(2);
+
+    System.out.println("The sum: " + sum(list));
+
+    list.add(10);
+
+    System.out.println("the sum: " + sum(list));
+}
+----
+
+Program output:
+
+[source]
+----
+The sum: 14
+The sum: 24
+----
+++++
+</details></div><!-- end 63 -->
+++++
