@@ -1,0 +1,33 @@
+= {doctitle}
+:author: Richard van den Ham, Pieter van den Hombergh, Geert Monsieur, Stefan Sobek, Linda Urselmans
+:version: V1.3  2019-0712
+:toc: right
+:toclevels: 4
+:icons: font
+:exercises: ../exercises
+:apidocs: ../apidocs
+:topics: ../topics
+:docinfo: shared
+:docbase: ../
+:sourcedir: ../exercises/code
+:description: This site contains all exercises for week 1 of PRC1 (Java Programming 1), starting in August 2019.
+:keywords: Java 1 SEBI Venlo
+:source-highlighter: highlightjs
+:highlightjs-theme: agate
+:highlightjs-linenums-mode: inline
+:linkattrs: true
+:stem: latexmath
+
+
+// remember that icons live in dir ../images/icons by virtue of the asciidoctor cmd settings and some conventions in asciidoctor it selves.
+:extra: icon="extra_challenge_small.png", caption="ExtraChallenge"
+
+
+toc::[]
+
+[#main-menu,cols="{tabcolumns}"]
+|===
+|link:../index.html[START] |week|link:week01.html[01] |link:week02.html[02] |link:week03.html[03] |link:week04.html[04] |link:week05.html[05] |link:week06.html[06] |link:week07.html[07] |link:week08.html[08] |link:week09.html[09] |link:week10.html[10] |link:week11.html[11] |link:week12.html[12] |link:tips.html[TIPS] |link:assessmentcorrectionrules.html[PA]
+|===
+
+:numbered:

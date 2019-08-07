@@ -1,0 +1,5 @@
+.SUFFIXES:
+.SUFFIXES: adoc html
+
+%.html: %.adoc
+	asciidoctor -a linkcss -a stylesdir=$(CSSDIR) -a stylesheet=java1.css  $<
