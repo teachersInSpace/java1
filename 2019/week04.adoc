@@ -1,8 +1,20 @@
+
+:doctitle: Methods and copying parameters
+:tabcolumns: d,h,d,d,d,h,d,d,d,d,d,d,d,d,d,d
+include::../commonhead.adoc[]
+
+[#_part1_1]
+:source-language: java
+:numbered!:
+
+== MOOC Material Week 4
+
+:numbered:
 == Methods and copying parameters
 
 Let us focus on a couple of details concerning methods.
 
-  In section 15 was an example, in which we tried to change the value of a main program variable
+  In section 15 there was an example, in which we tried to change the value of a main program variable
   inside a method.
 
 [source,java]
@@ -19,15 +31,15 @@ public static void addThree() {
 ----
 
 This program of ours does not work. The reason is that the method cannot access the main program variable
-  `number`.
+`number`.
 
 This is because main program variables are not visible to methods. More generally: no method
-  variable is visible to other methods. As the main program `main` is also a method, this constraint
-  holds for the main program as well. The only way to give information to a method is through
-  parameters.
+variable is visible to other methods. As the main program `main` is also a method, this constraint
+holds for the main program as well. The only way to give information to a method is through
+parameters.
 
-  Let us try to fix the above example by passing the main program variable `number` to the
-  method as a parameter.
+Let us try to fix the above example by passing the main program variable `number` to the
+method as a parameter.
 
 [source,java]
 ----
@@ -174,11 +186,11 @@ wire and the method can access the parameter directly.
     <div class="tehtava">
       <h3>Combining ArrayLists</h3>
 
-      Create the method `public static void combine(ArrayList<Integer> first,
-        ArrayList<Integer> second)` that inserts the items in a list called
-      `second` to a list called `first`. The order of the items can be
-      anything and the same item can appear in the list more than once. An example on using the
-      method:
+Create the method `public static void combine(ArrayList<Integer> first,
+  ArrayList<Integer> second)` that inserts the items in a list called
+`second` to a list called `first`. The order of the items can be
+anything and the same item can appear in the list more than once. An example on using the
+method:
 
 [source,java]
 ----
