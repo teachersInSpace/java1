@@ -402,7 +402,8 @@ DEPRECATED
   After the now taken measures the code still has some repetition left, the reading of the line numbers. Create the method `public static int askLineNumber(String question,
  Scanner reader)`. This method prints the question and reads the line number. Return value is -1 if the user entered a blank line (i.e. just pressed enter).
 *Hint:* you can use the following method body:
-<pre class="sh_java">
+[source,java]
+----
     public static int askLineNumber(String question, Scanner reader) {
         System.out.println(question);
         String line = // read a line from the user
@@ -410,10 +411,11 @@ DEPRECATED
         if (line.isEmpty()) {
             return -1;
         }
-        // otherwise turn the line variable into an integer using Integer.parseint and return that
-        return ...
+        // otherwise turn the line variable into an integer using Integer.parseInt and return that
+        return ...;
     }
 ----
+
   <h4>Call the method `askLineNumber` from the method `remove`</h4>
   The method `remove` reads a line number from the user.
 Change the `remove` method to use the `askLineNumber` method you just created.
@@ -433,7 +435,7 @@ Use the `askLineNumber` method to read the line number.
 Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo käännetty tehtävä
 -->
 
-<h2 id="olio_ohjelmointi">Object-oriented programming</h2>
+== Object-oriented programming
 
 Before we begin, here is a small introduction to object-oriented programming.
 
@@ -557,6 +559,8 @@ creates the object with the command `new`. For example, a new instance is create
 class Scanner by calling `new Scanner(..)`:
 
 <pre class="sh_java">
+[source,java]
+----
 Scanner reader = new Scanner(System.in);
 ----
 
@@ -589,21 +593,21 @@ System.out.println(bartosAccount);
 System.out.println(bartosSwissAccount);
 ----
 
-    <h4>Your first account</h4>
+<h4>Your first account</h4>
 
-    *Note:* there is a different exercise template for each of the sub-exercises.
-    For this exercise use the template 072.1
+*Note:* there is a different exercise template for each of the sub-exercises.
+For this exercise use the template 072.1
 
-    Create a program that creates an account with the balance of 100.0, deposits 20.0 and prints
-    the account. *Note!* do all the steps described in the exercise exactly in the
-    described order!
+Create a program that creates an account with the balance of 100.0, deposits 20.0 and prints
+the account. *Note!* do all the steps described in the exercise exactly in the
+described order!
 
-    <h4>Your first money transfer</h4>
+<h4>Your first money transfer</h4>
 
-    *Note:* there is a different exercise template for each of the sub-exercises.
-    For this exercise use the template 072.2
+*Note:* there is a different exercise template for each of the sub-exercises.
+For this exercise use the template 072.2
 
-    Create a program that:
+Create a program that:
 
     <ol>
       <li>Creates an account named `"Matt's account"` with the balance
@@ -656,15 +660,14 @@ individual.
 Let us go ahead and assume that we have a project frame with an empty main program:
 
 <pre class="sh_java sh_sourceCode">
-<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
-"sh_normal"> </span><span class="sh_classname">Main</span> <span class="sh_cbracket">{</span>
+[source,java]
+----
+public class Main {
 
-    <span class="sh_keyword">public</span> <span class="sh_keyword">static</span> <span class=
-"sh_type">void</span> <span class="sh_function">main</span><span class="sh_symbol">(</span>String<span class=
-"sh_symbol">[]</span> args<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
-    <span class="sh_cbracket">}</span>
+    public static void main(String[] args) {
+    }
 
-<span class="sh_cbracket">}</span>
+}
 ----
 
 We will create a new class in our project. In NetBeans, this can be done in <em>projects</em> on the
@@ -681,26 +684,32 @@ Let us create a class named `Person`. The class will exist in its own
 `Person.java` file. Since the main program is in its own file the program now consists of
 two files in total. At first the class will be empty:
 
-<pre class="sh_java sh_sourceCode">
-<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
-"sh_normal"> </span><span class="sh_classname">Person</span> <span class="sh_cbracket">{</span>
+[source,java]
+----
+public class Person {
 
-<span class="sh_cbracket">}</span>
+}
+----
+
+[source,java]
+----
+public class Person {
+    private String name;
+    private int age;
+}
 ----
 
 The class has to define what methods and attributes the objects created from the class will have.
 Let us decide that each person has a name and an age. It feels natural to represent the name as a
 String and the age as an integer. Let us add this to our schematics:
 
-<pre class="sh_java sh_sourceCode">
-<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
-"sh_normal"> </span><span class="sh_classname">Person</span> <span class="sh_cbracket">{</span>
-    <span class="sh_keyword">private</span> <span class="sh_usertype">String</span><span class=
-"sh_normal"> </span>name<span class="sh_symbol">;</span>
-    <span class="sh_keyword">private</span> <span class="sh_type">int</span> age<span class="sh_symbol">;</span>
-<span class="sh_cbracket">}</span>
+[source,java]
 ----
-
+public class Person {
+    private String name;
+    private int age;
+}
+----
 Above, we defined that all instances created from the `Person` class have a name and an
 age. Defining attributes is done in a quite similar fashion as with normal variables. In this case
 though, there is the keyword `private` in front. This keyword means that `name`
@@ -721,15 +730,12 @@ created for the most part in the same way as ready-made objects (`ArrayList` obj
 are created. Objects are created with the `new` command. When creating an object it would be
 handy to be able to set the values of some of the variables of that object.
 
-<pre class="sh_java sh_sourceCode">
-    <span class="sh_keyword">public</span> <span class="sh_keyword">static</span> <span class=
-"sh_type">void</span> <span class="sh_function">main</span><span class="sh_symbol">(</span>String<span class=
-"sh_symbol">[]</span> args<span class="sh_symbol">)</span> <span class="sh_cbracket">{</span>
-        <span class="sh_usertype">Person</span><span class="sh_normal"> </span>bob <span class=
-"sh_symbol">=</span> <span class="sh_keyword">new</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_string">"Bob"</span><span class="sh_symbol">);</span>
-        <span class="sh_comment">// ...</span>
-    <span class="sh_cbracket">}</span>
+[source,java]
+----
+public static void main(String[] args) {
+        Person bob = new Person("Bob");
+        // ...
+    }
 ----
 
 This can be achieved by defining the method that creates the object, <em>the constructor</em>. The
@@ -737,22 +743,17 @@ constructor for the `Person` class that creates a new `Person` object has been
 defined in the following example. In the constructor, the person that is being created gets 0 as her age and her
 name is received from the parameter of the constructor.
 
-<pre class="sh_java sh_sourceCode">
-<span class="sh_keyword">public</span> <span class="sh_keyword">class</span><span class=
-"sh_normal"> </span><span class="sh_classname">Person</span> <span class="sh_cbracket">{</span>
-    <span class="sh_keyword">private</span> <span class="sh_usertype">String</span><span class=
-"sh_normal"> </span>name<span class="sh_symbol">;</span>
-    <span class="sh_keyword">private</span> <span class="sh_type">int</span> age<span class="sh_symbol">;</span>
+[source,java]
+----
+public class Person {
+    private String name;
+    private int age;
 
-    <span class="sh_keyword">public</span> <span class="sh_function">Person</span><span class=
-"sh_symbol">(</span><span class="sh_usertype">String</span><span class="sh_normal"> </span>initialName<span class=
-"sh_symbol">)</span> <span class="sh_cbracket">{</span>
-        <span class="sh_keyword">this</span><span class="sh_symbol">.</span>age <span class=
-"sh_symbol">=</span> <span class="sh_number">0</span><span class="sh_symbol">;</span>
-        <span class="sh_keyword">this</span><span class="sh_symbol">.</span>name <span class=
-"sh_symbol">=</span> initialName<span class="sh_symbol">;</span>
-    <span class="sh_cbracket">}</span>
-<span class="sh_cbracket">}</span>
+    public Person(String initialName) {
+        this.age = 0;
+        this.name = initialName;
+    }
+}
 ----
 
 The constructor always has the same name as the class. In the code above, the class is
