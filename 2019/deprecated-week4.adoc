@@ -1,0 +1,53 @@
+<!--
+*DEPRECATED*
+
+<div class="tehtavat">
+  <h3>Texter</h3>
+*Note: the assignment has proved to be quite challenging for the first assignment of the week. If you do not immediately get what is the point in this assignment, skip it and do the rest of the assignments first before getting back to this.*
+  The assignment files contain a text editor made by Curtis Coder. The program is created as one single method!  Your job is to <em>refactor the code</em>, meaning that you should clean the code up following the principals given in the example above.
+  <h4>Commands away from main</h4>
+   Create an own method for each of the commands excluding quit. The method that corresponds to the command gets a reader (so that it can interact with the user) and a list of lines (so that it is able to modify them) as parameters. Create the methods:
+    <ul>
+      <li>`public static void print(Scanner reader, ArrayList<String> lines)`</li>
+      <li>`public static void reset(Scanner reader, ArrayList<String> lines)`</li>
+      <li>`public static void remove(Scanner reader, ArrayList<String> lines)`</li>
+      <li>`public static void add(Scanner reader, ArrayList<String> lines)`</li>
+      <li>`public static void count(Scanner reader, ArrayList<String> lines)`</li>
+    </ul>
+  After the methods are finished you should change the main method code so that it uses the newly-created methods to implement the commands. The new main method should only ask the name of the command from the user and then call the right method (from the list above) to do the work. The program should work like the original did regardless of the cleanup!
+  <h4>Reading the line number</h4>
+  After the now taken measures the code still has some repetition left, the reading of the line numbers. Create the method `public static int askLineNumber(String question,
+ Scanner reader)`. This method prints the question and reads the line number. Return value is -1 if the user entered a blank line (i.e. just pressed enter).
+*Hint:* you can use the following method body:
+[source,java]
+----
+    public static int askLineNumber(String question, Scanner reader) {
+        System.out.println(question);
+        String line = // read a line from the user
+        // if the line was empty, -1 gets returned;
+        if (line.isEmpty()) {
+            return -1;
+        }
+        // otherwise turn the line variable into an integer using Integer.parseInt and return that
+        return ...;
+    }
+----
+
+  <h4>Call the method `askLineNumber` from the method `remove`</h4>
+  The method `remove` reads a line number from the user.
+Change the `remove` method to use the `askLineNumber` method you just created.
+  <h4>Call the `askLineNumber` method from the method `add`</h4>
+  The method `add` reads a line number from the user as well.
+Use the `askLineNumber` method to read the line number.
+  <h3>The least common multiple</h3>
+  In this assignment the least common multiple of two numbers is calculated using their greatest common divisor.
+  <a href="http://en.wikipedia.org/wiki/Least_common_multiple">The least common multiple</a> is the smallest whole number that is exactly divisible (i.e. remainder is 0) by the numbers in question. It can be calculated easily, if we know the greatest common divisor of the numbers.
+<a href="http://en.wikipedia.org/wiki/Greatest_common_divisor">The greatest common divisor</a> means the greatest number that divides the numbers in question so that the result is a whole number.
+  For example, the greatest common divisor of the numbers 32 and 6 is 2, because 32 / 2 = 16 and 6 / 2 = 3 and there is no greater number that those two numbers could be exactly divided with.
+  The least common multiple of the numbers 32 and 6 is 96, because 96 / 32 = 3 ja 96 / 6 = 16, and there is no smaller number that those two numbers could be exactly divided with.
+  <h4>Calculating the greatest common divisor</h4>
+  Create the method `public static int greatestCommonDivisor(int number1, int number2)` into the class `LeastCommonMultiple`. The method calculates the greatest common divisor of the two numbers it gets as parameters and retuns the resulting number.
+-->
+<!--
+Alla oleva materiaali on nyt oikea. Sisältää jo koko ohpen. Mukaanlukien 1 jo käännetty tehtävä
+-->
