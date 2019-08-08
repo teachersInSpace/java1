@@ -46,3 +46,6 @@ target/2019/week04.html: src/2019/week04.adoc $(HEADERS) $(TARGETCSS)
 	asciidoctor -a linkcss -a stylesdir=../css -a stylesheet=java1.css  $< -o $@
 
 
+clean:
+	rm -fr target
+
