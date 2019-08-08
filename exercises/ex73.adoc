@@ -1,0 +1,24 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 73: Product</summary>
+++++
+
+Create a class `Product` that represents a product sold in a webshop. A product
+has a price, amount and name.
+
+A new class can be created as follows: Point at the project _073.Product_ in the
+_projects_ tab and click the right mouse button. Then select _new_ and _java class_.
+When a dialog opens, give the class the name `Product`.
+
+The class should have:
+
+* A constructor `public Product(String nameAtStart, double priceAtStart, int amountAtStart)`
+* A method `public void printProduct()` that prints a product in the following
+ form:
+
+[source]
+----
+Banana, price 1.1, amount 13
+----
+++++
+</details></div><!-- end 73 -->
+++++

@@ -1,0 +1,61 @@
+
+++++
+<div class='ex'><details class='ex'><summary>Exercise 76: Menu </summary>
+++++
+
+
+
+In this assignment, we will implement a class `Menu` that holds information about
+meals that are available in a cafeteria.
+
+Our starting point is the following class skeleton:
+
+[source,java]
+----
+import java.util.ArrayList;
+
+public class Menu {
+
+    private ArrayList<String> meals;
+
+    public Menu() {
+        this.meals = new ArrayList<String>();
+    }
+
+    // Implement the methods here
+}
+----
+
+Menu objects store the information of meals using an object variable of type
+`ArrayList<String>`
+
+++++
+<h4>Adding a meal to menu</h4>
+++++
+Implement the method `public void addMeal(String meal)` that adds a new meal to
+the list `this.meals` of a Menu object. If the meal is already in the list, it
+should not be added.
+
+++++
+<h4>Printing the menu</h4>
+++++
+Implement the method `public void printMeals()` that prints the meals in a menu.
+As an example, the output after three additions could be:
+
+[source]
+----
+Hamburger
+Fish'n'Chips
+Sauerkraut
+----
+++++
+<h4>Clearing a menu</h4>
+++++
+Implement the method `public void clearMenu()` that clears a menu. After
+calling this method, the menu should be empty. Class `ArrayList` has a method that is
+useful here. Within your method body write `meals.` and see how NetBeans helps you
+by showing the available methods.
+
+++++
+</details></div><!-- end ex 76 -->
+++++

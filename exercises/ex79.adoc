@@ -1,0 +1,172 @@
+++++
+<div class='ex'><details class='ex'><summary>Exercise 79: NumberStatistics</summary>
+++++
+
++++<h4 class="req">Amount of numbers</h4>+++
+
+Implement class `NumberStatistics` with the following methods:
+
+* `addNumber` adds a new number to the statistics
+* `amountOfNumbers` tells us how many numbers have been added to the
+  statistics
+
+Note that the class <em>should not store</em> the added numbers. At this stage, it is enough
+to remember how many added numbers there are, i.e. how many times the method
+`addNumber` has been called.
+
+The class skeleton:
+
+[source,java]
+----
+public class NumberStatistics {
+    private int amountOfNumbers;
+
+    public NumberStatistics() {
+        // initialize here the object variable amountOfNumbers
+    }
+
+    public void addNumber(int number) {
+        // code here
+    }
+
+    public int amountOfNumbers() {
+        // code here
+    }
+}
+----
+
+A usage example:
+
+[source,java]
+----
+public class Main {
+   public static void main(String[] args) {
+      NumberStatistics stats = new NumberStatistics();
+      stats.addNumber(3);
+      stats.addNumber(5);
+      stats.addNumber(1);
+      stats.addNumber(2);
+      System.out.println("Amount: " + stats.amountOfNumbers());
+    }
+}
+----
+
+The output should be:
+
+[source]
+----
+Amount: 4
+----
+
++++<h4 class="req">sum and average</h4>+++
+
+Add the following methods to the class:
+
+* `sum` returns the sum of the added numbers (if no numbers added, the sum is  0)
+* `average` returns the average of the added numbers (if no numbers added, the
+  average is 0)
+
+The class skeleton now:
+
+[source,java]
+----
+public class NumberStatistics {
+    private int amountOfNumbers;
+    private int sum;
+
+    public NumberStatistics() {
+        // initialize here the object variable amountOfNumbers
+    }
+
+    public void addNumber(int number) {
+        // code here
+    }
+
+    public int amountOfNumbers() {
+        // code here
+    }
+
+    public int sum() {
+        // code here
+    }
+
+    public double average() {
+        // code here
+    }
+}
+----
+
+A usage example:
+
+[source,java]
+----
+public class Main {
+    public static void main(String[] args) {
+        NumberStatistics stats = new NumberStatistics();
+        stats.addNumber(3);
+        stats.addNumber(5);
+        stats.addNumber(1);
+        stats.addNumber(2);
+        System.out.println("Amount: " + stats.amountOfNumbers());
+        System.out.println("sum: " + stats.sum());
+        System.out.println("average: " + stats.average());
+    }
+}
+----
+
+The output should be:
+[source]
+----
+Amount: 4
+sum: 11
+average: 2.75
+----
+
++++<h4 class="req">Asking for numbers from the user</h4>+++
+
+Create a program that asks the user to input numbers of type integer. When the user
+gives -1, the program stops and prints the sum of the given numbers (excluding the -1).
+
+*Note:* you should not make any changes to class NumberStatistics!
+
+The program should use a `NumberStatistics` object to calculate the sum.
+
+[source]
+----
+Type numbers:
+4
+2
+5
+4
+-1
+sum: 15
+----
+
++++<h4>Many sums</h4>+++
+
+Change your program so that it also calculates the sum of even and odd numbers in the user
+input (again -1 excluded).
+
+*NOTE*: define in your program <i>three</i> `NumberStatistics` objects. The
+first is used to track the sum of all the numbers. The second takes care of even numbers and
+the third the odd numbers. Remember also that you should not make any changes to class
+NumberStatistics!
+
+*The tests does not work if you do not create the objects in the order mentioned above!!*
+
+The program should work as follows:
+[source]
+----
+Type numbers:
+4
+2
+5
+2
+-1
+sum: 13
+sum of even: 8
+sum of odd: 5
+----
+++++
+</details></div><!-- end ex -->
+++++
