@@ -1,9 +1,8 @@
-
 :doctitle: Instructions on code-writing and problem solving
 :tabcolumns: d,h,d,d,d,h,d,d,d,d,d,d,d,d,d,d
 include::../commonhead.adoc[]
 
-[#_part1_1]
+[#_part1_4]
 :source-language: java
 :numbered!:
 

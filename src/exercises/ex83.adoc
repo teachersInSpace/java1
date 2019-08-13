@@ -2,13 +2,10 @@
 <div class='ex'><details class='ex'><summary>Exercise 83: Game logic for Hangman</summary>
 ++++
 
-++++
-</details></div><!-- end ex 83 -->
-++++
 
 Your Finnish friend designed a Hangman game that looks like the following:
 
-<img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/hirsipuu-tikkuukko.png">
+image::../images/hangmancomplete.png[]
 
 Your friend has programmed the user interface and also a skeleton for the game logic. Now,
 she asks you to finish the remaining pieces of the game logic.

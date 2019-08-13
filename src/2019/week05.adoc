@@ -1,16 +1,14 @@
-    <section class="viikkoraja" id="5">
-        <div class="viikkoraja">
-            Week 5
-        </div>
+:doctitle: More about objects and classes
+:tabcolumns: d,h,d,d,d,d,h,d,d,d,d,d,d,d,d,d
+include::../commonhead.adoc[]
 
-        <div class="viikkoraja-mooc" id="Week 5"  deadline="unlocks when 80% of week 4 done" unlock="unlocks when 80% of week 4 done" data-first-chapter-index="24"
-        data-first-exercise-index="84" data-first-week-index="5" data-first-chapter-index-mooc="23"
-        data-first-exercise-index-mooc="84" data-first-week-index-mooc="5" tekija="Arto Vihavainen, Matti Luukkainen" kaantaja="Emilia Hjelm, Alex H. Virtanen, Matti Luukkainen, Virpi Sumu, Birunthan Mohanathas">
-            <h2>More about objects and classes</h2>
 
-            <h3>Multiple constructors</h3>
+== More about objects and classes
+
+=== Multiple constructors
 Let us return to the class that handles Persons again. The class `Person` currently looks
-            like this:
+like this:
+
 [source,java]
 ----
 public class Person {
@@ -69,11 +67,12 @@ public class Person {
         this.weight = weight;
     }
 
-    public String getName(){
+    public String getName(){====
         return this.name;
     }
 }
 ----
+
 All person objects are 0 years old at creation, since the constructor sets it to 0:
 
 [source,java]
@@ -86,8 +85,8 @@ public Person(String name) {
 }
 ----
 We also want to create a person so that in addition to name, can be given an age as a parameter. This can
-            be achieved easily, since multiple constructors can exist. Let us make an alternative constructor. You
-            do not need to remove the old one.
+be achieved easily, since multiple constructors can exist. Let us make an alternative constructor. You
+do not need to remove the old one.
 [source,java]
 ----
 public Person(String name) {
@@ -122,13 +121,13 @@ Esko, age 0 years
 ----
 
 The technique in which a class has two constructors is called <em>constructor overloading</em>. A class
-            can have multiple constructors, which are different from one another according to parameter quanitities and/or
-            types. However, it is not possible to create two different constructors that have exactly the same type of
-            parameters. We cannot add a constructor `public Person(String name, int weight)` on top of
-            the old ones, since it is impossible for Java to tell the difference between this one and the one in which
-            the integer stands for the age.
+can have multiple constructors, which are different from one another according to parameter quantities and/or
+types. However, it is not possible to create two different constructors that have exactly the same type of
+parameters. We cannot add a constructor `public Person(String name, int weight)` on top of
+the old ones, since it is impossible for Java to tell the difference between this one and the one in which
+the integer stands for the age.
 
-            <h3>Calling your own constructor</h3>
+=== Calling your own constructor
 But wait, in chapter 21 we noted that "copy-paste" code is not too great of an idea! When
             we inspect the overloaded constructors above, we notice that they have the same code repeated in them.
             We are not ok with this.
@@ -153,12 +152,12 @@ public Person(String name, int age) {
 Calling the own constructor of a class `this(name, 0);` might seem a little peculiar. But we
             can imagine that during the call it will automatically copy-paste the code from the constructor below and
             that 0 is entered to the age parameter.
-
-            <h3>Overloading a method</h3>
+=== Overloading a method
 Just like constructors, methods can also be overloaded and multiple versions of a method can exist. Again,
-            the parameter types of different versions have to be different. Let us create another version of the
-            `becomeOlder`, which enables aging the person the amount of years that is entered as a
-            parameter:
+the parameter types of different versions have to be different. Let us create another version of the
+`becomeOlder`, which enables aging the person the amount of years that is entered as a
+parameter:
+
 [source,java]
 ----
 public void becomeOlder() {
@@ -183,79 +182,32 @@ public static void main(String[] args) {
 }
 ----
 Prints:
+
+[source]
 ----
 Pekka, age 24 years
 Pekka, age 25 years
 Pekka, age 35 years
 ----
 Now, a person has two `becomeOlder` methods. The method that is chosen to be run depends on
-            the amount of parameters entered in to the method call. The method `becomeOlder` can also be run
-            through the method `becomeOlder(int years)`:
+the amount of parameters entered in to the method call. The method `becomeOlder` can also be run
+through the method `becomeOlder(int years)`:
 [source,java]
 ----
-public void becomeOlder() {
-    this.becomeOlder(1);
-}
-
-public void becomeOlder(int years) {
-    this.age = this.age + years;
-}
+    public void becomeOlder() {
+        this.becomeOlder(1);
+    }
+    public void becomeOlder(int years) {
+        this.age = this.age + years;
+    }
 ----
-<!-- CAST1-->
-            <!-- screencast -->
 
-<div class="tehtavat">
-<div class="tehtava">
-  <h3>Overloaded counter</h3>
+include::{exercises}/ex84.adoc[]
 
-  <h4>Multiple constructors</h4>
-Make a class `Counter` that holds a number that can be decreased and increased. The
-  counter also has an optional <em>check</em> that prevents the counter from going below 0. The class
-  has to have the following constructors:
 
-  <ul>
-    <li>`public Counter(int startingValue, boolean check)` creates a new counter with
-    the given value. The check is on if the parameter given to `check` was
-    `true`.</li>
-
-    <li>`public Counter(int startingValue)` creates a new counter with the given value.
-    The check on the new counter should be off.</li>
-
-    <li>`public Counter(boolean check)` creates a new counter with the starting value
-    0. The check is on if the parameter given to `check` was `true`.</li>
-
-    <li>`public Counter()` creates a new counter with the starting value of 0 and with
-    checking off.</li>
-  </ul>
-and the following methods:
-
-  <ul>
-    <li>`public int value()` returns the current value of the counter</li>
-
-    <li>`public void increase()` increases the value of the counter by one</li>
-
-    <li>`public void decrease()` decreases the value of the counter by one, but not
-    below 0 if the check is on</li>
-  </ul>
-
-  <h4>Alternative methods</h4>
-Create also a one parametered versions of the methods `increase` and
-  `decrease`:
-
-  <ul>
-    <li>`public void increase(int increaseAmount)` increases the value by the amount of
-    the parameter. If the value of the parameter is negative, the value will not change.</li>
-
-    <li>`public void decrease(int decreaseAmount)` decreases the value of the counter by
-    the amount given by the parameter, but not below 0 if the check is on. If the value of the
-    parameter is negative, the value of the counter will not change.</li>
-  </ul>
-</div>
-            </div>
-
-            <h3>Object is at the end of a wire</h3>
+=== Object is at the end of a wire
 In chapter 20, we noted that `ArrayList` is at the end of a wire. Also objects are 'at the
-            end of a wire'. What does this mean? Let us inspect the following example:
+end of a wire'. What does this mean? Let us inspect the following example:
 
 [source,java]
 ----
@@ -266,13 +218,13 @@ public static void main(String[] args) {
 }
 ----
 When we run the sentence `Person pekka = new Person("Pekka", 24);` an object is
-            born. The object can be accessed through the variable `pekka`. Technically speaking, the object
-            is not within the variable `pekka` (in the box 'pekka'), but `pekka` refers
-            to the object that was born. In other words, the object is 'at the end of a wire' that is attached
-            to a variable named `pekka`. The concept could be visualized like this:
-<img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka1.PNG">
+born. The object can be accessed through the variable `pekka`. Technically speaking, the object
+is not within the variable `pekka` (in the box 'pekka'), but `pekka` refers
+to the object that was born. In other words, the object is 'at the end of a wire' that is attached
+to a variable named `pekka`. The concept could be visualized like this:
+image::../images/lanka1.png[]
 Let us add to the program a variable `person` of the type `Person` and set its
-            starting value to `pekka`. What happens now?
+starting value to `pekka`. What happens now?
 [source,java]
 ----
 public static void main(String[] args) {
@@ -292,18 +244,19 @@ Pekka, age 24 years
 Pekka, age 49 years
 ----
 In the beginning, Pekka was 24 years old. Then a Person object at the end of a wire attached to a
-            `Person` variable is aged by 25 years and as a consequence of that Pekka becomes older!
-            What is going on here?
+`Person` variable is aged by 25 years and as a consequence of that Pekka becomes older!
+What is going on here?
 The command `Person person = pekka;` makes `person` refer to
-            the same object that `pekka` refers to. So, a copy of the object is not born, but instead both
-            of the variables refer to the same object. With the command `Person person = pekka;` a <em>copy
+the same object that `pekka` refers to. So, a copy of the object is not born, but instead both
+of the variables refer to the same object. With the command `Person person = pekka;` a <em>copy
 of the wire</em> is born. The same thing as a picture (Note: in the picture p refers to the variable pekka, and h to the
-            variable person in the main program. The variable names have also been abbreviated in some of the following
-            pictures.):
-<img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka2.PNG">
+variable person in the main program. The variable names have also been abbreviated in some of the following
+pictures.):
+image::../images/lanka2.png[]
+// <img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka2.PNG">
 In the example, "an unknown `person` steals Pekka's identity". In the following,
-            we have expanded the example so that a new object is created and `pekka` begins to refer to a
-            new object:
+we have expanded the example so that a new object is created and `pekka` begins to refer to a
+new object:
 [source,java]
 ----
 public static void main(String[] args) {
@@ -327,10 +280,12 @@ Pekka, age 49 years
 Pekka Mikkola, age 24 years
 ----
 The variable `pekka` refers to one object, but then begins to refer to another. Here is
-            the situation after running the previous line of code:
-<img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka3.PNG">
+the situation after running the previous line of code:
+
+image::../images/lanka3.png[]
+//<img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/lanka3.PNG">
 Let's develop the example further by making `person` to refer to 'nothing', to
-            `null`:
+`null`:
 [source,java]
 ----
 public static void main(String[] args) {
@@ -377,24 +332,24 @@ public static void main(String[] args) {
 }
 ----
 Result:
+[source,]
 ----
 Pekka, age 24 years
-<font color="red">Exception in thread "main" java.lang.NullPointerException
-        at Main.main(Main.java:20)
-Java Result: 1</font>
+Exception in thread "main" java.lang.NullPointerException at Main.main(Main.java:20)
+Java Result: 1
 ----
-Not good. This might be the first time in your life that you see the text <b>NullPointerException</b>.
-            But we can assure you that it will not be the last. NullPointerException is an exception state, when we
-            try to call methods of an object with the value `null`.
+Not good. This might be the first time in your life that you see the text *NullPointerException*.
+But we can assure you that it will not be the last. NullPointerException is an exception state, when we
+try to call methods of an object with the value `null`.
 
-            <h3>An object as a method parameter</h3>
+=== An object as a method parameter
 We have seen that a method can have, for example `int, double, String` or ArrayList as its
-            parameter. ArrayLists and character strings are objects, so as one might guess a method can take any type
-            of object as a parameter. Let us demonstrate this with an example.
+parameter. ArrayLists and character strings are objects, so as one might guess a method can take any type
+of object as a parameter. Let us demonstrate this with an example.
 People whose weight index exceeds a certain limit are accepted into the Weight Watchers. The limit is
-            not the same in all Weight Watchers associations. Let us make a class corresponding to the Weight
-            Watchers association. As the object is being created, the lowest acceptance limit is passed to the
-            constructor as a parameter.
+not the same in all Weight Watchers associations. Let us make a class corresponding to the Weight
+Watchers association. As the object is being created, the lowest acceptance limit is passed to the
+constructor as a parameter.
 [source,java]
 ----
 public class WeightWatchersAssociation {
@@ -407,8 +362,8 @@ public class WeightWatchersAssociation {
 }
 ----
 Next we will create a method, with which we can check if a person is eligible to the association, in
-            other words we check if a person's weight index is large enough. The method returns `true`
-            if the person that is passed in as a parameter is eligible and `false` if not.
+other words we check if a person's weight index is large enough. The method returns `true`
+if the person that is passed in as a parameter is eligible and `false` if not.
 [source,java]
 ----
 public class WeightWatchersAssociation {
@@ -424,10 +379,10 @@ public class WeightWatchersAssociation {
 }
 ----
 The method `isAcceptedAsMember` of the WeightWatchersAssociation object gets a
-            `Person` object as its parameter (or more accurately the wire to the person), and then calls the
-            method `weightIndex` of the person that it received as a parameter.
+`Person` object as its parameter (or more accurately the wire to the person), and then calls the
+method `weightIndex` of the person that it received as a parameter.
 In the following, is a test main program in which a person object `matti` and a person
-            object `juhana` is passed to the weight watchers association's method:
+object `juhana` is passed to the weight watchers association's method:
 [source,java]
 ----
 public static void main(String[] args) {
@@ -460,384 +415,27 @@ Matti is accepted as a member
 Juhana is not accepted as a member
 ----
 
-            <div>
-<big><big><b>A few NetBeans-tips</b></big></big>
+[TIP]
+====
+*A few NetBeans-tips*
 
-<ul>
-  <li>All NetBeans-tips are found <a href="http://mooc.fi/courses/general/programming/#netbeans-tips">here</a>
-  </li>
+* All NetBeans-tips are found http://mooc.fi/courses/general/programming/#netbeans-tips[here]
 
-  <li>
-  <b>The automatic generating of constructors, getters and setters.</b>
+* *The automatic generating of constructors, getters and setters.*
 Go inside of the code block of the class, but outside of all methods and simultaneously
   press Ctrl+Space. If your class, for example, has an object variable `balance`,
   NetBeans will offer you the opportunity to generate the getter and setter methods, and a
   constructor that sets a starting value for the object variable.
-  </li>
-</ul>
-            </div><!-- CAST2 -->
-            <!-- screencast -->
+====
 
-            <div class="tehtavat">
-<div class="tehtava">
-  <h3>Reformatory</h3>
-In this assignment, we use the already given class `Person` and are supposed to build
-  a new class `Reformatory`. Reformatory objects do certain things to persons, e.g.
-  measure their weight and feed them.
-Note: you should not alter the code in the class Person!
 
-  <h4>Weight of a person</h4>
-The reformatory class already has a method skeleton `public int weight(Person
-    person)`:
-[source,java]
-----
-public class Reformatory {
+include::{exercises}/ex85.adoc[]
 
-    public int weight(Person person) {
-       // returns the weight of the parameter
-       return -1;
-    }
-}
-----
-The method gets a person object as a parameter. The method is supposed to return the weight of
-  the parameter, so the method should call a suitable method of `person`, get the return
-  value and then return it to the caller.
-In the following a reformatory weight's two persons:
-[source,java]
-----
-public static void main(String[] args) {
-    Reformatory eastHelsinkiReformatory = new Reformatory();
+include::{exercises}/ex86.adoc[]
 
-    Person brian = new Person("Brian", 1, 110, 7);
-    Person pekka = new Person("Pekka", 33, 176, 85);
 
-    System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
-    System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
-}
-----
-The output should be:
-----
-Brian weight: 7 kilos
-Pekka weight: 85 kilos
-----
 
-  <h4>Feeding a person</h4>
-In the previous part of the assignment, the method `weight` queried some information
-  from the parameter object by calling its method. It is also possible to change the state of the
-  parameter. Add to class Reformatory the method `public void feed(Person person)` that
-  increases the weight of its parameter by one.
-Next, an example where first the weight of Pekka and Brian is measured and printed. Then
-  Reformatory feeds Brian three times and after that the weights are measured and printed again.
-[source,java]
-----
-public static void main(String[] args) {
-    Reformatory eastHelsinkiReformatory = new Reformatory();
-
-    Person brian = new Person("Brian", 1, 110, 7);
-    Person pekka = new Person("Pekka", 33, 176, 85);
-
-    System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
-    System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
-
-    eastHelsinkiReformatory.feed(brian);
-    eastHelsinkiReformatory.feed(brian);
-    eastHelsinkiReformatory.feed(brian);
-
-    System.out.println("");
-
-    System.out.println(brian.getName() + " weight: " + eastHelsinkiReformatory.weight(brian) + " kilos");
-    System.out.println(pekka.getName() + " weight: " + eastHelsinkiReformatory.weight(pekka) + " kilos");
-}
-----
-The output should reveal that Brian has gained 3 kilos:
-----
-Brian weight: 7 kilos
-Pekka weight: 85 kilos
-
-Brian weight: 10 kilos
-Pekka weight: 85 kilos
-----
-
-  <h4>Number of times a weight has been measured</h4>
-Add to class Reformatory the method `public int totalWeightsMeasured()` that returns
-  the total number of times a weight has been measured.
-With the following main program:
-[source,java]
-----
-public static void main(String[] args) {
-    Reformatory eastHelsinkiReformatory = new Reformatory();
-
-    Person brian = new Person("Brian", 1, 110, 7);
-    Person pekka = new Person("Pekka", 33, 176, 85);
-
-    System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
-
-    eastHelsinkiReformatory.weight(brian);
-    eastHelsinkiReformatory.weight(pekka);
-
-    System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
-
-    eastHelsinkiReformatory.weight(brian);
-    eastHelsinkiReformatory.weight(brian);
-    eastHelsinkiReformatory.weight(brian);
-    eastHelsinkiReformatory.weight(brian);
-
-    System.out.println("total weights measured "+eastHelsinkiReformatory.totalWeightsMeasured());
-}
-----
-the output should be:
-----
-total weights measured 0
-total weights measured 2
-total weights measured 6
-----
-</div>
-
-<div class="tehtava">
-  <h3>Lyyra card and Cash Register</h3>
-
-  <h4 class="req">The "stupid" Lyyra card</h4>
-In the last set of exercises, we implemented the class LyyraCard. The card had methods for paying economical
-  and gourmet lunches and a method for loading money.
-Last week's version of the card is however somehow problematic. The card knew the lunch
-  prices so that it could take the right price from the balance if a lunch was paid. What if the
-  lunch prices change? Or what if it is decided that LyyraCards could also be used to purchase
-  coffee? A change like these would mean that all the existing LyyraCards should be replaced with the
-  new ones with the right prices and/or new methods. This does not sound good at all!
-A better solution is to store only the balance on the card and have all the inteligence in a
-  <em>cash register</em>.
-We will soon program the cash register but let us start by completing the "stupid"
-  version of the Lyyra card. The card holds the balance and has only two methods, `public void
-    loadMoney(double amount)` that is already implemented and `public boolean pay(double
-    amount)` that you should complete according to the instructions below:
-[source,java]
-----
-public class LyyraCard {
-    private double balance;
-
-    public LyyraCard(double balance) {
-        this.balance = balance;
-    }
-
-    public double balance() {
-        return this.balance;
-    }
-
-    public void loadMoney(double amount) {
-        this.balance += amount;
-    }
-
-    public boolean pay(double amount){
-       // the method checks if the balance of the card is at least the amount given as parameter
-       // if not, the method returns false meaning that the card could not be used for the payment
-       // if the balance is enough, the given amount is taken from the balance and true is returned
-    }
-}
-----
-With the following main:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        LyyraCard cardOfPekka = new LyyraCard(10);
-
-        System.out.println("money on the card " + cardOfPekka.balance() );
-        boolean succeeded = cardOfPekka.pay(8);
-        System.out.println("money taken: " + succeeded );
-        System.out.println("money on the card " + cardOfPekka.balance() );
-
-        succeeded = cardOfPekka.pay(4);
-        System.out.println("money taken: " + succeeded );
-        System.out.println("money on the card " + cardOfPekka.balance() );
-    }
-}
-----
-the output should be
-----
-money on the card 10.0
-money taken: true
-money on the card 2.0
-money taken: false
-money on the card 2.0
-----
-
-  <h4 class="req">Cash Register and paying with cash</h4>
-In Unicafe, a client pays either with cash or with a Lyyra Card. The personnel uses a cash
-  register to charge the client. Let us start by implementig the part of CashRegister that takes care
-  of cash payments.
-Below is the skeleton of CashRegister that also has the information on how the methods
-  should be implemented:
-[source,java]
-----
-public class CashRegister {
-    private double cashInRegister;   // the amount of cash in the register
-    private int economicalSold;      // the amount of economical lunches sold
-    private int gourmetSold;         // the amount of gourmet lunches sold
-
-    public CashRegister() {
-        // at start the register has 1000 euros
-    }
-
-    public double payEconomical(double cashGiven) {
-        // the price of the economical lunch is 2.50 euros
-        // if the given cash is at least the price of the lunch:
-        //    the price of lunch is added to register
-        //    the amount of the sold lunches is incremented by one
-        //    the method returns cashGiven - lunch price
-        // if not enough money is given, all is returned and nothing else happens
-    }
-
-    public double payGourmet(double cashGiven) {
-        // the price of the gourmet lunch is 4.00 euros
-        // if the given cash is at least the price of the lunch:
-        //    the price of lunch is added to the register
-        //    the amount of the sold lunches is incremented by one
-        //    the method returns cashGiven - lunch price
-        // if not enough money is given, all is returned and nothing else happens
-    }
-
-    public String toString() {
-        return "money in register "+cashInRegister+" economical lunches sold: "+economicalSold+" gourmet lunches sold: "+gourmetSold;
-    }
-}
-----
-When correctly implemented, the following main:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        CashRegister unicafeExactum = new CashRegister();
-
-        double theChange = unicafeExactum.payEconomical(10);
-        System.out.println("the change was " + theChange );
-
-        theChange = unicafeExactum.payEconomical(5);
-        System.out.println("the change was "  + theChange );
-
-        theChange = unicafeExactum.payGourmet(4);
-        System.out.println("the change was "  + theChange );
-
-        System.out.println( unicafeExactum );
-    }
-}
-----
-should output:
-----
-the change was 7.5
-the change was 2.5
-the change was 0.0
-money in register 1009.0 economical lunches sold: 2 gourmet lunches sold: 1
-----
-
-  <h4 class="req">Paying with card</h4>
-Extend the cash register with methods to charge a lunch price from a Lyyra Card. See below how
-  the methods should appear and behave:
-[source,java]
-----
-public class CashRegister {
-    // ...
-
-    public boolean payEconomical(LyyraCard card) {
-        // the price of the economical lunch is 2.50 euros
-        // if the balance of the card is at least the price of the lunch:
-        //    the amount of sold lunches is incremented by one
-        //    the method returns true
-        // if not, the method returns false
-    }
-
-    public boolean payGourmet(LyyraCard card) {
-        // the price of the gourmet lunch is 4.00 euros
-        // if the balance of the card is at least the price of the lunch:
-        //    the amount of sold lunches is incremented by one
-        //    the method returns true
-        // if not, the method returns false
-    }
-
-    // ...
-}
-----
-<b>Note:</b> card payments do not affect the amount of money in the register!
-Example main and output:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        CashRegister unicafeExactum = new CashRegister();
-
-        double theChange = unicafeExactum.payEconomical(10);
-        System.out.println("the change was " + theChange );
-
-        LyyraCard cardOfJim = new LyyraCard(7);
-
-        boolean succeeded = unicafeExactum.payGourmet(cardOfJim);
-        System.out.println("payment success: " + succeeded);
-        succeeded = unicafeExactum.payGourmet(cardOfJim);
-        System.out.println("payment success: " + succeeded);
-        succeeded = unicafeExactum.payEconomical(cardOfJim);
-        System.out.println("payment success: " + succeeded);
-
-        System.out.println( unicafeExactum );
-    }
-}
-----
-----
-the change was 7.5
-payment success: true
-payment success: false
-payment success: true
-money in register 1002.5 economical lunches sold: 2 gourmet lunches sold: 1
-----
-
-  <h4 class="req">Loading money</h4>
-To complete the assignment, extend the cash register with a method that can be used to load cash
-  to Lyyra Cards. When a certain amount is loaded to the card, the amount stored in the register
-  increases correspondingly. Remember that the amount to be loaded needs to be positive! The method
-  skeleton:
-[source,java]
-----
-public void loadMoneyToCard(LyyraCard card, double sum) {
-   // ...
-}
-----
-Example main and its output:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        CashRegister unicafeExactum = new CashRegister();
-        System.out.println( unicafeExactum );
-
-        LyyraCard cardOfJim = new LyyraCard(2);
-
-        System.out.println("the card balance " + cardOfJim.balance() + " euros");
-
-        boolean succeeded = unicafeExactum.payGourmet(cardOfJim);
-        System.out.println("payment success: " + succeeded);
-
-        unicafeExactum.loadMoneyToCard(cardOfJim, 100);
-
-        succeeded = unicafeExactum.payGourmet(cardOfJim);
-        System.out.println("payment success: " + succeeded);
-
-        System.out.println("the card balance " + cardOfJim.balance() + " euros");
-
-        System.out.println( unicafeExactum );
-    }
-}
-----
-
-----
-money in register 1000.0 economical lunches sold: 0 gourmet lunches sold: 0
-money on the card 2.0 euros
-payment success: false
-payment success: true
-the card balance 98.0 euros
-money in register 1100.0 economical lunches sold: 0 gourmet lunches sold: 1
-----
-</div>
-            </div>
-
-            <h3>Another object of the same type as a parameter to a method</h3>
+=== Another object of the same type as a parameter to a method
 We will keep on working with the `Person` class. As we recall, persons know their
             age:
 [source,java]
@@ -853,8 +451,8 @@ public class Person {
 }
 ----
 We want to compare ages of two persons. The comparison can be done in a number of ways. We could
-            define a getter method `getAge` for a person. Comparing two persons in that case would be done
-            like this:
+define a getter method `getAge` for a person. Comparing two persons in that case would be done
+like this:
 [source,java]
 ----
 Person pekka = new Person("Pekka");
@@ -912,10 +510,10 @@ Even though `age` is a `private` object variable, we can read the value of the
             an object. Unlike calling a method, we refer to a field of an object, in which case we do not write
             the parentheses.
 
-            <h3>The date as an object</h3>
+=== The date as an object
 Another example of the same theme. Let us create a class, which can represent dates.
 Within an object, the date is represented with three object variables. Let us also make a method,
-            which can compare whether the date is earlier than a date that is given as a parameter:
+which can compare whether the date is earlier than a date that is given as a parameter:
 [source,java]
 ----
 public class MyDate {
@@ -982,80 +580,16 @@ public static void main(String[] args) {
 31.12.2010 earlier than 14.2.2011: true
 14.2.2011 earlier than 31.12.2010: false
 ----
-<!-- CAST3 -->
-            <!-- screencast -->
+// <!-- CAST3 -->
+//             <!-- screencast -->
+//
+//
+//             <div class="tehtavat">
+// <div class="tehtava">
 
-            <div class="tehtavat">
-<div class="tehtava">
-  <h3>Apartment comparison</h3>
-The information system of a Housing service represents the apartments it has for sale using
-  objects of the following class:
-[source,java]
-----
-public class Apartment {
-    private int rooms;
-    private int squareMeters;
-    private int pricePerSquareMeter;
+include::{exercises}/ex87.adoc[]
 
-    public Apartment(int rooms, int squareMeters, int pricePerSquareMeter){
-        this.rooms = rooms;
-        this.squareMeters = squareMeters;
-        this.pricePerSquareMeter = pricePerSquareMeter;
-    }
-}
-----
-Next you should implement a couple of methods that help in apartment comparisons.
-
-  <h4>Larger</h4>
-Implement the method `public boolean larger(Apartment otherApartment)` that returns
-  true if the Apartment object for which the method is called (`this`) is larger than the
-  apartment object given as parameter (`otherApartment`).
-Example of the usage:
-[source,java]
-----
-Apartment studioManhattan = new Apartment(1, 16, 5500);
-Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
-Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
-
-System.out.println( studioManhattan.larger(twoRoomsBrooklyn) );       // false
-System.out.println( fourAndKitchenBronx.larger(twoRoomsBrooklyn) );   // true
-----
-
-  <h4>Price difference</h4>
-Implement the method `public int priceDifference(Apartment otherApartment)` that
-  returns the absolute value of the price difference of the Apartment object for which the method is
-  called (`this`) and the apartment object given as parameter
-  (`otherApartment`). The price of an apartment is `squareMeters *
-    pricePerSquareMeter.`
-Example of the usage:
-[source,java]
-----
-Apartment studioManhattan = new Apartment(1, 16, 5500);
-Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
-Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
-
-System.out.println( studioManhattan.priceDifference(twoRoomsBrooklyn) );        // 71600
-System.out.println( fourAndKitchenBronx.priceDifference(twoRoomsBrooklyn) );    // 35400
-----
-
-  <h4>more expensive than</h4>
-Implement the method `public boolean moreExpensiveThan(Apartment otherApartment)`
-  that returns true if the Apartment-object for which the method is called (`this`) has a
-  higher price than the apartment object given as parameter (`otherApartment`).
-Example of the usage:
-[source,java]
-----
-Apartment studioManhattan = new Apartment(1, 16, 5500);
-Apartment twoRoomsBrooklyn = new Apartment(2, 38, 4200);
-Apartment fourAndKitchenBronx = new Apartment(3, 78, 2500);
-
-System.out.println( studioManhattan.moreExpensiveThan(twoRoomsBrooklyn) );       // false
-System.out.println( fourAndKitchenBronx.moreExpensiveThan(twoRoomsBrooklyn) );   // true
-----
-</div>
-            </div>
-
-            <h3>Objects on a list</h3>
+=== Objects on a list
 We've used `ArrayList`s in a lot of examples and assignments already. You can add
             character strings, for example, to an ArrayList object and going through the strings, searching, removing
             and sorting them and so forth, are painless actions.
@@ -1102,31 +636,24 @@ Matti, age 30 years
 Martin, age 30 years
 ----
 
+
+
             <div class="tehtavat">
 <div class="tehtava">
-  <h3>Students</h3>
+
+=== Students
 
   <h4 class="req">Class Student</h4>
 Implement class `Student` that holds the following information about a student:
 
-  <ul>
-    <li>name (`String`)</li>
+  * name (`String`)* studentNumber (`String`)
 
-    <li>studentNumber (`String`)</li>
-  </ul>
 The class should have the following methods:
 
-  <ul>
-    <li>A constructor that initializes the name and the student number with the given
-    parameters.</li>
+  * A constructor that initializes the name and the student number with the given
+    parameters.* `getName`, that returns the student name* `getStudentNumber`, that returns the student number* `toString`, that returns a String representation of the form: Pekka Mikkola
+    (013141590)
 
-    <li>`getName`, that returns the student name</li>
-
-    <li>`getStudentNumber`, that returns the student number</li>
-
-    <li>`toString`, that returns a String representation of the form: Pekka Mikkola
-    (013141590)</li>
-  </ul>
 With the following code:
 [source,java]
 ----
@@ -1198,7 +725,7 @@ Edsger Dijkstra (014662803)
 </div>
             </div>
 
-            <h3>An object within an object</h3>
+=== An object within an object
 Objects can have objects within them, not only character strings but also self-defined objects.
             Let's get back to the `Person`-class again and add a birthday for the person. We can use the
             `MyDate`-object we created earlier here:
@@ -1279,7 +806,8 @@ When age is removed, the `olderThan` method has to be changed so that it compare
 
             <div class="tehtavat">
 <div class="tehtava">
-  <h3>Clock object</h3>
+
+=== Clock object
 In assignment 78 we used objects of the class `BoundedCounter` to implement a clock
   in the main method. In this assignment we will tranform the clock to an object. The skeleton of the
   class clock looks like the following:
@@ -1342,7 +870,7 @@ The output should be:
 </div>
             </div><!-- foobar -->
 
-            <h3>A list of objects within an object</h3>
+=== A list of objects within an object
 Let's expand the `WeightWatchersAssociation` object so that the association records all
             its members into an `ArrayList` object. So in this case the list will be filled with
             `Person` objects. In the extended version the association is given a name as a constructor
@@ -1442,17 +970,15 @@ The members of weight watchers association 'kumpulan paino':
 <!-- screencast -->
 
 <div class="tehtava">
-  <h3>Team and Players</h3>
+
+=== Team and Players
 
   <h4 class="req">Class Team</h4>
 Implement a class `Team`. At this stage team has only a name (`String`)
   and the following functionality:
 
-  <ul>
-    <li>a constructor that sets the team name</li>
+  * a constructor that sets the team name* `getName`, that returns the name
 
-    <li>`getName`, that returns the name</li>
-  </ul>
 With the code:
 [source,java]
 ----
@@ -1474,14 +1000,9 @@ Create a class `Player` with the instance variables for the player name and the
   another that initializes the name and the amount of goals. Implement also the following
   methods:
 
-  <ul>
-    <li>`getName`, returns the player name</li>
+  * `getName`, returns the player name* `goals`, returns the amount of goals* `toString`, returns a string representation that is formed as in the example
+    below
 
-    <li>`goals`, returns the amount of goals</li>
-
-    <li>`toString`, returns a string representation that is formed as in the example
-    below</li>
-  </ul>
 Example usage:
 [source,java]
 ----
@@ -1508,11 +1029,8 @@ Player: Pekka, goals 39
   <h4 class="req">Adding players to a team</h4>
 Add to the class `Team` the following methods:
 
-  <ul>
-    <li>`addPlayer`, adds a player to the team</li>
+  * `addPlayer`, adds a player to the team* `printPlayers`, prints the players in the team
 
-    <li>`printPlayers`, prints the players in the team</li>
-  </ul>
 You should store the players to an instance variable of the type
   `ArrayList&lt;Player&gt;` within the class `Team`.
 With the code:
@@ -1543,12 +1061,9 @@ Mikael, goals 1
   <h4 class="req">The team maximum size and current size</h4>
 Add to the class `Team` the methods
 
-  <ul>
-    <li>`setMaxSize(int maxSize)`, sets the maximum number of players that the team can
-    have</li>
+  * `setMaxSize(int maxSize)`, sets the maximum number of players that the team can
+    have* `size`, returns the number of players in the team
 
-    <li>`size`, returns the number of players in the team</li>
-  </ul>
 By default the maximum number of players should be set to 16, and that can be changed with the method
   `setMaxSize`. Change the method `addPlayer` so that it does not add players
   to the team if the team already has the maximum number of players.
@@ -1578,9 +1093,8 @@ Number of players: 1
   <h4 class="req">Goals of a team</h4>
 Add to the class `Team` the method
 
-  <ul>
-    <li>`goals`, returns the total number of goals for all the players in the team</li>
-  </ul>
+  * `goals`, returns the total number of goals for all the players in the team
+
 With the code:
 [source,java]
 ----
@@ -1605,7 +1119,7 @@ Total goals: 40
 </div>
             </div>
 
-            <h3>Method returns an object</h3>
+=== Method returns an object
 We've seen methods that return booleans, numbers, lists and strings. It's easy to guess that a
             method can return any type of an object. Let's make a method for the weight watchers association that
             returns the person with the highest weight index.
@@ -1657,7 +1171,7 @@ member with the greatest weight index: Petri
 weight index 37,42
 ----
 
-            <h3>Method returns an object it creates</h3>
+=== Method returns an object it creates
 In the last example a method returned one Person object that the WeightWatcers object had in it.
             It's also possible that a method returns an entirely new object. In the following is a simple counter
             that has a method `clone` with which a clone - an entirely new counter object - can be made from
@@ -1726,7 +1240,8 @@ The value of the object being cloned and the value of the clone - after the clon
 
             <div class="tehtavat">
 <div class="tehtava">
-  <h3>Extending MyDate</h3>
+
+=== Extending MyDate
 In this assignment we will extend the class `MyDate`, that was developed in chapter
   24.7. The code of the class:
 [source,java]
@@ -1825,13 +1340,14 @@ The date 790 days from this week's Friday is  5.5.2013
 </div>
             </div>
 
-            <h3>More assignments</h3>
+=== More assignments
 All the new theory for this week has already been covered. However, since this week's topics are
             quite challenging, we will practise our routine with a couple of more exercises.
 
             <div class="tehtavat">
 <div class="tehtava">
-  <h3>Difference of two dates</h3>
+
+=== Difference of two dates
 In this assignment we'll further extend the class MyDate. This assignment does not depend on
   the previous one, so the project contains the MyDate class that does not have the extensions of the
   previous assignment.
@@ -1842,13 +1358,10 @@ Add to the class MyDate the method `public int differenceInYears(MyDate
   called and the object given as parameters.
 <b>Note the following</b>
 
-  <ul>
-    <li>the first vesion of the method is not very precise, it only calculates the difference of
-    the years and does not take into account the day and month of the dates</li>
+  * the first vesion of the method is not very precise, it only calculates the difference of
+    the years and does not take into account the day and month of the dates* The method needs to work only in the case where the date given as parameter is before the
+    date for which the method is called
 
-    <li>The method needs to work only in the case where the date given as parameter is before the
-    date for which the method is called</li>
-  </ul>
 With the code
 [source,java]
 ----
@@ -1887,7 +1400,7 @@ The output for the previous example is now:
 1.1.2011 and 25.12.2010 difference in years: 0
 ----
 
-  <h4>And the final version</h4>
+==== And the final version</h4>
 Modify the method so that it works no matter which date is later, the one for which the method
   is called or the parameter. Example code:
 [source,java]
@@ -1919,7 +1432,8 @@ and the output
 </div>
 
 <div class="tehtava">
-  <h3>Person extended</h3>
+
+=== Person extended
 
   <h4 class="req">Calculating the age based on the birthday</h4>
 In chapter 24.9. Person was extended by adding to it a birthday represented as a MyDate object.
@@ -2012,16 +1526,13 @@ Martin is older than Pekka: false
 Pekka is older than Martin: true
 ----
 
-  <h4>New constructors</h4>
+==== New constructors</h4>
 Add to the class Person two new constructors:
 
-  <ul>
-    <li>`public Person(String name, MyDate birthday)` constructor sets the given
-    MyDate-object to be the birthday of the person</li>
+  * `public Person(String name, MyDate birthday)` constructor sets the given
+    MyDate-object to be the birthday of the person* `public Person(String name)` constructor sets the current date (i.e., the date
+    when the program is run) to be the birthday of the person
 
-    <li>`public Person(String name)` constructor sets the current date (i.e., the date
-    when the program is run) to be the birthday of the person</li>
-  </ul>
 Example program:
 [source,java]
 ----
