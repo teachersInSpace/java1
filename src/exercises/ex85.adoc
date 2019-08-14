@@ -1,5 +1,5 @@
 ++++
-<div class='ex'><details class='ex'><summary>Exercise 84: Reformatory</summary>
+<div class='ex'><details class='ex'><summary>Exercise 85: Reformatory</summary>
 ++++
 
 In this assignment, we use the already given class `Person` and are supposed to build

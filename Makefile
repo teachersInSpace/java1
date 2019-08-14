@@ -7,8 +7,8 @@ TARGETCSS=target/css/sebistyle.css \
 HEADERS=src/2019/docinfo.html src/commonhead.adoc $(CSSDIR)/sebistyle.css $(CSSDIR)/java1.css \
 	$(CSSDIR)/mooc.css
 EXDIR=src/exercises
-EX84-93=$(EXDIR)/ex84.adoc $(EXDIR)/ex85.adoc $(EXDIR)/ex86.adoc $(EXDIR)/ex87.adoc
-# $(EXDIR)/ex8.adoc $(EXDIR)/ex84.adoc $(EXDIR)/ex84.adoc $(EXDIR)/ex84.adoc $(EXDIR)/ex84.adoc
+EX84-93=$(EXDIR)/ex84.adoc $(EXDIR)/ex85.adoc $(EXDIR)/ex86.adoc $(EXDIR)/ex87.adoc $(EXDIR)/ex88.adoc \
+	$(EXDIR)/ex89.adoc $(EXDIR)/ex90.adoc $(EXDIR)/ex91.adoc $(EXDIR)/ex92.adoc $(EXDIR)/ex93.adoc
 IMAGES=target/images
 
 

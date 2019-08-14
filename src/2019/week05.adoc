@@ -433,8 +433,6 @@ include::{exercises}/ex85.adoc[]
 
 include::{exercises}/ex86.adoc[]
 
-
-
 === Another object of the same type as a parameter to a method
 We will keep on working with the `Person` class. As we recall, persons know their
             age:
@@ -590,11 +588,11 @@ public static void main(String[] args) {
 include::{exercises}/ex87.adoc[]
 
 === Objects on a list
-We've used `ArrayList`s in a lot of examples and assignments already. You can add
-            character strings, for example, to an ArrayList object and going through the strings, searching, removing
-            and sorting them and so forth, are painless actions.
+We've used `ArrayList` s in a lot of examples and assignments already. You can add
+character strings, for example, to an ArrayList object and going through the strings, searching, removing
+and sorting them and so forth, are painless actions.
 You can put any type of objects in ArrayLists. Let's create a person list, an
-            `ArrayList&lt;Person&gt;` and put a few person objects in it:
+`ArrayList<Person>` and put a few person objects in it:
 [source,java]
 ----
 public static void main(String[] args) {
@@ -636,94 +634,7 @@ Matti, age 30 years
 Martin, age 30 years
 ----
 
-
-
-            <div class="tehtavat">
-<div class="tehtava">
-
-=== Students
-
-  <h4 class="req">Class Student</h4>
-Implement class `Student` that holds the following information about a student:
-
-  * name (`String`)* studentNumber (`String`)
-
-The class should have the following methods:
-
-  * A constructor that initializes the name and the student number with the given
-    parameters.* `getName`, that returns the student name* `getStudentNumber`, that returns the student number* `toString`, that returns a String representation of the form: Pekka Mikkola
-    (013141590)
-
-With the following code:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        Student pekka = new Student("Pekka Mikkola", "013141590");
-        System.out.println("name: " + pekka.getName());
-        System.out.println("studentnumber: " + pekka.getStudentNumber());
-        System.out.println(pekka);
-    }
-}
-----
-The output should be:
-----
-name: Pekka Mikkola
-studentnumber: 013141590
-Pekka Mikkola (013141590)
-----
-
-  <h4 class="req">List of students</h4>
-Implement a main program that works as follws:
-----
-name: <font color="red">Alan Turing</font>
-studentnumber: <font color="red">017635727</font>
-name: <font color="red">Linus Torvalds</font>
-studentnumber: <font color="red">011288989</font>
-name: <font color="red">Steve Jobs</font>
-studentnumber: <font color="red">013672548</font>
-name:
-
-Alan Turing (017635727)
-Linus Torvalds (011288989)
-Steve Jobs (013672548)
-----
-So the program asks for student information from the user until the user gives a student an
-  empty name. After the student info has been enteres, all the students are printed. From each
-  inputted name-studentnumber-pair, the program should create a Student object. The program should
-  store the students in an ArrayList which is defined as follows:
-[source,java]
-----
-ArrayList&lt;Student&gt; list = new ArrayList&lt;Student&gt;();
-----
-
-  <h4 class="req">Search</h4>
-Extend the program of the previous part so that after the student info has been entered and
-  students printed, the user can search the student list based on a given search term. The extended
-  program should work in the following manner:
-----
-name: <font color="red">Carl Gustaf Mannerheim</font>
-studentnumber: <font color="red">015696234</font>
-name: <font color="red">Steve Jobs</font>
-studentnumber: <font color="red">013672548</font>
-name: <font color="red">Edsger Dijkstra</font>
-studentnumber: <font color="red">014662803</font>
-name:
-
-Carl Gustaf Mannerheim (015696234)
-Steve Jobs (013672548)
-Edsger Dijkstra (014662803)
-
-Give search term: <font color="red">st</font>
-Result:
-Carl Gustaf Mannerheim (015696234)
-Edsger Dijkstra (014662803)
-----
-<strong>TIP:</strong> in the search you should iterate (using for or while) through the student
-  list and by using the method `contains` of String check if a student's name
-  (obtained with method `getName`) matches the search term.
-</div>
-            </div>
+include::{exercises}/ex88.adoc[]
 
 === An object within an object
 Objects can have objects within them, not only character strings but also self-defined objects.
@@ -781,19 +692,22 @@ Martin, born 24.4.1983
 Juhana, born 17.9.1985
 ----
 In chapter 24.4, we noted that objects are 'at the end of a wire'. Take a look at that chapter
-            again for good measure.
+again for good measure.
 Person objects have the object variables `name`, which is a String-object and
-            `birthMyDate`, which is a MyDate object. The variables of person are consequently both objects,
-            so technically speaking they don't actually exist within a person object, but are 'at the end of a
-            wire'. In other words a person has a reference to the objects stored in its object variables. The
-            concept as a picture:
-<img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/person.PNG">
+`birthMyDate`, which is a MyDate object. The variables of person are consequently both objects,
+so technically speaking they don't actually exist within a person object, but are 'at the end of a
+wire'. In other words a person has a reference to the objects stored in its object variables. The
+concept as a picture:
+//<img src="https://raw.github.com/UniversityHelsinkiTKTL/MOOC-material/master/img/person.PNG">
+
+image::../images/person.png[]
+
 The main program now has two person programs at the ends of wires. The persons have a name and a
-            birthdate. Because both are objects, both are at the ends of wires the person holds.
+birthdate. Because both are objects, both are at the ends of wires the person holds.
 Birthday seems like a good expansion to the Person class. We notice, however, that the object variable
-            `age` is becoming obsolete and should probably be removed since the age can be determined easily
-            with the help of the current date and birthday. In Java, the current day can be figured out, for example,
-            like this:
+`age` is becoming obsolete and should probably be removed since the age can be determined easily
+with the help of the current date and birthday. In Java, the current day can be figured out, for example,
+like this:
 [source,java]
 ----
 int day = Calendar.getInstance().get(Calendar.DATE);
@@ -802,73 +716,10 @@ int year = Calendar.getInstance().get(Calendar.YEAR);
 System.out.println("Today is " + day + "." + month + "." + year );
 ----
 When age is removed, the `olderThan` method has to be changed so that it compares birthdates.
-            We'll do this as an excersise assignment.
+We'll do this as an excersise assignment.
 
-            <div class="tehtavat">
-<div class="tehtava">
+include::{exercises}/ex89.adoc[]
 
-=== Clock object
-In assignment 78 we used objects of the class `BoundedCounter` to implement a clock
-  in the main method. In this assignment we will tranform the clock to an object. The skeleton of the
-  class clock looks like the following:
-[source,java]
-----
-public class Clock {
-    private BoundedCounter hours;
-    private BoundedCounter minutes;
-    private BoundedCounter seconds;
-
-    public Clock(int hoursAtBeginning, int minutesAtBeginning, int secondsAtBeginning) {
-      // the counters that represent hours, minutes and seconds are created and
-      // set to have the correct initial values
-    }
-
-    public void tick(){
-      // Clock advances by one second
-    }
-
-    public String toString() {
-        // returns the string representation
-    }
-}
-----
-Copy the class `BoundedCounter` from assignment 78 to the project of this
-  assignment!
-Implement constructor and method `tick` for the class `Clock`. Use the
-  following main to test your clock:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        Clock clock = new Clock(23, 59, 50);
-
-        int i = 0;
-        while( i &lt; 20) {
-            System.out.println( clock );
-            clock.tick();
-            i++;
-        }
-    }
-}
-----
-The output should be:
-----
-23:59:50
-23:59:51
-23:59:52
-23:59:53
-23:59:54
-23:59:55
-23:59:56
-23:59:57
-23:59:58
-23:59:59
-00:00:00
-00:00:01
-...
-----
-</div>
-            </div><!-- foobar -->
 
 === A list of objects within an object
 Let's expand the `WeightWatchersAssociation` object so that the association records all
@@ -965,159 +816,7 @@ The members of weight watchers association 'kumpulan paino':
   Petri
 ----
 
-            <div class="tehtavat">
-<!-- CAST4 -->
-<!-- screencast -->
-
-<div class="tehtava">
-
-=== Team and Players
-
-  <h4 class="req">Class Team</h4>
-Implement a class `Team`. At this stage team has only a name (`String`)
-  and the following functionality:
-
-  * a constructor that sets the team name* `getName`, that returns the name
-
-With the code:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-    Team barcelona = new Team("FC Barcelona");
-    System.out.println("Team: " + barcelona.getName());
-    }
-}
-----
-the output should be::
-----
-Team: FC Barcelona
-----
-
-  <h4 class="req">Player</h4>
-Create a class `Player` with the instance variables for the player name and the
-  amount of goals. A player should have two constructors: one that initializes the name and an
-  another that initializes the name and the amount of goals. Implement also the following
-  methods:
-
-  * `getName`, returns the player name* `goals`, returns the amount of goals* `toString`, returns a string representation that is formed as in the example
-    below
-
-Example usage:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-    Team barcelona = new Team("FC Barcelona");
-    System.out.println("Team: " + barcelona.getName());
-
-        Player brian = new Player("Brian");
-        System.out.println("Player: " + brian);
-
-        Player pekka = new Player("Pekka", 39);
-        System.out.println("Player: " + pekka);
-    }
-}
-----
-and the expected output:
-----
-Team: FC Barcelona
-Player: Brian, goals 0
-Player: Pekka, goals 39
-----
-
-  <h4 class="req">Adding players to a team</h4>
-Add to the class `Team` the following methods:
-
-  * `addPlayer`, adds a player to the team* `printPlayers`, prints the players in the team
-
-You should store the players to an instance variable of the type
-  `ArrayList&lt;Player&gt;` within the class `Team`.
-With the code:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-    Team barcelona = new Team("FC Barcelona");
-
-        Player brian = new Player("Brian");
-        Player pekka = new Player("Pekka", 39);
-
-        barcelona.addPlayer(brian);
-        barcelona.addPlayer(pekka);
-        barcelona.addPlayer(new Player("Mikael", 1)); // works similarly as the above
-
-        barcelona.printPlayers();
-    }
-}
-----
-the output should be:
-----
-Brian, goals 0
-Pekka, goals 39
-Mikael, goals 1
-----
-
-  <h4 class="req">The team maximum size and current size</h4>
-Add to the class `Team` the methods
-
-  * `setMaxSize(int maxSize)`, sets the maximum number of players that the team can
-    have* `size`, returns the number of players in the team
-
-By default the maximum number of players should be set to 16, and that can be changed with the method
-  `setMaxSize`. Change the method `addPlayer` so that it does not add players
-  to the team if the team already has the maximum number of players.
-With the code:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-    Team barcelona = new Team("FC Barcelona");
-        barcelona.setMaxSize(1);
-
-        Player brian = new Player("Brian");
-        Player pekka = new Player("Pekka", 39);
-        barcelona.addPlayer(brian);
-        barcelona.addPlayer(pekka);
-        barcelona.addPlayer(new Player("Mikael", 1)); // works similarly as the above
-
-        System.out.println("Number of players: " + barcelona.size());
-    }
-}
-----
-the output should be
-----
-Number of players: 1
-----
-
-  <h4 class="req">Goals of a team</h4>
-Add to the class `Team` the method
-
-  * `goals`, returns the total number of goals for all the players in the team
-
-With the code:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        Team barcelona = new Team("FC Barcelona");
-
-        Player brian = new Player("Brian");
-        Player pekka = new Player("Pekka", 39);
-        barcelona.addPlayer(brian);
-        barcelona.addPlayer(pekka);
-        barcelona.addPlayer(new Player("Mikael", 1)); // works similarly as the above
-
-        System.out.println("Total goals: " + barcelona.goals());
-    }
-}
-----
-the output should be
-----
-Total goals: 40
-----
-</div>
-            </div>
+include::{exercises}/ex90.adoc[]
 
 === Method returns an object
 We've seen methods that return booleans, numbers, lists and strings. It's easy to guess that a
@@ -1238,321 +937,16 @@ The value of the object being cloned and the value of the clone - after the clon
             the same. However they are two different objects, so in the future as one of the counters grows the value
             of the other isn't affected in any way.
 
-            <div class="tehtavat">
-<div class="tehtava">
-
-=== Extending MyDate
-In this assignment we will extend the class `MyDate`, that was developed in chapter
-  24.7. The code of the class:
-[source,java]
-----
-public class MyDate {
-    private int day;
-    private int month;
-    private int year;
-
-    public MyDate(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
-    }
-
-    public String toString() {
-        return this.day + "." + this.month + "." + this.year;
-    }
-
-    public boolean earlier(MyDate compared) {
-        // first we'll compare years
-        if ( this.year &lt; compared.year ) {
-            return true;
-        }
-
-        // if the years are the same, we'll compare the months
-        if ( this.year == compared.year &amp;&amp; this.month &lt; compared.month ) {
-            return true;
-        }
-
-        // years and months the same, we'll compare the days
-        if ( this.year == compared.year &amp;&amp; this.month == compared.month &amp;&amp;
-                this.day &lt; compared.day ) {
-            return true;
-        }
-
-        return false;
-    }
-}
-----
-
-  <h4 class="req">Next day</h4>
-Add to the class MyDate the method `public void advance()` that advances the date by
-  one. <strong>Note:</strong> In this assignment we assume that all the months have 30 days!
-
-  <h4 class="req">Advancing many days</h4>
-Add also overloaded version `public void advance(int numberOfDays)`. This method
-  should advance the day by the number given as parameter. Implement this method so that it calls the
-  method `advance()` that was defined in the previous part of the assignment, e.g. the
-  call `advance(5)` should call `advance()` 5 times. Again assume that all the
-  months have 30 days!
-
-  <h4 class="req">Creation of a new date</h4>
-Add to the class `MyDate` the method `MyDate afterNumberOfDays(int days)`,
-  that returns a <strong>new</strong> `MyDate`-object that has the date which equals the
-  date of the object for which the method was called advance by the parameter of the method
-  `days`. Again assume that all the months have 30 days!
-Note that the object for which this method is called should not change!
-Since the method creates a <b>new object</b>, the skeleton is of the form:
-[source,java]
-----
-public MyDate afterNumberOfDays(int days){
-    MyDate newMyDate = new MyDate( ... );
-
-    // some code here
-
-    return newMyDate;
-}
-----
-The following code
-[source,java]
-----
-public static void main(String[] args) {
-    MyDate day = new MyDate(25, 2, 2011);
-    MyDate newDate = day.afterNumberOfDays(7);
-    for (int i = 1; i &lt;= 7; ++i) {
-        System.out.println("Friday after  " + i + " weeks is " + newDate);
-        newDate = newDate.afterNumberOfDays(7);
-    }
-    System.out.println("This week's Friday is " + day);
-    System.out.println("The date 790 days from this week's Friday is  " + day.afterNumberOfDays(790));
-}
-----
-should print:
-----
-Friday after  1 weeks is 2.3.2011
-Friday after  2 weeks is 9.3.2011
-Friday after  3 weeks is 16.3.2011
-Friday after  4 weeks is 23.3.2011
-Friday after  5 weeks is 30.3.2011
-Friday after  6 weeks is 7.4.2011
-Friday after  7 weeks is 14.4.2011
-This week's Friday is 25.2.2011
-The date 790 days from this week's Friday is  5.5.2013
-----
-</div>
-            </div>
+include::{exercises}/ex91.adoc[]
 
 === More assignments
 All the new theory for this week has already been covered. However, since this week's topics are
             quite challenging, we will practise our routine with a couple of more exercises.
 
-            <div class="tehtavat">
-<div class="tehtava">
+include::{exercises}/ex92.adoc[]
 
-=== Difference of two dates
-In this assignment we'll further extend the class MyDate. This assignment does not depend on
-  the previous one, so the project contains the MyDate class that does not have the extensions of the
-  previous assignment.
+include::{exercises}/ex93.adoc[]
 
-  <h4 class="req">Difference in years, first version</h4>
-Add to the class MyDate the method `public int differenceInYears(MyDate
-    comparedDate)`, that calculates the difference in years of the object for which the method is
-  called and the object given as parameters.
-<b>Note the following</b>
-
-  * the first vesion of the method is not very precise, it only calculates the difference of
-    the years and does not take into account the day and month of the dates* The method needs to work only in the case where the date given as parameter is before the
-    date for which the method is called
-
-With the code
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        MyDate first = new MyDate(24, 12, 2009);
-        MyDate second = new MyDate(1, 1, 2011);
-        MyDate third = new MyDate(25, 12, 2010);
-
-        System.out.println( second + " and " + first + " difference in years: " + second.differenceInYears(first) );
-
-        System.out.println( third + " and " + first + " difference in years: " + third.differenceInYears(first) );
-
-        System.out.println( second + " and " + third + " difference in years: " + second.differenceInYears(third) );
-    }
-}
-----
-the output should be:
-----
-1.1.2011 and 24.12.2009 difference in years: 2     // since 2011-2009 = 2
-25.12.2010 and 24.12.2009 difference in years: 1   // since 2010-2009 = 1
-1.1.2011 and 25.12.2010 difference in years: 1     // since 2011-2010 = 1
-----
-
-  <h4 class="req">More accuracy</h4>
-Calculation of the previous version was not very exact, e.g. the difference of dates 1.1.2011
-  and 25.12.2010 was claimed to be one year. <b>Modify the method so that it can calculate the
-    difference properly.</b> Only the full years in difference count. So if the difference of two dates
-  would be 1 year and 364 days, only the full years are counted and the result is thus one.
-The method still needs to work only in the case where the date given as parameter is before the
-  date for which the method is called
-The output for the previous example is now:
-----
-1.1.2011 and 24.12.2009 difference in years: 1
-25.12.2010 and 24.12.2009 difference in years: 1
-1.1.2011 and 25.12.2010 difference in years: 0
-----
-
-==== And the final version</h4>
-Modify the method so that it works no matter which date is later, the one for which the method
-  is called or the parameter. Example code:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        MyDate first = new MyDate(24, 12, 2009);
-        MyDate second = new MyDate(1, 1, 2011);
-        MyDate third = new MyDate(25, 12, 2010);
-
-        System.out.println( first + " and " + second + " difference in years: " + second.differenceInYears(first) );
-        System.out.println( second + " and " + first + " difference in years: " + first.differenceInYears(second) );
-        System.out.println( first + " and " + third + " difference in years: " + third.differenceInYears(first) );
-        System.out.println( third + " and " + first + " difference in years: " + first.differenceInYears(third) );
-        System.out.println( third + " and " + second + " difference in years: " + second.differenceInYears(third) );
-        System.out.println( second + " and " + third + " difference in years: " + third.differenceInYears(second) );
-    }
-}
-----
-and the output
-----
-24.12.2009 and 1.1.2011 difference in years: 1
-1.1.2011 and 24.12.2009 difference in years: 1
-24.12.2009 and 25.12.2010 difference in years: 1
-25.12.2010 and 24.12.2009 difference in years: 1
-1.1.2011 and 25.12.2010 difference in years: 0
-25.12.2010 and 1.1.2011 difference in years: 0
-----
-</div>
-
-<div class="tehtava">
-
-=== Person extended
-
-  <h4 class="req">Calculating the age based on the birthday</h4>
-In chapter 24.9. Person was extended by adding to it a birthday represented as a MyDate object.
-  It was noticed that after the addition the instance variable `age` has no role since the
-  age could easily be calculated based on the current date and the birthday.
-Now implement the method `age` that calucates and returns the age of the person.
-<b>Note:</b> in the previous assignment we added the class `MyDate` method
-  `public int differenceInYears(MyDate compared)`. Copy the method here since it eases
-  this assignment considerably.
-[source,java]
-----
-import java.util.Calendar;
-
-public class Person {
-    private String name;
-    private MyDate birthday;
-
-    public Person(String name, int pp, int kk, int vv) {
-        this.name = name;
-        this.birthday = new MyDate(pp, kk, vv);
-    }
-
-    public int age() {
-        // calculate the age based on the birthday and the current day
-        // you get the current day as follows:
-        // Calendar.getInstance().get(Calendar.DATE);
-        // Calendar.getInstance().get(Calendar.MONTH) + 1; // January is 0 so we add one
-        // Calendar.getInstance().get(Calendar.YEAR);
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public String toString() {
-        return this.name +", born "+ this.birthday;
-    }
-}
-----
-You can use the following program to test your method. Add also yourself to the program and
-  ensure that your age is calculated correctly.
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 15, 2, 1993);
-        Person steve = new Person("Thomas", 1, 3, 1955);
-
-        System.out.println( steve.getName() + " age " + steve.age() + " years");
-        System.out.println( pekka.getName() + " age " + pekka.age() + " years");
-    }
-}
-----
-Output:
-----
-Thomas age 59 years
-Pekka age 21 years
-----
-
-  <h4 class="req">Comparing ages based on birthdate</h4>
-Add to the class Person the method `boolean olderThan(Person compared)` which
-  compares the ages of the object for which the method is called and the object given as parameter.
-  The method returns true if the object itself is older than the parameter.
-[source,java]
-----
-public class Person {
-    // ...
-
-    public boolean olderThan(Person compared) {
-       // compare the ages based on birthdate
-    }
-}
-----
-Test the method with the code:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", 15, 2, 1983);
-        Person martin = new Person("Martin", 1, 3, 1983);
-
-        System.out.println( martin.getName() + " is older than " +  pekka.getName() + ": "+ martin.olderThan(pekka) );
-        System.out.println( pekka.getName() + " is older than " +  martin.getName() + ": "+ pekka.olderThan(martin) );
-    }
-}
-----
-The output should be:
-----
-Martin is older than Pekka: false
-Pekka is older than Martin: true
-----
-
-==== New constructors</h4>
-Add to the class Person two new constructors:
-
-  * `public Person(String name, MyDate birthday)` constructor sets the given
-    MyDate-object to be the birthday of the person* `public Person(String name)` constructor sets the current date (i.e., the date
-    when the program is run) to be the birthday of the person
-
-Example program:
-[source,java]
-----
-public class Main {
-    public static void main(String[] args) {
-        Person pekka = new Person("Pekka", new MyDate(15, 2, 1983));
-        Person steve = new Person("Steve");
-
-        System.out.println( pekka );
-        System.out.println( steve );
-    }
-}
-----
-Output:
-----
-Pekka, born 15.2.1983
-Steve, born 9.2.2012
-----
-<b>Note:</b> The last line depends on the day when the code is executed!
-</div>
-            </div><!-- TYPOFIXES UPTO HERE DONE -->
-        </div>
-    </section>
+//         </div><!-- TYPOFIXES UPTO HERE DONE -->
+//     </div>
+// </section>

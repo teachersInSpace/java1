@@ -34,8 +34,9 @@ studentnumber: 013141590
 Pekka Mikkola (013141590)
 ----
 
-  <h4 class="req">List of students</h4>
-Implement a main program that works as follws:
++++<h4 class="req">List of students</h4>+++
+Implement a main program that works as follows:
+
 ----
 name: Alan Turing
 studentnumber: 017635727
@@ -50,9 +51,10 @@ Linus Torvalds (011288989)
 Steve Jobs (013672548)
 ----
 So the program asks for student information from the user until the user gives a student an
-  empty name. After the student info has been enteres, all the students are printed. From each
-  inputted name-studentnumber-pair, the program should create a Student object. The program should
-  store the students in an ArrayList which is defined as follows:
+empty name. After the student info has been entered, all the students are printed. From each
+inputted name-studentnumber-pair, the program should create a Student object. The program should
+store the students in an ArrayList which is defined as follows:
+
 [source,java]
 ----
 ArrayList&lt;Student&gt; list = new ArrayList&lt;Student&gt;();
