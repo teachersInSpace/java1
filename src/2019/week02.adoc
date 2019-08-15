@@ -1,5 +1,5 @@
 :doctitle: Using and updating variables
-:tabcolumns: d,h,d,h,d,d,d,d,d,d,d,d,d,d,d,d
+:tabcolumns: d,h,d,h,d,d,d,d,d,d,d,d,d,d,d
 include::../commonhead.adoc[]
 
 [#_part1_2]

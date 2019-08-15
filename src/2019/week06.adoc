@@ -1,8 +1,8 @@
 :doctitle: A quick recap.
-:tabcolumns: d,h,d,d,d,d,h,d,d,d,d,d,d,d,d,d
+:tabcolumns: d,h,d,d,d,d,d,h,d,d,d,d,d,d,d
 include::../commonhead.adoc[]
 
-[#_part1_4]
+[#_part1_6]
 :numbered!:
 
 == MOOC Material Week 6

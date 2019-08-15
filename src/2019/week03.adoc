@@ -1,5 +1,5 @@
 :doctitle: More about methods
-:tabcolumns: d,h,d,d,h,d,d,d,d,d,d,d,d,d,d,d
+:tabcolumns: d,h,d,d,h,d,d,d,d,d,d,d,d,d,d
 include::../commonhead.adoc[]
 
 [#_part1_3]

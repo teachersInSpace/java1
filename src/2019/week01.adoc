@@ -1,5 +1,5 @@
 :doctitle: The program and the source code
-:tabcolumns: d,h,h,d,d,d,d,d,d,d,d,d,d,d,d,d
+:tabcolumns: d,h,h,d,d,d,d,d,d,d,d,d,d,d,d
 include::../commonhead.adoc[]
 
 [#_part1_1]
