@@ -1,5 +1,5 @@
 = {doctitle}
-:author: Authors: see footer.
+:author: Various
 :version: V1.3  2019-0712
 :toc: right
 :toclevels: 4
@@ -27,7 +27,7 @@ toc::[]
 
 [#main-menu,cols="{tabcolumns}"]
 |===
-|link:../index.html[START] |week|link:week01.html[01] |link:week02.html[02] |link:week03.html[03] |link:week04.html[04] |link:week05.html[05] |link:week06.html[06] |link:week07.html[07] |link:week08.html[08] |link:week09.html[09] |link:week10.html[10] |link:week11.html[11] |link:week12.html[12] |link:tips.html[TIPS] |link:assessmentcorrectionrules.html[PA] |
+|link:../index.html[START] |week|link:week01.html[01] |link:week02.html[02] |link:week03.html[03] |link:week04.html[04] |link:week05.html[05] |link:week06.html[06] |link:week07.html[07] |link:week08.html[08] |link:week09.html[09] |link:week10.html[10] |link:week11.html[11] |link:week12.html[12] |link:tips.html[TIPS] |link:assessmentcorrectionrules.html[PA]
 |===
 
 :numbered:

@@ -1,4 +1,4 @@
-:doctitle: Using variables
+:doctitle: Using and updating variables
 :tabcolumns: d,h,d,h,d,d,d,d,d,d,d,d,d,d,d,d
 include::../commonhead.adoc[]
 
