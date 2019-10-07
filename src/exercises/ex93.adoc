@@ -6,7 +6,7 @@
 +++<h4 class="req">Calculating the age based on the birthday</h4>+++
 
 In chapter 24.9. Person was extended by adding to it a birthday represented as a MyDate object.
-  It was noticed that after the addition the instance variable `age` has no role since the
+  It was noticed that after the addition the field `age` has no role since the
   age could easily be calculated based on the current date and the birthday.
 Now implement the method `age` that calucates and returns the age of the person.
 *Note:* in the previous assignment we added the class `MyDate` method

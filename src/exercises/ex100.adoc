@@ -64,8 +64,8 @@ given width and height. Density gets the value `0.1`.
 NightSky-object with the given density, width and height
 
 Add to the class `NightSky` the method `printLine`, that prints one line of
-stars. The line length is determined by the value of the instance variable `width` and
-the instance variable `density` determines the star probability. For each printed
+stars. The line length is determined by the value of the field `width` and
+the field `density` determines the star probability. For each printed
 character you should use a `Random` object to decide if it prints out as a white space
 or a star. The method `nextDouble` will probably be of use now.
 
@@ -105,7 +105,7 @@ NightSky.print();
 
 +++<h4>Counting the number of stars</h4>+++
 
-Add the class `NightSky` an instance variable starsInLastPrint (`int`) and
+Add the class `NightSky` an field starsInLastPrint (`int`) and
 the method `starsInLastPrint()`, that returns the number of stars printed in the
 previous night sky. Example in the below:
 

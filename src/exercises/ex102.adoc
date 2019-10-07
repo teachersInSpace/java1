@@ -27,7 +27,7 @@ String riw = scanner.nextLine();
 
 
 If another object needs a scanner, you can pass it as constructor parameter and save in
-instance variable.
+field.
 
 *Note2:* Do not save anything in static variables. The main method is executed by the tests
 multiple times so the use of static variables might cause problems.

@@ -27,7 +27,7 @@ Team: FC Barcelona
 
 +++<h4 class="req">Player</h4>+++
 
-Create a class `Player` with the instance variables for the player name and the
+Create a class `Player` with the fields for the player name and the
 amount of goals. A player should have two constructors: one that initializes the name and an
 another that initializes the name and the amount of goals. Implement also the following
 methods:
@@ -65,7 +65,7 @@ Add to the class `Team` the following methods:
 * `addPlayer`, adds a player to the team
 * `printPlayers`, prints the players in the team.
 
-You should store the players to an instance variable of the type
+You should store the players to an field of the type
 `ArrayList<Player>` within the class `Team`.
 With the code:
 [source,java]

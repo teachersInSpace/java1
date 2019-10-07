@@ -34,7 +34,7 @@ The output should be:
 
 *NOTE:* in this and some of the following assignments methods are `static` as the
 they used to be in the assignments for weeks 2 and 3. The reason for this is that the methods
-are not instance methods, i.e. not operating with instance variables of objects, instead they are
+are not instance methods, i.e. not operating with fields of objects, instead they are
 working at "class level" and operating just with the values and objects given as
 parameter. In chapter 31 we'll elaborate more on the question whether a method should be static
 or not.

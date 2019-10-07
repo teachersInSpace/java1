@@ -14,7 +14,7 @@ search for the books within the library.
 
 +++<h4>Book</h4>+++
 
-Let us start with the class Book. The class has instance variables `title` for the
+Let us start with the class Book. The class has fields `title` for the
 book title, `publisher` for the name of the publisher, and `year`
 for the publishing year. The title and the publisher are of the type String and the publishing year
 is represented as an integer.

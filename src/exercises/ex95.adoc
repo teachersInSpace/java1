@@ -46,7 +46,7 @@ public class Money {
 }
 ----
 
-Notice that the instance variables `euros` and `cents` have been defined
+Notice that the fields `euros` and `cents` have been defined
 as `final` meaning that once the variables have been set, the value of those can not be
 changed. An object value of which can not be changed is said to be _immutable_. If we need to
 e.g. calculate the sum of two money objects, we need to create a new money object that represents
